@@ -1,63 +1,63 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
-import Notifications from 'react-notification-system-redux'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import Notifications from "react-notification-system-redux";
+import PropTypes from "prop-types";
 
-import { notificationActions } from '../redux/actions'
+import { notificationActions } from "../redux/actions";
 
-import { Container, Box } from '@material-ui/core'
+import { Container, Box } from "@material-ui/core";
 
-import { Sidebar, Footer } from '../components'
+import { Sidebar, Footer } from "../components";
 
 class App extends Component {
   constructor(props) {
-    super(props)
-    const { user, history, dispatch } = this.props
+    super(props);
+    const { user, history, dispatch } = this.props;
 
-    const pathname = history.location.pathname
-    console.debug('[CApp] fn=constructor, window.location.pathname=', pathname)
+    const pathname = history.location.pathname;
+    console.debug("[CApp] fn=constructor, window.location.pathname=", pathname);
     if (user.isAuthed) {
-      if (pathname === '/signin' || pathname === '/register') {
-        if (pathname !== '/') history.replace('/')
+      if (pathname === "/signin" || pathname === "/register") {
+        if (pathname !== "/") history.replace("/");
       } //else {
       //history.replace('/dashboard')
       //}
     } else {
-      if (pathname !== '/signin') history.replace('/signin')
+      if (pathname !== "/signin") history.replace("/signin");
     }
 
     history.listen(() => {
       // clear notifications on location change
-      dispatch(notificationActions.clear())
-    })
+      dispatch(notificationActions.clear());
+    });
   }
   shouldComponentUpdate(nextProps) {
-    const locationChanged = nextProps.location !== this.props.location
+    const locationChanged = nextProps.location !== this.props.location;
     console.debug(
       `[CApp] fn=shouldComponentUpdate, locationChanged=${locationChanged}, nextProps.location=${nextProps.location.pathname}, this.props.location=${this.props.location.pathname}`
-    )
+    );
     return (
       locationChanged ||
       nextProps.notifications.length !== this.props.notifications.length
-    )
+    );
   }
   render() {
-    console.debug('[CApp] fn=render')
-    const { notifications, user } = this.props
+    console.debug("[CApp] fn=render");
+    const { notifications, user } = this.props;
     return (
-      <div className={!user.isAuthed && 'background-img'}>
+      <div className={!user.isAuthed && "background-img"}>
         {user.isAuthed && <Sidebar {...this.props} />}
         <Notifications
           notifications={notifications}
-          className='notifications-lb'
+          className="notifications-lb"
         />
-        <Container maxWidth='xl'>
+        <Container maxWidth="xl">
           <Box pt={8}>{this.props.children}</Box>
         </Container>
         {user.isAuthed && <Footer {...this.props} />}
       </div>
-    )
+    );
   }
 }
 
@@ -68,12 +68,12 @@ App.propTypes = {
   location: PropTypes.object.isRequired,
   notifications: PropTypes.array.isRequired,
   children: PropTypes.object.isRequired
-}
+};
 
 function mapStateToProps(state) {
-  const { notifications, user } = state
-  return { notifications, user }
+  const { notifications, user } = state;
+  return { notifications, user };
 }
 
-const connected = withRouter(connect(mapStateToProps)(App))
-export { connected as App }
+const connected = withRouter(connect(mapStateToProps)(App));
+export { connected as App };

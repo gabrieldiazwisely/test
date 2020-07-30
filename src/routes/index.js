@@ -1,7 +1,7 @@
-import React from 'react'
-import { Route, Switch } from 'react-router' // react-router v4
+import React from "react";
+import { Route, Switch } from "react-router"; // react-router v4
 
-import { routePaths } from './paths'
+import { routePaths } from "./paths";
 
 const Routes = (
   <Switch>
@@ -14,8 +14,8 @@ const Routes = (
         component={route.component}
       />
     ))}
-    <Route render={() => 'Path not found'} />
+    <Route render={() => "Path not found"} />
   </Switch>
-)
+);
 
-export default Routes
+export default Routes;

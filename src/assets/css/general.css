@@ -141,7 +141,7 @@
   display: block;
   left: 0;
   top: 0;
-  content: '';
+  content: "";
 }
 .content-is-authed {
   min-height: 980px;
@@ -293,7 +293,7 @@ h4.card-title {
 }
 
 .clearfix::after {
-  content: '';
+  content: "";
   clear: both;
   display: table;
 }
@@ -497,7 +497,7 @@ ul.video-tabs {
 }
 
 .nav-views .nav-devider-pipe:after {
-  content: '|';
+  content: "|";
   position: absolute;
   top: 7px;
   margin-left: 5px;

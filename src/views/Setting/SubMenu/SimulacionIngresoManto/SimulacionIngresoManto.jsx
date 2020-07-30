@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { SimulacionIngresoManto as CSimulacionIngresoManto } from '../../../../components'
+import { SimulacionIngresoManto as CSimulacionIngresoManto } from "../../../../components";
 
 class SimulacionIngresoManto extends Component {
   shouldComponentUpdate(nextProps, nextStates) {
-    return false
+    return false;
   }
 
   render() {
     return (
-      <div className='content SimulacionIngresoManto'>
+      <div className="content SimulacionIngresoManto">
         <CSimulacionIngresoManto />
       </div>
-    )
+    );
   }
 }
 
-export { SimulacionIngresoManto }
+export { SimulacionIngresoManto };

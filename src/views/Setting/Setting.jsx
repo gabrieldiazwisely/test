@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { Setting as CSetting } from '../../components'
+import { Setting as CSetting } from "../../components";
 
 class Setting extends Component {
   shouldComponentUpdate(nextProps, nextStates) {
-    return false
+    return false;
   }
 
   render() {
     return (
-      <div className='content Setting'>
+      <div className="content Setting">
         <CSetting />
       </div>
-    )
+    );
   }
 }
 
-export { Setting }
+export { Setting };

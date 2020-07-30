@@ -1,2 +1,2 @@
-export * from './AuthProvider'
-export * from './withAuthorization'
+export * from "./AuthProvider";
+export * from "./withAuthorization";

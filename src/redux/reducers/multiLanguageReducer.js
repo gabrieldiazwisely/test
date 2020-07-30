@@ -1,20 +1,20 @@
-import { multiLanguageConstants } from '../constants'
+import { multiLanguageConstants } from "../constants";
 
 const initialState = {
-    data: {
-        language: 'es'
-    }
-}
+  data: {
+    language: "es"
+  }
+};
 
-export function multiLanguage (state= initialState, action) {
-    switch(action.type) {
-        case multiLanguageConstants.GET_SELECTED_SUCCESS:
-            debugger
-            return {
-                ...state,
-                data: action.data
-            }
-        default:
-            return state
-    }
+export function multiLanguage(state = initialState, action) {
+  switch (action.type) {
+    case multiLanguageConstants.GET_SELECTED_SUCCESS:
+      debugger;
+      return {
+        ...state,
+        data: action.data
+      };
+    default:
+      return state;
+  }
 }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 function withAuthorization(requirements, configs = {}) {
   return function applyAuthFor(WrappableComponent) {
@@ -8,23 +8,23 @@ function withAuthorization(requirements, configs = {}) {
         user: PropTypes.object,
         authorize: PropTypes.func,
         loggedOutRole: PropTypes.oneOfType([PropTypes.string, PropTypes.symbol])
-      }
+      };
       render() {
-        const { unauthorized } = configs
-        const { user, authorize } = this.context
+        const { unauthorized } = configs;
+        const { user, authorize } = this.context;
 
         if (user && user.isAuthed && authorize(requirements, user)) {
-          return <WrappableComponent {...this.props} />
+          return <WrappableComponent {...this.props} />;
         }
 
         if (unauthorized) {
-          return unauthorized
+          return unauthorized;
         }
 
-        return null
+        return null;
       }
-    }
-  }
+    };
+  };
 }
 
-export { withAuthorization }
+export { withAuthorization };

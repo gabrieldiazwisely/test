@@ -1,11 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import clsx from 'clsx'
-import queryString from 'query-string'
+import React from "react";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
+import clsx from "clsx";
 
-import PersonalMenu from './PersonalMenu'
-// import Alerts from './Alerts'
+import PersonalMenu from "./PersonalMenu";
 
 import {
   AppBar,
@@ -16,64 +14,63 @@ import {
   MenuItem,
   Tooltip,
   Grid
-} from '@material-ui/core'
+} from "@material-ui/core";
 
-import MoreIcon from '@material-ui/icons/MoreVert'
+import MoreIcon from "@material-ui/icons/MoreVert";
 
-import { useStyles } from './style'
-import logo from '../../assets/img/logo-elecmetal.png'
-import logo_small from '../../assets/img/logo-elecmetal_small.png'
+import { useStyles } from "./style";
+import logo from "../../assets/img/logo-elecmetal.png";
+import logo_small from "../../assets/img/logo-elecmetal_small.png";
 
 const DASH_ROUTES = [
   {
-    path: '/dashboard',
-    name: 'Dashboard'
+    path: "/dashboard",
+    name: "Dashboard"
   },
   {
-    path: '/setting',
-    name: 'Setting'
+    path: "/setting",
+    name: "Setting"
   },
   {
-    path: '/wear',
-    name: 'Desgaste'
+    path: "/wear",
+    name: "Desgaste"
   },
   {
-    path: '/sim-manto',
-    name: 'Sim. de manto'
+    path: "/sim-manto",
+    name: "Sim. de manto"
   },
   {
-    path: '/camera-geometry',
-    name: 'Geometría  de cámara'
+    path: "/camera-geometry",
+    name: "Geometría  de cámara"
   }
-]
-
+];
 
 const Sidebar = () => {
-  const classes = useStyles()
-  const pathname = window.location.pathname.split('/')
-  
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
+  const classes = useStyles();
+  const pathname = window.location.pathname.split("/");
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleMobileMenuOpen = event => {
-    console.log('event.currentTarget', event.currentTarget)
-    setMobileMoreAnchorEl(event.currentTarget)
-  }
+    console.log("event.currentTarget", event.currentTarget);
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
 
   const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null)
-  }
+    setMobileMoreAnchorEl(null);
+  };
 
-  const mobileMenuId = 'primary-search-account-menu-mobile'
+  const mobileMenuId = "primary-search-account-menu-mobile";
 
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
@@ -81,29 +78,33 @@ const Sidebar = () => {
         return (
           <MenuItem key={key}>
             <NavLink to={prop.path}>
-              {' '}
-              <IconButton disableRipple className={clsx(classes.NavButton, classes.NabButtonMobile)} color='primary'>
+              {" "}
+              <IconButton
+                disableRipple
+                className={clsx(classes.NavButton, classes.NabButtonMobile)}
+                color="primary"
+              >
                 {prop.name}
               </IconButton>
             </NavLink>
           </MenuItem>
-        )
+        );
       })}
     </Menu>
-  )
+  );
 
   return (
     <AppBar className={clsx(classes.root)}>
       <Toolbar>
         <Grid container className={classes.NavAll}>
           <Grid item xs={4} sm={2}>
-            <NavLink to='/projects'>
+            <NavLink to="/projects">
               <Hidden smDown>
-                <img alt='Logo' src={logo} className={classes.logo} />
+                <img alt="Logo" src={logo} className={classes.logo} />
               </Hidden>
               <Hidden mdUp>
                 <img
-                  alt='Logo'
+                  alt="Logo"
                   src={logo_small}
                   className={classes.logo_small}
                 />
@@ -116,27 +117,38 @@ const Sidebar = () => {
               {DASH_ROUTES.map((prop, key) => {
                 return (
                   <Tooltip title={prop.name} key={key}>
-                    <NavLink to={prop.path} key={key} className={classes.NavLink}>
-                      <IconButton disableRipple color='primary' className={clsx(classes.NavButton, ('/' + pathname[1] === prop.path)? 'active' : '')}>
+                    <NavLink
+                      to={prop.path}
+                      key={key}
+                      className={classes.NavLink}
+                    >
+                      <IconButton
+                        disableRipple
+                        color="primary"
+                        className={clsx(
+                          classes.NavButton,
+                          "/" + pathname[1] === prop.path ? "active" : ""
+                        )}
+                      >
                         {prop.name}
                       </IconButton>
                     </NavLink>
                   </Tooltip>
-                )
+                );
               })}
             </Hidden>
           </Grid>
           <Grid item xs={3} sm={1} className={classes.NavPersonalConfig}>
-              <PersonalMenu />
+            <PersonalMenu />
           </Grid>
         </Grid>
 
         <Hidden mdUp>
           <IconButton
             aria-controls={mobileMenuId}
-            aria-label='show more'
-            aria-haspopup='true'
-            color='inherit'
+            aria-label="show more"
+            aria-haspopup="true"
+            color="inherit"
             onClick={handleMobileMenuOpen}
           >
             <MoreIcon />
@@ -146,8 +158,8 @@ const Sidebar = () => {
         {renderMobileMenu}
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
 
-const connected = connect()(Sidebar)
-export { connected as Sidebar }
+const connected = connect()(Sidebar);
+export { connected as Sidebar };

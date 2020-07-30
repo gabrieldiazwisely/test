@@ -1,66 +1,66 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import { withStyles } from '@material-ui/core/styles'
-import { Typography, Menu, Avatar, Grid } from '@material-ui/core'
-import MenuItem from '@material-ui/core/MenuItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
+import { withStyles } from "@material-ui/core/styles";
+import { Typography, Menu, Avatar, Grid } from "@material-ui/core";
+import MenuItem from "@material-ui/core/MenuItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import SettingsIcon from '@material-ui/icons/Settings'
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import SettingsIcon from "@material-ui/icons/Settings";
 
-import { useStyles } from './style'
+import { useStyles } from "./style";
 
 const StyledMenu = withStyles({
   paper: {
-    border: '1px solid #d3d4d5'
+    border: "1px solid #d3d4d5"
   }
 })(props => (
   <Menu
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center'
+      vertical: "bottom",
+      horizontal: "center"
     }}
     transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center'
+      vertical: "top",
+      horizontal: "center"
     }}
     {...props}
   />
-))
+));
 
 const StyledMenuItem = withStyles(theme => ({
   root: {}
-}))(MenuItem)
+}))(MenuItem);
 
 export default function PersonalMenu() {
-  const classes = useStyles()
+  const classes = useStyles();
 
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleClose = () => {
-    setAnchorEl(null)
-  }
+    setAnchorEl(null);
+  };
 
   return (
     <React.Fragment>
       <Avatar
-        aria-controls='customized-menu'
-        aria-haspopup='true'
-        color='primary'
+        aria-controls="customized-menu"
+        aria-haspopup="true"
+        color="primary"
         onClick={handleClick}
       >
         G
       </Avatar>
       <StyledMenu
-        id='customized-menu'
+        id="customized-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -72,28 +72,28 @@ export default function PersonalMenu() {
               <Avatar>G</Avatar>
             </Grid>
             <Grid item>
-              <Typography variant='h6'>Guest</Typography>
+              <Typography variant="h6">Guest</Typography>
               {/* <Typography color='secondary'>View profile</Typography> */}
             </Grid>
           </Grid>
         </MenuItem>
-        <NavLink to='/account' className={classes.navMenuItem}>
+        <NavLink to="/account" className={classes.navMenuItem}>
           <StyledMenuItem>
             <ListItemIcon>
-              <SettingsIcon fontSize='small' />
+              <SettingsIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary='Account' />
+            <ListItemText primary="Account" />
           </StyledMenuItem>
         </NavLink>
-        <NavLink to='/signout' className={classes.navMenuItem}>
+        <NavLink to="/signout" className={classes.navMenuItem}>
           <StyledMenuItem>
             <ListItemIcon>
-              <ExitToAppIcon fontSize='small' />
+              <ExitToAppIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary='Logout' />
+            <ListItemText primary="Logout" />
           </StyledMenuItem>
         </NavLink>
       </StyledMenu>
     </React.Fragment>
-  )
+  );
 }

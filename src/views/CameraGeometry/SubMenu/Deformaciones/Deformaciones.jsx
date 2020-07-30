@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { Deformaciones as CDeformaciones } from '../../../../components'
+import { Deformaciones as CDeformaciones } from "../../../../components";
 
 class Deformaciones extends Component {
   shouldComponentUpdate(nextProps, nextStates) {
-    return false
+    return false;
   }
 
   render() {
     return (
-      <div className='content Deformaciones'>
+      <div className="content Deformaciones">
         <CDeformaciones />
       </div>
-    )
+    );
   }
 }
 
-export { Deformaciones }
+export { Deformaciones };

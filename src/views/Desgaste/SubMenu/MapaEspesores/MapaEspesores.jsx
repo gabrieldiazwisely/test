@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { MapaEspesores as CMapaEspesores } from '../../../../components'
+import { MapaEspesores as CMapaEspesores } from "../../../../components";
 
 class MapaEspesores extends Component {
   shouldComponentUpdate(nextProps, nextStates) {
-    return false
+    return false;
   }
 
   render() {
     return (
-      <div className='content MapaEspesores'>
+      <div className="content MapaEspesores">
         <CMapaEspesores />
       </div>
-    )
+    );
   }
 }
 
-export { MapaEspesores }
+export { MapaEspesores };

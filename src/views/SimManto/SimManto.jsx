@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { SimManto as CSimManto } from '../../components'
+import { SimManto as CSimManto } from "../../components";
 
 class SimManto extends Component {
   shouldComponentUpdate(nextProps, nextStates) {
-    return false
+    return false;
   }
 
   render() {
     return (
-      <div className='content SimManto'>
+      <div className="content SimManto">
         <CSimManto />
       </div>
-    )
+    );
   }
 }
 
-export { SimManto }
+export { SimManto };

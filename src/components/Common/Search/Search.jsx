@@ -1,27 +1,33 @@
-import React from 'react'
-import {Grid, FormControl, InputLabel, Select, MenuItem} from '@material-ui/core'
-import { useStyles } from './style'
+import React from "react";
+import {
+  Grid,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
+} from "@material-ui/core";
+import { useStyles } from "./style";
 
 const Search = props => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   const [equipment, setEquipment] = React.useState(1);
   const [campaign, setCampaign] = React.useState(7);
   const [measurement, setMeasurement] = React.useState(7);
 
-  const handleChangeEquipment = (event) => {
-    setEquipment(event.target.value)
-  }
+  const handleChangeEquipment = event => {
+    setEquipment(event.target.value);
+  };
 
-  const handleChangeCampaign = (event) => {
-    setCampaign(event.target.value)
-  }
+  const handleChangeCampaign = event => {
+    setCampaign(event.target.value);
+  };
 
-  const handleChangeMeasurement = (event) => {
-    setMeasurement(event.target.value)
-  }
-  
-  return(
+  const handleChangeMeasurement = event => {
+    setMeasurement(event.target.value);
+  };
+
+  return (
     <React.Fragment>
       <Grid container className={classes.root} spacing={3}>
         <Grid item xs={4}>
@@ -79,7 +85,7 @@ const Search = props => {
         </Grid>
       </Grid>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export {Search}
+export { Search };

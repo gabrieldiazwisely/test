@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { SettingCalculation as CSettingCalculation } from '../../../../components'
+import { SettingCalculation as CSettingCalculation } from "../../../../components";
 
 class SettingCalculation extends Component {
   shouldComponentUpdate(nextProps, nextStates) {
-    return false
+    return false;
   }
 
   render() {
     return (
-      <div className='content SettingCalculation'>
+      <div className="content SettingCalculation">
         <CSettingCalculation />
       </div>
-    )
+    );
   }
 }
 
-export { SettingCalculation }
+export { SettingCalculation };
