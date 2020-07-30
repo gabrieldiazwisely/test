@@ -7,4 +7,7 @@ export const useStyles = makeStyles(theme => ({
   imgCenter: {
     textAlign: 'center',
   },
+  CSinformation: {
+    padding: theme.spacing(3) + 'px !important'
+  }
 }))

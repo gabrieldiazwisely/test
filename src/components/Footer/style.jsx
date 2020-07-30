@@ -7,7 +7,7 @@ export const useStyles = makeStyles(theme => ({
     top: 'auto',
     bottom: 0,
     paddingTop: theme.spacing(2),
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(3),
     height: '100%',
   },
   logo: {
@@ -15,5 +15,8 @@ export const useStyles = makeStyles(theme => ({
   },
   options: {
     color: '#fff'
+  },
+  NavAll: {
+    background: '#0057B8'
   }
 }))

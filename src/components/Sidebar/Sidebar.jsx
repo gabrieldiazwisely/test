@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
+import queryString from 'query-string'
 
 import PersonalMenu from './PersonalMenu'
 // import Alerts from './Alerts'
@@ -37,6 +38,10 @@ const DASH_ROUTES = [
     name: 'Desgaste'
   },
   {
+    path: '/sim-manto',
+    name: 'Sim. de manto'
+  },
+  {
     path: '/camera-geometry',
     name: 'Geometría  de cámara'
   }
@@ -45,8 +50,8 @@ const DASH_ROUTES = [
 
 const Sidebar = () => {
   const classes = useStyles()
-  const pathname = window.location.pathname
-
+  const pathname = window.location.pathname.split('/')
+  
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -112,7 +117,7 @@ const Sidebar = () => {
                 return (
                   <Tooltip title={prop.name} key={key}>
                     <NavLink to={prop.path} key={key} className={classes.NavLink}>
-                      <IconButton disableRipple color='primary' className={clsx(classes.NavButton, (pathname === prop.path)? 'active' : '')}>
+                      <IconButton disableRipple color='primary' className={clsx(classes.NavButton, ('/' + pathname[1] === prop.path)? 'active' : '')}>
                         {prop.name}
                       </IconButton>
                     </NavLink>

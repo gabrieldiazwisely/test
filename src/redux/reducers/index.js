@@ -4,6 +4,8 @@ import { connectRouter } from 'connected-react-router'
 import { loadingBarReducer as loadingBar } from 'react-redux-loading-bar'
 
 import { user } from './userReducer'
+import { multiLanguage } from './multiLanguageReducer'
+import { scale } from './scaleReducer'
 
 export const createRootReducer = history =>
   combineReducers({
@@ -11,4 +13,6 @@ export const createRootReducer = history =>
     notifications,
     loadingBar,
     user,
+    multiLanguage,
+    scale
   })

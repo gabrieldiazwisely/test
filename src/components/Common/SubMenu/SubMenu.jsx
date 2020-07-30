@@ -6,17 +6,19 @@ import clsx from 'clsx'
 
 const SubMenu = props => {
   const classes = useStyles()
-  // const pathname = window.location.pathname
-  const {items } = props
+  const pathname = window.location.pathname
+
+  const { items } = props
+
   return(
     <React.Fragment>
       <Grid container
-  direction="row"
-  justify="flex-end"
-  alignItems="center" className={classes.root}>
+      direction="row"
+      justify="flex-end"
+      alignItems="center" className={classes.root}>
         {items.map((item, key) => {
           return (
-            <NavLink to={item.path} key={key} className={clsx(classes.navLink, (key === 1)? classes.active : '')}>
+            <NavLink to={item.path} key={key} className={clsx(classes.navLink, (item.path === pathname)? classes.active : '')}>
               {item.title}
             </NavLink>
           )

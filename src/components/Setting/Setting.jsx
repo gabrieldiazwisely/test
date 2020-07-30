@@ -1,10 +1,16 @@
 import React from 'react'
-import {Grid, Typography, Paper} from '@material-ui/core'
+import {Grid, Paper} from '@material-ui/core'
 import { useStyles } from './style'
 import {Information, Equipment} from '../Common/'
 
-import dashboard1 from '../../assets/img/fake/dashboard1.png'
-import dashboard2 from '../../assets/img/fake/dashboard2.png'
+import setting1 from '../../assets/img/fake/setting1.png'
+import setting2 from '../../assets/img/fake/setting2.png'
+
+const SUBMENU = [
+  {id: 1, title: 'Resumen', path: '/setting'}, 
+  {id: 2, title: 'Calculo de setting', path: '/setting/setting-calculation'}, 
+  {id: 3, title: 'Incremento poste', path: '/setting/incremento-poste'},
+]
 
 const Setting = props => {
   const classes = useStyles()
@@ -12,21 +18,19 @@ const Setting = props => {
     <React.Fragment>
       <Grid container className={classes.root} direction="row" justify="center" spacing={2}>
         <Grid item xs={12}>
-          <Equipment submenu={false}/>
+          <Equipment  submenu={SUBMENU}/>
         </Grid>
         <Grid item xs={9}>
-          <Information items={['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ', 'Tempor incididunt ut labore et dolore magna aliqua. ', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']}/>
+          <Information icon={'i'} items={['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ', 'Tempor incididunt ut labore et dolore magna aliqua. ', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']}/>
         </Grid>
-        <Grid item xs={10} mt={2}>
+        <Grid item xs={5} mt={2}>
           <Paper elevation={3}  className={classes.imgCenter}>
-            <Typography  variant="h3" >Proyecciones</Typography>
-            <img src={dashboard1} alt={'Dashboard1'} style={{width: '70%'}}/>
+            <img src={setting1} alt={'setting1'} style={{width: '70%'}}/>
           </Paper>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={7}>
           <Paper elevation={3}  className={classes.imgCenter}>
-            <Typography  variant="h3" >Recomendación altura de manto</Typography>
-            <img src={dashboard2} alt={'Dashboard2'} style={{width: '70%'}} />
+            <img src={setting2} alt={'setting2'} style={{width: '70%'}} />
           </Paper>
         </Grid>
       </Grid>

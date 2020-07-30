@@ -6,8 +6,8 @@ const Search = props => {
   const classes = useStyles()
 
   const [equipment, setEquipment] = React.useState(1);
-  const [campaign, setCampaign] = React.useState(1);
-  const [measurement, setMeasurement] = React.useState(1);
+  const [campaign, setCampaign] = React.useState(7);
+  const [measurement, setMeasurement] = React.useState(7);
 
   const handleChangeEquipment = (event) => {
     setEquipment(event.target.value)
@@ -48,9 +48,13 @@ const Search = props => {
               value={campaign}
               onChange={handleChangeCampaign}
             >
-              <MenuItem value={1}>Campaña 1</MenuItem>
-              <MenuItem value={2}>Campaña 2</MenuItem>
-              <MenuItem value={3}>Campaña 3</MenuItem>
+              <MenuItem value={7}>Julio - 2019</MenuItem>
+              <MenuItem value={6}>Junio - 2019</MenuItem>
+              <MenuItem value={5}>Mayo - 2019</MenuItem>
+              <MenuItem value={4}>Abril - 2019</MenuItem>
+              <MenuItem value={3}>Marzo - 2019</MenuItem>
+              <MenuItem value={2}>Febrero - 2019</MenuItem>
+              <MenuItem value={1}>Enero - 2019</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -63,9 +67,13 @@ const Search = props => {
               value={measurement}
               onChange={handleChangeMeasurement}
             >
-              <MenuItem value={1}>Medición 1</MenuItem>
-              <MenuItem value={2}>Medición 2</MenuItem>
-              <MenuItem value={3}>Medición 3</MenuItem>
+              <MenuItem value={7}>Julio - 2019</MenuItem>
+              <MenuItem value={6}>Junio - 2019</MenuItem>
+              <MenuItem value={5}>Mayo - 2019</MenuItem>
+              <MenuItem value={4}>Abril - 2019</MenuItem>
+              <MenuItem value={3}>Marzo - 2019</MenuItem>
+              <MenuItem value={2}>Febrero - 2019</MenuItem>
+              <MenuItem value={1}>Enero - 2019</MenuItem>
             </Select>
           </FormControl>
         </Grid>
