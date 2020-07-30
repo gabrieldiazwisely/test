@@ -29,6 +29,7 @@ const Setting = props => {
         <Grid item xs={9}>
           <Information
             icon={"i"}
+            title={'Antecedentes del equipo'}
             items={[
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
               "Tempor incididunt ut labore et dolore magna aliqua. ",
