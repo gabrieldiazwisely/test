@@ -41,7 +41,8 @@
     "reactstrap": "^8.0.0",
     "react-grid-layout": "^0.18.3",
     "react-redux-multilingual": "^2.0.4",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "eslint": "^6.6.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2",
