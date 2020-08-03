@@ -10,7 +10,8 @@ export const useStyles = makeStyles(theme => ({
   },
   NavButton: {
     borderRadius: "0",
-    color: "#fff"
+    color: "#fff",
+    padding: theme.spacing(2, 1), 
   },
   NavLink: {
     padding: "10px 10px",
@@ -34,7 +35,8 @@ export const useStyles = makeStyles(theme => ({
     height: 55
   },
   NavAll: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
   },
   NavList: {
     textAlign: "right"
@@ -42,7 +44,8 @@ export const useStyles = makeStyles(theme => ({
   NavPersonalConfig: {
     display: "flex",
     justifyContent: "flex-end",
-    color: "#bdbdbd"
+    color: "#bdbdbd",
+    alignItems: 'center',
   },
   NavAlert: {
     color: "#DAD7D6",

@@ -2,8 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
+import { Equipment } from "../Common/";
 
 import PersonalMenu from "./PersonalMenu";
+import { SubMenuMobil } from "./SubMenuMobil";
 
 import {
   AppBar,
@@ -22,30 +24,9 @@ import { useStyles } from "./style";
 import logo from "../../assets/img/logo-elecmetal.png";
 import logo_small from "../../assets/img/logo-elecmetal_small.png";
 
-const DASH_ROUTES = [
-  {
-    path: "/dashboard",
-    name: "Dashboard"
-  },
-  {
-    path: "/setting",
-    name: "Setting"
-  },
-  {
-    path: "/wear",
-    name: "Desgaste"
-  },
-  {
-    path: "/sim-manto",
-    name: "Sim. de manto"
-  },
-  {
-    path: "/camera-geometry",
-    name: "Geometría  de cámara"
-  }
-];
+const Sidebar = (props) => {
 
-const Sidebar = () => {
+  const { DASH_ROUTES } = props
   const classes = useStyles();
   const pathname = window.location.pathname.split("/");
 
@@ -77,16 +58,7 @@ const Sidebar = () => {
       {DASH_ROUTES.map((prop, key) => {
         return (
           <MenuItem key={key}>
-            <NavLink to={prop.path}>
-              {" "}
-              <IconButton
-                disableRipple
-                className={clsx(classes.NavButton, classes.NabButtonMobile)}
-                color="primary"
-              >
-                {prop.name}
-              </IconButton>
-            </NavLink>
+              <SubMenuMobil items={prop} handleMobileMenuClose={handleMobileMenuClose}/>
           </MenuItem>
         );
       })}
@@ -157,6 +129,7 @@ const Sidebar = () => {
 
         {renderMobileMenu}
       </Toolbar>
+      <Equipment DASH_ROUTES = {DASH_ROUTES} />
     </AppBar>
   );
 };

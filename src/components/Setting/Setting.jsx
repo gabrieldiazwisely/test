@@ -1,16 +1,10 @@
 import React from "react";
 import { Grid, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
-import { Information, Equipment } from "../Common/";
+import { Information } from "../Common/";
 
 import setting1 from "../../assets/img/fake/setting1.png";
 import setting2 from "../../assets/img/fake/setting2.png";
-
-const SUBMENU = [
-  { id: 1, title: "Resumen", path: "/setting" },
-  { id: 2, title: "Calculo de setting", path: "/setting/setting-calculation" },
-  { id: 3, title: "Incremento poste", path: "/setting/incremento-poste" }
-];
 
 const Setting = props => {
   const classes = useStyles();
@@ -23,9 +17,6 @@ const Setting = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment submenu={SUBMENU} />
-        </Grid>
         <Grid item xs={9}>
           <Information
             icon={"i"}

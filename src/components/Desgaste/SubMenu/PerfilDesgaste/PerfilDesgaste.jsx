@@ -1,22 +1,17 @@
-import React from "react";
-import { Information, Equipment } from "../../../Common";
-import { Grid, Typography, Paper } from "@material-ui/core";
-import { useStyles } from "../../style";
+import React from "react"
+import { Information } from "../../../Common"
+import { Grid, Typography, Paper } from "@material-ui/core"
+import { useStyles } from "../../style"
 
-import perfildesgaste0 from "../../../../assets/img/fake/perfildesgaste0.png";
-import perfildesgaste1 from "../../../../assets/img/fake/perfildesgaste1.png";
-import perfildesgastetable1 from "../../../../assets/img/fake/perfildesgastetable1.png";
-import perfildesgaste2 from "../../../../assets/img/fake/perfildesgaste2.png";
-import perfildesgastetable2 from "../../../../assets/img/fake/perfildesgastetable2.png";
+import perfildesgaste0 from "../../../../assets/img/fake/perfildesgaste0.png"
+import perfildesgaste1 from "../../../../assets/img/fake/perfildesgaste1.png"
+import perfildesgastetable1 from "../../../../assets/img/fake/perfildesgastetable1.png"
+import perfildesgaste2 from "../../../../assets/img/fake/perfildesgaste2.png"
+import perfildesgastetable2 from "../../../../assets/img/fake/perfildesgastetable2.png"
 
-const SUBMENU = [
-  { id: 1, title: "Resumen", path: "/wear" },
-  { id: 2, title: "Perfil de desgaste", path: "/wear/perfil-desgaste" },
-  { id: 3, title: "Mapa de espesores", path: "/wear/mapa-espesores" }
-];
 
 const PerfilDesgaste = props => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <React.Fragment>
       <Grid
@@ -26,9 +21,6 @@ const PerfilDesgaste = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment submenu={SUBMENU} />
-        </Grid>
         <Grid item xs={12} style={{ textAlign: "right" }}>
           <img
             src={perfildesgaste0}
@@ -91,7 +83,7 @@ const PerfilDesgaste = props => {
         </Grid>
       </Grid>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export { PerfilDesgaste };
+export { PerfilDesgaste }

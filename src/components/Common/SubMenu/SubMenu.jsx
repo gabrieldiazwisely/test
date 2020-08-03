@@ -5,6 +5,7 @@ import { useStyles } from "./style";
 import clsx from "clsx";
 
 const SubMenu = props => {
+  
   const classes = useStyles();
   const pathname = window.location.pathname;
 
@@ -20,14 +21,15 @@ const SubMenu = props => {
         className={classes.root}
       >
         {items.map((item, key) => {
+          let active = item.path === pathname ? classes.active : "" 
           return (
             <NavLink
               to={item.path}
               key={key}
               className={clsx(
-                classes.navLink,
-                item.path === pathname ? classes.active : ""
-              )}
+                classes.navLink
+              )} 
+              activeClassName={active}
             >
               {item.title}
             </NavLink>

@@ -1,20 +1,14 @@
-import React from "react";
-import { Information, Equipment } from "../../../Common";
-import { Grid, Typography, Paper } from "@material-ui/core";
-import { useStyles } from "../../style";
+import React from "react"
+import { Information } from "../../../Common"
+import { Grid, Typography, Paper } from "@material-ui/core"
+import { useStyles } from "../../style"
 
-import settingcalculation1 from "../../../../assets/img/fake/settingcalculation1.png";
-import settingcalculation2 from "../../../../assets/img/fake/settingcalculation2.png";
-import settingcalculation3 from "../../../../assets/img/fake/settingcalculation3.png";
-
-const SUBMENU = [
-  { id: 1, title: "Resumen", path: "/setting" },
-  { id: 2, title: "Calculo de setting", path: "/setting/setting-calculation" },
-  { id: 3, title: "Incremento poste", path: "/setting/incremento-poste" }
-];
+import settingcalculation1 from "../../../../assets/img/fake/settingcalculation1.png"
+import settingcalculation2 from "../../../../assets/img/fake/settingcalculation2.png"
+import settingcalculation3 from "../../../../assets/img/fake/settingcalculation3.png"
 
 const SettingCalculation = props => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <React.Fragment>
       <Grid
@@ -24,9 +18,6 @@ const SettingCalculation = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment submenu={SUBMENU} />
-        </Grid>
         <Grid item xs={10} mt={12}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Variación del Setting</Typography>
@@ -74,7 +65,7 @@ const SettingCalculation = props => {
         </Grid>
       </Grid>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export { SettingCalculation };
+export { SettingCalculation }

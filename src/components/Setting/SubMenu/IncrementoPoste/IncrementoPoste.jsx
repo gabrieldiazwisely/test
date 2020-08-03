@@ -1,20 +1,14 @@
-import React from "react";
-import { Information, Equipment } from "../../../Common";
-import { Grid, Typography, Paper } from "@material-ui/core";
-import { useStyles } from "../../style";
+import React from "react"
+import { Information } from "../../../Common"
+import { Grid, Typography, Paper } from "@material-ui/core"
+import { useStyles } from "../../style"
 
-import incrementoposte0 from "../../../../assets/img/fake/incrementoposte0.png";
-import incrementoposte1 from "../../../../assets/img/fake/incrementoposte1.png";
-import incrementoposte2 from "../../../../assets/img/fake/incrementoposte2.png";
-
-const SUBMENU = [
-  { id: 1, title: "Resumen", path: "/setting" },
-  { id: 2, title: "Calculo de setting", path: "/setting/setting-calculation" },
-  { id: 3, title: "Incremento poste", path: "/setting/incremento-poste" }
-];
+import incrementoposte0 from "../../../../assets/img/fake/incrementoposte0.png"
+import incrementoposte1 from "../../../../assets/img/fake/incrementoposte1.png"
+import incrementoposte2 from "../../../../assets/img/fake/incrementoposte2.png"
 
 const IncrementoPoste = props => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <React.Fragment>
       <Grid
@@ -24,9 +18,6 @@ const IncrementoPoste = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment submenu={SUBMENU} />
-        </Grid>
         <Grid item xs={10} mt={12}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">
@@ -77,7 +68,7 @@ const IncrementoPoste = props => {
         </Grid>
       </Grid>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export { IncrementoPoste };
+export { IncrementoPoste }

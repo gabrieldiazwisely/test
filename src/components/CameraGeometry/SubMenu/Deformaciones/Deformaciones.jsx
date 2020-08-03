@@ -1,17 +1,11 @@
 import React from "react";
-import { Information, Equipment } from "../../../Common";
+import { Information } from "../../../Common";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "../../style";
 
 import deformaciones1 from "../../../../assets/img/fake/deformaciones1.png";
 import deformaciones2 from "../../../../assets/img/fake/deformaciones2.png";
 import deformaciones3 from "../../../../assets/img/fake/deformaciones3.png";
-
-const SUBMENU = [
-  { id: 1, title: "Resumen", path: "/camera-geometry" },
-  { id: 2, title: "Deformaciones", path: "/camera-geometry/deformaciones" },
-  { id: 3, title: "Ángulo cámara", path: "/camera-geometry/angulo-camara" }
-];
 
 const Deformaciones = props => {
   const classes = useStyles();
@@ -24,9 +18,6 @@ const Deformaciones = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment submenu={SUBMENU} />
-        </Grid>
         <Grid item xs={12} style={{ textAlign: "right" }}>
           <img
             src={deformaciones1}

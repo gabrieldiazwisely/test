@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
-import { Information, Equipment } from "../Common/";
+import { Information } from "../Common/";
 
 import dashboard1 from "../../assets/img/fake/dashboard1.png";
 import dashboard2 from "../../assets/img/fake/dashboard2.png";
@@ -18,9 +18,6 @@ const Dashboard = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment />
-        </Grid>
         <Grid item xs={9}>
           <Information
             title={"Antecedentes del equipo"}

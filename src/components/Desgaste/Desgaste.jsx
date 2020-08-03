@@ -1,17 +1,11 @@
 import React from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
-import { Information, Equipment } from "../Common/";
+import { Information } from "../Common/";
 import Table from "./Table";
 
 import desgaste1 from "../../assets/img/fake/desgaste1.png";
 import desgaste2 from "../../assets/img/fake/desgaste2.png";
-
-const SUBMENU = [
-  { id: 1, title: "Resumen", path: "/wear" },
-  { id: 2, title: "Perfil de desgaste", path: "/wear/perfil-desgaste" },
-  { id: 3, title: "Mapa de espesores", path: "/wear/mapa-espesores" }
-];
 
 const Desgaste = props => {
   const classes = useStyles();
@@ -24,9 +18,6 @@ const Desgaste = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment submenu={SUBMENU} />
-        </Grid>
         <Grid item xs={9}>
           <Information
             title={"Antecedentes del equipo"}

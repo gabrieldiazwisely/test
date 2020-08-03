@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
-import { Information, Equipment } from "../Common/";
+import { Information } from "../Common/";
 
 import simmanto1 from "../../assets/img/fake/simmanto1.png";
 import simmanto2 from "../../assets/img/fake/simmanto2.png";
@@ -18,9 +18,6 @@ const SimManto = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12}>
-          <Equipment />
-        </Grid>
         <Grid item xs={2} mt={2}></Grid>
         <Grid item xs={8} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>

@@ -10,6 +10,46 @@ import { Container, Box } from "@material-ui/core";
 
 import { Sidebar, Footer } from "../components";
 
+const DASH_ROUTES = [
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    subMenu: []
+  },
+  {
+    path: "/setting",
+    name: "Setting",
+    subMenu: [
+      { id: 1, title: "Resumen", path: "/setting" },
+      { id: 2, title: "Calculo de setting", path: "/setting/setting-calculation" },
+      { id: 3, title: "Incremento poste", path: "/setting/incremento-poste" }
+    ]
+  },
+  {
+    path: "/wear",
+    name: "Desgaste",
+    subMenu: [
+      { id: 1, title: "Resumen", path: "/wear" },
+      { id: 2, title: "Perfil de desgaste", path: "/wear/perfil-desgaste" },
+      { id: 3, title: "Mapa de espesores", path: "/wear/mapa-espesores" }
+    ]
+  },
+  {
+    path: "/sim-manto",
+    name: "Sim. de manto",
+    subMenu: []
+  },
+  {
+    path: "/camera-geometry",
+    name: "Geometría  de cámara",
+    subMenu: [
+      { id: 1, title: "Resumen", path: "/camera-geometry" },
+      { id: 2, title: "Deformaciones", path: "/camera-geometry/deformaciones" },
+      { id: 3, title: "Ángulo cámara", path: "/camera-geometry/angulo-camara" }
+    ]
+  }
+]
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -46,14 +86,14 @@ class App extends Component {
     console.debug("[CApp] fn=render");
     const { notifications, user } = this.props;
     return (
-      <div className={!user.isAuthed && "background-img"}>
-        {user.isAuthed && <Sidebar {...this.props} />}
+      <div className={!user.isAuthed && "background-img"}>  
+        {user.isAuthed && <Sidebar DASH_ROUTES = {DASH_ROUTES} {...this.props} /> }
         <Notifications
           notifications={notifications}
           className="notifications-lb"
         />
         <Container maxWidth="xl">
-          <Box pt={8}>{this.props.children}</Box>
+          <Box mt={18} >{this.props.children}</Box>
         </Container>
         {user.isAuthed && <Footer {...this.props} />}
       </div>
