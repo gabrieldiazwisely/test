@@ -7,9 +7,6 @@ export const useStyles = makeStyles(theme => ({
   imgCenter: {
     textAlign: "center"
   },
-  table: {
-    minWidth: 700
-  },
   tableTitle: {
     color: "#fff",
     background: "#0057B8",

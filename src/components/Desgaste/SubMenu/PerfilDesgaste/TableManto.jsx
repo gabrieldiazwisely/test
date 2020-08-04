@@ -22,13 +22,10 @@ export default function SpanningTable() {
         <TableHead>
           <TableRow>
             <TableCell align="center" className={clsx(classes.tableTitle, classes.tableTitleBotton)}>
-              Fila
-            </TableCell>
-            <TableCell align="center" className={clsx(classes.tableTitle, classes.tableTitleBotton)}>
               Pto de medición
             </TableCell>
             <TableCell align="center" className={clsx(classes.tableTitle, classes.tableTitleBotton)}>
-              Ubicación desde pie concava inferior [mm]
+              Posición [mm]
             </TableCell>
             <TableCell align="center" className={clsx(classes.tableTitle, classes.tableTitleBotton)}>
               Espesor nominal [mm]
@@ -61,7 +58,7 @@ export default function SpanningTable() {
                 <TableHead>
                   <TableRow>
                     <TableCell align="center" className={classes.tableTitle}>
-                      Desgaste [mm] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Desgaste [mm] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </TableCell>
                   </TableRow>
                 </TableHead>
@@ -110,10 +107,10 @@ export default function SpanningTable() {
         <TableBody className={classes.tableBackgroundOne}>
           {/* ****************** */}
           <TableRow key={1}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">4</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+            
+            <TableCell className={classes.tableBody} align="center">8</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -122,7 +119,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -136,7 +133,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -151,7 +148,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -160,11 +157,11 @@ export default function SpanningTable() {
           </TableRow>
           {/* ****************** */}
           {/* ****************** */}
-          <TableRow key={2}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">3</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+          <TableRow key={1}>
+            
+            <TableCell className={classes.tableBody} align="center">7</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -173,7 +170,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -187,7 +184,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -202,7 +199,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -211,11 +208,11 @@ export default function SpanningTable() {
           </TableRow>
           {/* ****************** */}
           {/* ****************** */}
-          <TableRow key={3}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">4</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+          <TableRow key={1}>
+            
+            <TableCell className={classes.tableBody} align="center">6</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -224,7 +221,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -238,7 +235,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -253,7 +250,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -261,11 +258,12 @@ export default function SpanningTable() {
             </TableCell>
           </TableRow>
           {/* ****************** */}
-          <TableRow key={1} className={classes.tableBackgroundTwo}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">3</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+          {/* ****************** */}
+          <TableRow key={1}>
+            
+            <TableCell className={classes.tableBody} align="center">5</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -274,7 +272,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -288,7 +286,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -303,7 +301,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -312,11 +310,11 @@ export default function SpanningTable() {
           </TableRow>
           {/* ****************** */}
           {/* ****************** */}
-          <TableRow key={2} className={classes.tableBackgroundTwo}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">3</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+          <TableRow key={1}>
+            
+            <TableCell className={classes.tableBody} align="center">4</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -325,7 +323,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -339,7 +337,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -354,7 +352,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -363,11 +361,11 @@ export default function SpanningTable() {
           </TableRow>
           {/* ****************** */}
           {/* ****************** */}
-          <TableRow key={3} className={classes.tableBackgroundTwo}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">3</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+          <TableRow key={1}>
+            
+            <TableCell className={classes.tableBody} align="center">3</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -376,7 +374,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -390,7 +388,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -405,7 +403,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -414,11 +412,11 @@ export default function SpanningTable() {
           </TableRow>
           {/* ****************** */}
           {/* ****************** */}
-          <TableRow key={1} className={classes.tableBackgroundOne}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">2</TableCell>
+          <TableRow key={1}>
+            
             <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -427,7 +425,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -441,7 +439,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -456,7 +454,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -465,11 +463,11 @@ export default function SpanningTable() {
           </TableRow>
           {/* ****************** */}
           {/* ****************** */}
-          <TableRow key={2} className={classes.tableBackgroundOne}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
+          <TableRow key={1}>
+            
+            <TableCell className={classes.tableBody} align="center">1</TableCell>
+            <TableCell className={classes.tableBody} align="center">1200</TableCell>
+            <TableCell className={classes.tableBody} align="center">145,6</TableCell>
             <TableCell className={classes.tableBody} align="center">
               <Table >
                 <TableBody>
@@ -478,7 +476,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
+                      141,0
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -492,7 +490,7 @@ export default function SpanningTable() {
                       {/* max */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,8
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -507,7 +505,7 @@ export default function SpanningTable() {
                       {/* min */}
                     </TableCell>
                     <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
+                      4,6
                     </TableCell>
                   </TableRow>
                 </TableBody>
@@ -515,57 +513,7 @@ export default function SpanningTable() {
             </TableCell>
           </TableRow>
           {/* ****************** */}
-          {/* ****************** */}
-          <TableRow key={3} className={classes.tableBackgroundOne}>
-            <TableCell className={clsx(classes.tableFila, classes.tableBody)} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">2</TableCell>
-            <TableCell className={classes.tableBody} align="center">3150</TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
-            <TableCell className={classes.tableBody} align="center">
-              <Table >
-                <TableBody>
-                  <TableRow>
-                    <TableCell className={classes.tableSubBody} align="center">
-                      {/* min */}
-                    </TableCell>
-                    <TableCell className={classes.tableSubBody} align="center">
-                      {/* pro */}
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableCell>
-            <TableCell className={classes.tableBody} align="center">
-              <Table >
-                <TableBody>
-                  <TableRow>
-                    <TableCell className={classes.tableSubBody}  align="center">
-                      {/* max */}
-                    </TableCell>
-                    <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableCell>
-            <TableCell className={classes.tableBody} align="center"></TableCell>
-            <TableCell className={classes.tableBody} align="center">
-              <Table >
-                <TableBody>
-                  <TableRow>
-                    <TableCell className={classes.tableSubBody}  align="center">
-                      {/* min */}
-                    </TableCell>
-                    <TableCell className={classes.tableSubBody}  align="center">
-                      {/* pro */}
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableCell>
-          </TableRow>
-          {/* ****************** */}
+          
         </TableBody>
       </Table>
     </TableContainer>

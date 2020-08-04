@@ -18,7 +18,7 @@ const Desgaste = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={9}>
+        <Grid item xs={10}>
           <Information
             title={"Antecedentes del equipo"}
             icon={"i"}

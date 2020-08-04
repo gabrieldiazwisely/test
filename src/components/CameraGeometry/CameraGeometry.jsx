@@ -15,7 +15,7 @@ const CameraGeometry = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={9}>
+        <Grid item xs={10}>
           <Information
             icon={"i"}
             title={"Antecedentes del equipo"}
@@ -26,7 +26,7 @@ const CameraGeometry = props => {
             ]}
           />
         </Grid>
-        <Grid item xs={9} mt={2}>
+        <Grid item xs={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Table />
           </Paper>

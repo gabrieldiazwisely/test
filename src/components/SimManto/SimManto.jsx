@@ -18,14 +18,12 @@ const SimManto = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={2} mt={2}></Grid>
-        <Grid item xs={8} mt={2}>
+        <Grid item xs={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
             <img src={simmanto1} alt={"simmanto1"} style={{ width: "100%" }} />
           </Paper>
         </Grid>
-        <Grid item xs={2} mt={2}></Grid>
-        <Grid item xs={4}>
+        <Grid item  xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
             <img src={simmanto2} alt={"simmanto2"} style={{ width: "70%" }} />
           </Paper>
@@ -38,7 +36,7 @@ const SimManto = props => {
             />
           </Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
             <img src={simmanto3} alt={"simmanto3"} style={{ width: "70%" }} />
           </Paper>

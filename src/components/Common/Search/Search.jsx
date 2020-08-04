@@ -5,12 +5,13 @@ import {
   Typography,
   Select,
   MenuItem,
-  Hidden,Tooltip
+  Hidden,
+  Tooltip
 } from "@material-ui/core";
-import { useStyles } from "./style";
+import { useStyles } from "./style"
 
-import { withStyles } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
+import { withStyles } from '@material-ui/core/styles'
+import InputBase from '@material-ui/core/InputBase'
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -36,45 +37,45 @@ const BootstrapInput = withStyles((theme) => ({
 const Search = () => {
   const classes = useStyles();
 
-  const [equipment, setEquipment] = React.useState(1);
-  const [campaign, setCampaign] = React.useState(7);
-  const [measurement, setMeasurement] = React.useState(7);
+  const [equipment, setEquipment] = React.useState(1)
+  const [campaign, setCampaign] = React.useState(7)
+  const [measurement, setMeasurement] = React.useState(7)
 
   const handleChangeEquipment = event => {
     setEquipment(event.target.value);
-  };
+  }
 
   const handleChangeCampaign = event => {
     setCampaign(event.target.value);
-  };
+  }
 
   const handleChangeMeasurement = event => {
     setMeasurement(event.target.value);
-  };
+  }
 
   return (
     <React.Fragment>
       <Grid container className={classes.root} spacing={0} direction="row" justify="left" alignItems="center">
         <Grid item xs={4} sm={3}>
           <FormControl fullWidth variant="outlined" className={classes.formControl} >
-            {/* <InputLabel id="demo-simple-select-label">Equipo</InputLabel> */}
-            <Tooltip title="Delete"> ewr</Tooltip>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={equipment}
-              onChange={handleChangeEquipment}
-              input={<BootstrapInput />}
-              inputProps={{
-                classes: {
-                    icon: classes.icon,
-                },
-              }}
-            >
-              <MenuItem value={1}>Equipo 1</MenuItem>
-              <MenuItem value={2}>Equipo 2</MenuItem>
-              <MenuItem value={3}>Equipo 3</MenuItem>
-            </Select>
+            <Tooltip title="Equipo" arrow> 
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={equipment}
+                onChange={handleChangeEquipment}
+                input={<BootstrapInput />}
+                inputProps={{
+                  classes: {
+                      icon: classes.icon,
+                  },
+                }}
+              >
+                <MenuItem value={1}>Equipo 1</MenuItem>
+                <MenuItem value={2}>Equipo 2</MenuItem>
+                <MenuItem value={3}>Equipo 3</MenuItem>
+              </Select>
+            </Tooltip>
           </FormControl>
         </Grid>
         <Hidden smDown>
@@ -84,27 +85,28 @@ const Search = () => {
         </Hidden>
         <Grid item xs={4} sm={3}>
           <FormControl fullWidth variant="outlined" className={classes.formControl}>
-            {/* <InputLabel id="demo-simple-select-label">Campaña</InputLabel> */}
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={campaign}
-              onChange={handleChangeCampaign}
-              input={<BootstrapInput />}
-              inputProps={{
-                classes: {
-                    icon: classes.icon,
-                },
-              }}
-            >
-              <MenuItem value={7}>Julio - 2019</MenuItem>
-              <MenuItem value={6}>Junio - 2019</MenuItem>
-              <MenuItem value={5}>Mayo - 2019</MenuItem>
-              <MenuItem value={4}>Abril - 2019</MenuItem>
-              <MenuItem value={3}>Marzo - 2019</MenuItem>
-              <MenuItem value={2}>Febrero - 2019</MenuItem>
-              <MenuItem value={1}>Enero - 2019</MenuItem>
-            </Select>
+            <Tooltip title="Campaña" arrow> 
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={campaign}
+                onChange={handleChangeCampaign}
+                input={<BootstrapInput />}
+                inputProps={{
+                  classes: {
+                      icon: classes.icon,
+                  },
+                }}
+              >
+                <MenuItem value={7}>Julio - 2019</MenuItem>
+                <MenuItem value={6}>Junio - 2019</MenuItem>
+                <MenuItem value={5}>Mayo - 2019</MenuItem>
+                <MenuItem value={4}>Abril - 2019</MenuItem>
+                <MenuItem value={3}>Marzo - 2019</MenuItem>
+                <MenuItem value={2}>Febrero - 2019</MenuItem>
+                <MenuItem value={1}>Enero - 2019</MenuItem>
+              </Select>
+            </Tooltip>
           </FormControl>
         </Grid>
         <Hidden smDown>
@@ -114,27 +116,28 @@ const Search = () => {
         </Hidden>
         <Grid item xs={4} sm={3}>
           <FormControl fullWidth variant="outlined" className={classes.formControl}>
-          {/* <InputLabel id="demo-simple-select-label">Medición</InputLabel> */}
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={measurement}
-              onChange={handleChangeMeasurement}
-              input={<BootstrapInput />}
-              inputProps={{
-                classes: {
-                    icon: classes.icon,
-                },
-              }}
-            >
-              <MenuItem value={7}>Julio - 2019</MenuItem>
-              <MenuItem value={6}>Junio - 2019</MenuItem>
-              <MenuItem value={5}>Mayo - 2019</MenuItem>
-              <MenuItem value={4}>Abril - 2019</MenuItem>
-              <MenuItem value={3}>Marzo - 2019</MenuItem>
-              <MenuItem value={2}>Febrero - 2019</MenuItem>
-              <MenuItem value={1}>Enero - 2019</MenuItem>
-            </Select>
+            <Tooltip title="Medición" arrow>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={measurement}
+                onChange={handleChangeMeasurement}
+                input={<BootstrapInput />}
+                inputProps={{
+                  classes: {
+                      icon: classes.icon,
+                  },
+                }}
+              >
+                <MenuItem value={7}>Julio - 2019</MenuItem>
+                <MenuItem value={6}>Junio - 2019</MenuItem>
+                <MenuItem value={5}>Mayo - 2019</MenuItem>
+                <MenuItem value={4}>Abril - 2019</MenuItem>
+                <MenuItem value={3}>Marzo - 2019</MenuItem>
+                <MenuItem value={2}>Febrero - 2019</MenuItem>
+                <MenuItem value={1}>Enero - 2019</MenuItem>
+              </Select>
+            </Tooltip>
           </FormControl>
         </Grid>
       </Grid>

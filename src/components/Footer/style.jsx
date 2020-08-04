@@ -6,7 +6,7 @@ export const useStyles = makeStyles(theme => ({
     background: "#0057B8",
     top: "auto",
     bottom: 0,
-    paddingTop: theme.spacing(2),
+    // paddingTop: theme.spacing(2),
     marginTop: theme.spacing(3),
     height: "100%"
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import { Information } from "../../../Common";
-import { Grid, Typography, Paper } from "@material-ui/core";
+import { Grid, Typography, Paper, Hidden } from "@material-ui/core";
 import { useStyles } from "../../style";
 
 import deformaciones1 from "../../../../assets/img/fake/deformaciones1.png";
@@ -18,18 +18,20 @@ const Deformaciones = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12} style={{ textAlign: "right" }}>
+        <Hidden smDown>
+        <Grid item xs={12} sm={12} style={{ textAlign: "right" }}>
           <img
             src={deformaciones1}
             alt={"deformaciones1"}
             style={{ height: "100%" }}
           />
         </Grid>
+        </Hidden>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Deformación de cóncava</Typography>
             <Grid container spacing={2} direction="row" justify="center">
-              <Grid item xs={8} mt={12} className={classes.Dinformation}>
+              <Grid item xs={10} mt={12} className={classes.Dinformation}>
                 <Information
                   title={"Antecedentes del equipo"}
                   icon={"i"}

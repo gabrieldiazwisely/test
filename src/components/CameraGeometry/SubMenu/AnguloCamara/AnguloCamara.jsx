@@ -1,9 +1,12 @@
 import React from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "../../style";
+import { Information } from "../../../Common";
 
-import angulocamara1 from "../../../../assets/img/fake/angulocamara1.png";
-import angulocamara2 from "../../../../assets/img/fake/angulocamara2.png";
+import Table from "./Table";
+import TableGrado from "./TableGrado";
+
+import angulocamara1 from "../../../../assets/img/fake/angulocamara1.png"
 
 const AnguloCamara = props => {
   const classes = useStyles();
@@ -16,23 +19,37 @@ const AnguloCamara = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={10} mt={12}>
+        <Grid item xs={10} sm={12}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Ángulo NIP</Typography>
             <Grid container spacing={2}>
-              <Grid item xs={6} mt={12}>
+              <Grid item xs={12} sm={6}>
                 <img
                   src={angulocamara1}
                   alt={"angulocamara1"}
                   style={{ width: "100%" }}
                 />
               </Grid>
-              <Grid item xs={6} mt={12}>
-                <img
-                  src={angulocamara2}
-                  alt={"angulocamara2"}
-                  style={{ width: "100%" }}
-                />
+              <Grid item xs={12} sm={6}>
+                <Grid container spacing={2}>
+                  <Grid item  xs={12} sm={12}>
+                    <Paper>
+                      <Table />
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} sm={12}>
+                    <Paper>
+                      <TableGrado />
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} sm={12} className={classes.Dinformation}>
+                    <Information
+                      items={[
+                        "Para el cálculo del NIP Angle (ángulo NIP) como para las dimensiones interiores de la cámara de chancado, se utilizaron las curvas promedio tanto para cóncavo como para manto. Se realiza la medida en la condición de OSS y CSS."
+                      ]}
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Paper>

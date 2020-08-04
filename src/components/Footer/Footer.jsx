@@ -19,14 +19,13 @@ const Footer = () => {
         alignItems="flex-start"
         spacing={3}
       >
-        <Grid item xs={4} sm={6} style={{ paddingLeft: 50 }}>
+        <Grid item xs={12} sm={6} style={{ paddingLeft: 50 }}>
           <MultiLanguage />
           <Scale />
         </Grid>
         <Grid
           item
-          xs={4}
-          sm={6}
+          xs={12} sm={6}
           style={{ textAlign: "right", paddingRight: 50 }}
         >
           <Typography>

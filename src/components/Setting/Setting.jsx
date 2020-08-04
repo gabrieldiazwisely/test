@@ -17,7 +17,7 @@ const Setting = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={9}>
+        <Grid item xs={12} sm={10}>
           <Information
             icon={"i"}
             title={'Antecedentes del equipo'}
@@ -28,12 +28,12 @@ const Setting = props => {
             ]}
           />
         </Grid>
-        <Grid item xs={5} mt={2}>
+        <Grid item xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
             <img src={setting1} alt={"setting1"} style={{ width: "70%" }} />
           </Paper>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
             <img src={setting2} alt={"setting2"} style={{ width: "70%" }} />
           </Paper>

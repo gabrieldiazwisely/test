@@ -53,6 +53,11 @@ h3 {
   padding-left: 10px !important;
 }
 
+.Mui-disabled {
+  color: #ffffff !important;
+  background-color: #009FE3 !important;
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .logo-elecmetal {

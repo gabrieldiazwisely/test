@@ -18,18 +18,18 @@ const SettingCalculation = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={10} mt={12}>
+        <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Variación del Setting</Typography>
             <Grid container spacing={2}>
-              <Grid item xs={6} mt={12}>
+              <Grid item xs={12} sm={6}>
                 <img
                   src={settingcalculation1}
                   alt={"settingcalculation1"}
                   style={{ width: "100%" }}
                 />
               </Grid>
-              <Grid item xs={6} mt={12} className={classes.CSinformation}>
+              <Grid item xs={12} sm={6} className={classes.CSinformation}>
                 <Information
                   title={"Antecedentes del equipo"}
                   icon={"i"}
@@ -43,7 +43,7 @@ const SettingCalculation = props => {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={5} mt={12}>
+        <Grid item xs={12} sm={5}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Zona de setting</Typography>
             <img
@@ -53,7 +53,7 @@ const SettingCalculation = props => {
             />
           </Paper>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} sm={5}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Setting v/s Altura de poste</Typography>
             <img
