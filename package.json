@@ -49,6 +49,7 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint .",
@@ -56,9 +57,7 @@
     "prettier-run": "prettier --write 'src/**/*.{js,jsx,css}'",
     "check-code": "yarn run prettier-run && yarn run lint",
     "dev": "react-scripts start",
-    "start": "node index.js",
-    "build": "ng build",
-    "heroku-postbuild": "ng build --prod" 
+    "start": "serve -s build"
   },
   "browserslist": [
     ">0.2%",
