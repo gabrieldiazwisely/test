@@ -49,15 +49,11 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
-    "start": "serve -s build",
-    "build": "babel src -d lib",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "prettier-check": "prettier --check 'src/**/*.{js,jsx,css}'",
-    "prettier-run": "prettier --write 'src/**/*.{js,jsx,css}'",
-    "check-code": "yarn run prettier-run && yarn run lint",
-    "dev": "react-scripts start"   
+    "lint": "eslint ." 
   },
   "browserslist": [
     ">0.2%",
