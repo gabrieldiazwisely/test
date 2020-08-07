@@ -10,7 +10,7 @@ export const useStyles = makeStyles(theme => ({
   },
   NavButton: {
     borderRadius: "0",
-    color: "#fff",
+    color: "#fff !important",
     padding: theme.spacing(2, 1), 
   },
   NavLink: {
