@@ -1,10 +1,12 @@
-import React from "react";
-import { Grid, Paper } from "@material-ui/core";
-import { useStyles } from "./style";
-import { Information } from "../Common/";
+import React from "react"
+import { Grid, Paper } from "@material-ui/core"
+import { useStyles } from "./style"
+import { Information } from "../Common/"
 
-import setting1 from "../../assets/img/fake/setting1.png";
-import setting2 from "../../assets/img/fake/setting2.png";
+import { BarChart } from "./charts/BarChart"
+
+import setting1 from "../../assets/img/fake/setting1.png"
+import setting2 from "../../assets/img/fake/setting2.png"
 
 const Setting = props => {
   const classes = useStyles();
@@ -35,7 +37,8 @@ const Setting = props => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <img src={setting2} alt={"setting2"} style={{ width: "70%" }} />
+            <BarChart />
+            {/* <img src={setting2} alt={"setting2"} style={{ width: "70%" }} /> */}
           </Paper>
         </Grid>
       </Grid>

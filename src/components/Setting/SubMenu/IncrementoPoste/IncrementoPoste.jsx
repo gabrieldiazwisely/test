@@ -1,5 +1,6 @@
 import React from "react"
 import { Information } from "../../../Common"
+import { PostIncreaseRecommendation } from '../../../Common/Calculators/PostIncreaseRecommendation'
 import { 
   Grid, 
   Typography, 
@@ -64,11 +65,7 @@ const IncrementoPoste = props => {
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
-                <img
-                  src={incrementoposte0}
-                  alt={"incrementoposte0"}
-                  style={{ width: "100%" }}
-                />
+                <PostIncreaseRecommendation />
               </Grid>
               <Grid item xs={12} sm={6} className={classes.CSinformation}>
                 <Information

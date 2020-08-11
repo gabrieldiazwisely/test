@@ -1,7 +1,10 @@
 import React from "react"
 import { Information } from "../../../Common"
+import { SettingVariation } from "../../../Common/Calculators/SettingVariation"
 import { Grid, Typography, Paper } from "@material-ui/core"
 import { useStyles } from "../../style"
+
+import { LineChart } from "../../charts/LineChart"
 
 import settingcalculation1 from "../../../../assets/img/fake/settingcalculation1.png"
 import settingcalculation2 from "../../../../assets/img/fake/settingcalculation2.png"
@@ -21,13 +24,9 @@ const SettingCalculation = props => {
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Variación del Setting</Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} align={'left'}>
               <Grid item xs={12} sm={6}>
-                <img
-                  src={settingcalculation1}
-                  alt={"settingcalculation1"}
-                  style={{ width: "100%" }}
-                />
+                <SettingVariation />
               </Grid>
               <Grid item xs={12} sm={6} className={classes.CSinformation}>
                 <Information
@@ -56,11 +55,7 @@ const SettingCalculation = props => {
         <Grid item xs={12} sm={5}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Setting v/s Altura de poste</Typography>
-            <img
-              src={settingcalculation3}
-              alt={"settingcalculation3"}
-              style={{ width: "90%" }}
-            />
+            <LineChart />
           </Paper>
         </Grid>
       </Grid>

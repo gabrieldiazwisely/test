@@ -2,6 +2,8 @@ import React from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
+// import Bar from "./charts/Historico" 
+import { BarChart } from "./charts/BarChart"
 
 import dashboard1 from "../../assets/img/fake/dashboard1.png";
 import dashboard2 from "../../assets/img/fake/dashboard2.png";
@@ -46,7 +48,8 @@ const Dashboard = props => {
             <Typography variant="h3">
               Resumen histórico de procesamiento por campaña
             </Typography>
-            <img src={dashboard3} alt={"Dashboard3"} style={{ width: "70%" }} />
+            <BarChart />
+            {/* <img src={dashboard3} alt={"Dashboard3"} style={{ width: "70%" }} /> */}
           </Paper>
         </Grid>
       </Grid>
