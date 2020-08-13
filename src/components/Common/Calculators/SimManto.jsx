@@ -149,8 +149,75 @@ const SimManto = props => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={6} className={classes.InputContent}>
-              Cuatro
+            <Grid item xs={12} sm={4} className={classes.InputContent}>
+              <Typography className={classes.InputLabel}>Recorrido de manto:</Typography>
+              <Grid container spacing={2}  direction="row" justify="center" alignItems="center" style={{height: '100%'}}>
+                <Grid item xs={12} sm={6}>
+                  <Typography className={classes.InputLabel} style={{fontSize:12}}>Recorrido Mecanico:</Typography>
+                  <TextField
+                    placeholder=""
+                    fullWidth
+                    margin="normal"
+                    className={classes.InputText}
+                    InputProps={{
+                      className: classes.input,
+                    }} 
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.BorderSeparationLeft} >
+                  <Typography className={clsx(classes.InputLabel,  classes.SeparationRecorridoManto)} >Margen de seguridad superior:</Typography>
+                  <TextField
+                    placeholder=""
+                    fullWidth
+                    margin="normal"
+                    className={classes.InputText}
+                    InputProps={{
+                      className: classes.input,
+                    }} 
+                  />
+                  <Typography className={clsx(classes.InputLabel,  classes.SeparationRecorridoManto)} >Recorrido electronico:</Typography>
+                  <TextField
+                    placeholder=""
+                    fullWidth
+                    margin="normal"
+                    className={classes.InputText}
+                    InputProps={{
+                      className: classes.input,
+                    }} 
+                  />
+                  <Typography className={clsx(classes.InputLabel,  classes.SeparationRecorridoManto)}>Margen de Seguridad inferior:</Typography>
+                  <TextField
+                    placeholder=""
+                    fullWidth
+                    margin="normal"
+                    className={classes.InputText}
+                    InputProps={{
+                      className: classes.input,
+                    }} 
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={2} className={classes.InputContent} >
+              <Grid container spacing={2} direction="row" justify="center" alignItems="flex-end" style={{height: '100%'}}>
+                <Grid item xs={12} sm={12} align={'left'} className={classes.MarginLeft}>
+                  <Button variant="contained" size="medium" color="primary" className={classes.Button}>
+                    Simular
+                  </Button>
+                  <Typography className={clsx(classes.InputLabel,  classes.SeparationRecorridoManto)}>Altura Simulada:</Typography>
+                  <TextField
+                    placeholder=""
+                    fullWidth
+                    value="8,88'"
+                    margin="normal"
+                    className={classes.InputText}
+                    InputProps={{
+                      className: classes.input,
+                      readOnly: true,
+                    }} 
+                  />
+                </Grid>
+              </Grid>
             </Grid>
         </Grid>
       </Paper>

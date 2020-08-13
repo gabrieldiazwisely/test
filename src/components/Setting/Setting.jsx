@@ -4,6 +4,7 @@ import { useStyles } from "./style"
 import { Information } from "../Common/"
 
 import { BarChart } from "./charts/BarChart"
+import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
 
 import setting1 from "../../assets/img/fake/setting1.png"
 import setting2 from "../../assets/img/fake/setting2.png"
@@ -32,7 +33,7 @@ const Setting = props => {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <img src={setting1} alt={"setting1"} style={{ width: "70%" }} />
+            <CanvasImg />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>

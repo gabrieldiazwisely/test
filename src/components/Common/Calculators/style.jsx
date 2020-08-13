@@ -9,6 +9,7 @@ export const useStyles = makeStyles(theme => ({
   },
   Button: {
     marginTop: theme.spacing(3),
+    padding: theme.spacing(2,2,2,2),
     background: '#0057B8 0% 0% no-repeat padding-box',
     border: '1px solid #707070',
     borderRadius: '10px',
@@ -27,6 +28,7 @@ export const useStyles = makeStyles(theme => ({
     background: '#fff',
     borderRadius: 10,
     marginTop: theme.spacing(1),
+    padding: theme.spacing(1, 2, 1, 2)
   },
   InputLabel: {
     textAlign: 'left',
@@ -76,4 +78,15 @@ export const useStyles = makeStyles(theme => ({
   formControl: {
     padding: theme.spacing(1)
   },
+  SeparationRecorridoManto: {
+    fontSize: 12,
+    marginTop: theme.spacing(2),
+  },
+  MarginLeft: {
+    marginLeft: theme.spacing(3)
+  },
+  BorderSeparationLeft: {
+    borderLeft: '2px solid #fff',
+    marginBottom: theme.spacing(2)
+  }
 }));
