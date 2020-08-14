@@ -7,38 +7,58 @@ let img = new Image
 
 const draw = (ctx, frameCount) => {
 
-  
   img.src = setting1 
 
-  // ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height)
+  ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height)
 
   ctx.beginPath()
-  ctx.moveTo(0,5)
+  ctx.moveTo(70,20)
   ctx.lineTo(100,100)
-  ctx.lineTo(0,263)
-  ctx.moveTo(200,5)
-  ctx.lineTo(150,100)
+  ctx.lineTo(110,190)
+  ctx.lineTo(110,263)
+
+  ctx.moveTo(260,20)
+  ctx.lineTo(240,100)
   ctx.lineTo(210,263)
-  ctx.stroke() 
   ctx.strokeStyle = "#FF0000"
   ctx.lineCap = 'round'
   ctx.lineWidth = 2 
   ctx.lineJoin = 'round'
+  ctx.stroke()
   ctx.closePath();
 
   ctx.beginPath()
-  ctx.arc(125, 260, 25, 0, Math.PI * 2, false);
-  ctx.strokeStyle = "skyblue";
-  ctx.lineWidth = 2;
+  
+  ctx.fillStyle="#737373";
+  ctx.arc(150, 380, 40, 0, Math.PI * 2, false);
+  ctx.fill();
+  ctx.strokeStyle = "#000";
+  ctx.lineWidth = 3;  
   ctx.stroke();
   ctx.closePath()
+
+
+  ctx.beginPath()
+  ctx.font = "30px serif"
+  ctx.fillStyle = "#fff"
+  ctx.fillText("OSS", 122, 380)
+  ctx.stroke()
+  ctx.closePath()
+
+  ctx.beginPath()
+  ctx.font = "22px serif"
+  ctx.fillStyle = "#fff"
+  ctx.fillText('8,0"', 135, 400)
+  ctx.stroke()
+  ctx.closePath()
+
 }
 
 const CanvasImg = props => {
   const classes = useStyles()
   return (
     <React.Fragment>
-      <Canvas draw={draw} width={400} height={400}/>
+      <Canvas draw={draw} />
     </React.Fragment>
   )
 }

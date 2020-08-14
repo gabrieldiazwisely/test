@@ -6,7 +6,7 @@ const Canvas = props => {
   const { draw, options, ...rest } = props;
   const canvasRef = useCanvas(draw, options);
 
-  return <canvas ref={canvasRef} {...rest} />;
+  return <canvas ref={canvasRef} {...rest} style={{width: 500, height: 500}} />;
 };
 
 Canvas.defaultProps = {

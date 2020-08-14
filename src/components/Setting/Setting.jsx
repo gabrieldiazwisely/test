@@ -6,9 +6,6 @@ import { Information } from "../Common/"
 import { BarChart } from "./charts/BarChart"
 import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
 
-import setting1 from "../../assets/img/fake/setting1.png"
-import setting2 from "../../assets/img/fake/setting2.png"
-
 const Setting = props => {
   const classes = useStyles();
   return (

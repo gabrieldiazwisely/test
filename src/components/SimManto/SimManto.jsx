@@ -3,7 +3,7 @@ import { Grid, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
 import { SimManto as SimMantoCalculator } from "../Common/Calculators/SimManto"
-
+import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
 
 import simmanto1 from "../../assets/img/fake/simmanto1.png";
 import simmanto2 from "../../assets/img/fake/simmanto2.png";
@@ -40,7 +40,7 @@ const SimManto = props => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <img src={simmanto3} alt={"simmanto3"} style={{ width: "70%" }} />
+            <CanvasImg />
           </Paper>
         </Grid>
       </Grid>
