@@ -18,7 +18,7 @@ const Desgaste = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={10}>
+        <Grid item xs={12} sm={10}>
           <Information
             title={"Antecedentes del equipo"}
             icon={"i"}
@@ -29,18 +29,18 @@ const Desgaste = props => {
             ]}
           />
         </Grid>
-        <Grid item xs={10} mt={2}>
+        <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Table />
           </Paper>
         </Grid>
-        <Grid item xs={10} mt={2}>
+        <Grid item xs={12} sm={10}mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Desgaste tendencia concavas</Typography>
             <img src={desgaste1} alt={"desgaste1"} style={{ width: "70%" }} />
           </Paper>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Desgaste tendencia manto</Typography>
             <img src={desgaste2} alt={"desgaste2"} style={{ width: "70%" }} />
