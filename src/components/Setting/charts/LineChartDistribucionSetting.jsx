@@ -12,7 +12,7 @@ const data = {
       label: 'OSS ',
       fill: true,
       lineTension: 0.1,
-      backgroundColor: 'rgba(75,192,192,0.4)',
+      backgroundColor: 'rgba(75,192,192,0)',
       borderColor: 'rgba(75,192,192,1)',
       borderCapStyle: 'butt',
       borderDash: [],
@@ -28,6 +28,27 @@ const data = {
       pointRadius: 1,
       pointHitRadius: 10,
       data: [260, 245, 180, 159, 143, 120, 99, 80,40,1]
+    },
+    {
+      label: 'Separador de Concavas ',
+      fill: true,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(#838383,0.4)',
+      borderColor: 'rgba(#838383,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(#838383,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      // pointHoverBackgroundColor: 'rgba(#838383,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: []
     }
   ]
 }
@@ -83,25 +104,25 @@ const options = {
     },
     scaleLabel: {
       display: true,
-      labelString: 'OSS [in]',
-      fontSize: 21,
-      fontColor: '#0057B8'
+      labelString: 'Angulo (deg)',
+      // fontSize: 21,
+      // fontColor: '#0057B8'
     }
   }],
   yAxes: [{
     stacked: true,
     scaleLabel: {
       display: true,
-      labelString: 'Recorrido del poste [mm]',
-      fontSize: 21,
-      fontColor: '#0057B8'
+      labelString: 'Remanente [mm]',
+      // fontSize: 21,
+      // fontColor: '#0057B8'
     }
   }],
   },
   responsive: true,
     legend: {
-      display: false,
-      position: 'right',
+      display: true,
+      position: 'bottom',
       labels: {
         fontColor: '#91929b',
         padding: 20
