@@ -88,5 +88,12 @@ export const useStyles = makeStyles(theme => ({
   BorderSeparationLeft: {
     borderLeft: '2px solid #fff',
     marginBottom: theme.spacing(2)
+  },
+  separationCalculatorLeft: {
+    borderRight: '3px solid #fff',
+    paddingRight: theme.spacing(3)
+  }, 
+  separationCalculatorRight: {
+    paddingLeft: theme.spacing(3)
   }
 }));

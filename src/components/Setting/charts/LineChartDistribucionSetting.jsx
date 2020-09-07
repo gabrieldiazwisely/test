@@ -33,7 +33,7 @@ const data = {
       label: 'Separador de Concavas ',
       fill: true,
       lineTension: 0.1,
-      backgroundColor: 'rgba(#838383,0.4)',
+      backgroundColor: 'rgba(#838383,0.nino4)',
       borderColor: 'rgba(#838383,1)',
       borderCapStyle: 'butt',
       borderDash: [],
@@ -63,7 +63,7 @@ const options = {
       borderColor: '#838383',
       borderWidth: 1,
       label: {
-        enabled: true,
+        enabled: true,    
         position: "top",
         content: '7.5'
      }

@@ -4,7 +4,9 @@ export const useStyles = makeStyles(theme => ({
   root: {
     border: "3px solid #0057B8",
     borderRadius: "7px 25px 25px 0px",
-    textAlign: "left"
+    textAlign: "left",
+    width: '100%',
+    marginLeft: 0
   },
   icon: {
     background: "#0057B8",
