@@ -11,6 +11,17 @@ import dashboard3 from "../../assets/img/fake/dashboard3.png";
 
 const Dashboard = props => {
   const classes = useStyles();
+  const data = {
+    'marca_diseno': 'FLSmith – Fuller Traylor 60”x110” Tc',
+    'instalacion_concava': '10-04-2020',
+    'instalacion_manto': '03-06-2020',
+    'ton_concava': '8.9 Mton',
+    'ton_manto': '4.5 Mton',
+    'setting_objetivo': '7.5',
+    'manto_instalado': '112.5',
+    'altura_manto': '50 mm',
+    'recorrido': '210 mm'
+  }
   return (
     <React.Fragment>
       <Grid
@@ -24,11 +35,7 @@ const Dashboard = props => {
           <Information
             title={"Antecedentes del equipo"}
             icon={"i"}
-            items={[
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
-              "Tempor incididunt ut labore et dolore magna aliqua. ",
-              "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            ]}
+            items={ data }
           />
         </Grid>
         <Grid item xs={10} mt={2}>

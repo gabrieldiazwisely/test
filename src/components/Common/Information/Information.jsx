@@ -6,6 +6,21 @@ import { useStyles } from "./style";
 const Information = props => {
   const classes = useStyles();
   const { title = "", items, icon = "" } = props;
+
+  const getItems = () => {
+    let data = []
+    for ( const key in items ) {
+      data.push(
+        <Typography className={classes.item}>
+          {`${key}: ${items[key]}`}
+        </Typography>
+      )
+    }
+    return data
+  }
+
+  const getEmptyData = () => <Typography className={classes.item}>{'No Data'}</Typography>
+
   return (
     <React.Fragment>
       <Grid container className={classes.root} spacing={2}>
@@ -18,11 +33,14 @@ const Information = props => {
               {title}
             </Typography>
           )}
-          {items.map((item, i) => (
+          {/* {items.map((item, i) => (
             <Typography className={classes.item} key={i}>
               {item}
             </Typography>
-          ))}
+          ))} */}
+          {Object.keys(items).length === 0 
+            ? getEmptyData()
+            : getItems()}
         </Grid>
       </Grid>
     </React.Fragment>
@@ -30,7 +48,7 @@ const Information = props => {
 };
 
 Information.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.object.isRequired
 };
 
 export { Information };
