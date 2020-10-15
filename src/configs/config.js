@@ -22,6 +22,13 @@ export const config = {
       hostname:
         process.env.REACT_APP_REST_API_HOSTNAME || window.location.hostname,
       port: process.env.REACT_APP_REST_API_PORT
+    },
+    routes : {
+      machines: {
+        getAll: `/fakes/machines/`,
+        getMachine: '/fakes/machine/:id',
+        machineBackground:'/fakes/machinebackground'
+      },
     }
   }
 };

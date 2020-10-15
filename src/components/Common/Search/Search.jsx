@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux"
+
 import {
   Grid,
   FormControl,
@@ -12,6 +14,7 @@ import { useStyles } from "./style"
 
 import { withStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
+
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -35,11 +38,19 @@ const BootstrapInput = withStyles((theme) => ({
 }))(InputBase);
 
 const Search = () => {
+
+  const dispatch = useDispatch()
+
   const classes = useStyles();
 
-  const [equipment, setEquipment] = React.useState(1)
-  const [campaign, setCampaign] = React.useState(7)
-  const [measurement, setMeasurement] = React.useState(7)
+  const machines = useSelector(state => state.machines.data)
+  const selectedMachine = useSelector(state => state.selectedMachine.data)
+// debugger
+
+
+  const [equipment, setEquipment] = React.useState(selectedMachine.id)
+  const [campaign, setCampaign] = React.useState(1)
+  const [measurement, setMeasurement] = React.useState(1)
 
   const handleChangeEquipment = event => {
     setEquipment(event.target.value);
@@ -52,6 +63,30 @@ const Search = () => {
   const handleChangeMeasurement = event => {
     setMeasurement(event.target.value);
   }
+
+  const renderEquipments = () => {
+    if ( machines ) {
+      return machines.map((value, index) => {
+        return <MenuItem value={index}>{value.name}</MenuItem>
+      })
+    }
+  }
+
+  const renderCampaigns = () => {
+    if ( machines ) {
+      return machines[selectedMachine.id].campaigns.map((value, index) => {
+        return <MenuItem value={index}>{value.name}</MenuItem>
+      })
+    }
+  }
+
+  // const renderMeasurements = () => {
+  //   if ( machines ) {
+  //     return machines[machines.length - 1].campaigns[machines[machines.length - 1].campaigns.length - 1].measurements.map((value, index) => {
+  //       return <MenuItem value={index}>{value.date}</MenuItem>
+  //     })
+  //   }
+  // }
 
   return (
     <React.Fragment>
@@ -71,9 +106,7 @@ const Search = () => {
                   },
                 }}
               >
-                <MenuItem value={1}>Equipo 1</MenuItem>
-                <MenuItem value={2}>Equipo 2</MenuItem>
-                <MenuItem value={3}>Equipo 3</MenuItem>
+                { renderEquipments() }
               </Select>
             </Tooltip>
           </FormControl>
@@ -98,13 +131,7 @@ const Search = () => {
                   },
                 }}
               >
-                <MenuItem value={7}>Julio - 2019</MenuItem>
-                <MenuItem value={6}>Junio - 2019</MenuItem>
-                <MenuItem value={5}>Mayo - 2019</MenuItem>
-                <MenuItem value={4}>Abril - 2019</MenuItem>
-                <MenuItem value={3}>Marzo - 2019</MenuItem>
-                <MenuItem value={2}>Febrero - 2019</MenuItem>
-                <MenuItem value={1}>Enero - 2019</MenuItem>
+                {/* {renderCampaigns()} */}
               </Select>
             </Tooltip>
           </FormControl>
@@ -129,13 +156,7 @@ const Search = () => {
                   },
                 }}
               >
-                <MenuItem value={7}>Julio - 2019</MenuItem>
-                <MenuItem value={6}>Junio - 2019</MenuItem>
-                <MenuItem value={5}>Mayo - 2019</MenuItem>
-                <MenuItem value={4}>Abril - 2019</MenuItem>
-                <MenuItem value={3}>Marzo - 2019</MenuItem>
-                <MenuItem value={2}>Febrero - 2019</MenuItem>
-                <MenuItem value={1}>Enero - 2019</MenuItem>
+                {/* {renderMeasurements()} */}
               </Select>
             </Tooltip>
           </FormControl>

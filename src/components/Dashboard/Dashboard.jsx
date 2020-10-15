@@ -2,19 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
-// import Bar from "./charts/Historico" 
 import { BarChart } from "./charts/BarChart"
+
+import { connect, useDispatch, useSelector } from "react-redux";
+import { machineActions, machinesActions } from '../../redux/actions'
+
+import _ from 'lodash'
+
 
 import dashboard1 from "../../assets/img/fake/dashboard1.png";
 import dashboard2 from "../../assets/img/fake/dashboard2.png";
 import dashboard3 from "../../assets/img/fake/dashboard3.png";
-import { connect, useDispatch } from "react-redux";
-import { machineActions } from '../../redux/actions'
-import _ from 'lodash'
 
 const Dashboard = props => {
   const classes = useStyles();
   const dispatch = useDispatch()
+
+  const [flag, setFlag] = React.useState(true)
+  const [flagMachines, setFlagMachines] = React.useState(true)
+
+  const machine = useSelector(state => state.machine.data)
+  const machines = useSelector(state => state.machines.data)
+
+
   const [ machineBackground, setMachineBackground ] = useState({})
   const { data } = props.machine
   if ( !_.isEqual( machineBackground, data ) ) {
@@ -22,8 +32,19 @@ const Dashboard = props => {
   }
 
   useEffect( () => {
-    getMachineBackground()
-  }, [machineBackground] )
+    // getMachineBackground()
+
+    if (flag || !machine){
+      setFlag(false)
+      dispatch(machinesActions.getSelectedMachine(machines[machines.length -1]))
+    }
+
+    if (flagMachines || !machines){
+      setFlagMachines(false)
+      dispatch(machinesActions.getAll())
+    }
+
+  }, [machineBackground, machines, machine] )
 
   const getMachineBackground = () => {
     //TODO: pending get machine data to send to getMachineBackground api.

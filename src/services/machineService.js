@@ -6,7 +6,7 @@ const { protocol, hostname, port, version } = config.restapiAuth.server;
 const getBackgroundData = body => {
   const requestOptions = {
     // url: `${protocol}://${hostname}${port}${version}/machine`,
-    url: 'https://backend-clubkopa.herokuapp.com/fakes/machinebackground',
+    url: config.apiGateway.routes.machines.machineBackground,
     method: 'GET',
     headers: auth.getHeader(),
     //body
