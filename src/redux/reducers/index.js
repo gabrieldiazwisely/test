@@ -6,6 +6,7 @@ import { loadingBarReducer as loadingBar } from "react-redux-loading-bar";
 import { user } from "./userReducer";
 import { multiLanguage } from "./multiLanguageReducer";
 import { scale } from "./scaleReducer";
+import { machine } from './machineReducer'
 
 export const createRootReducer = history =>
   combineReducers({
@@ -14,5 +15,6 @@ export const createRootReducer = history =>
     loadingBar,
     user,
     multiLanguage,
-    scale
+    scale,
+    machine
   });

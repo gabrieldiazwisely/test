@@ -5,14 +5,14 @@ import { useStyles } from "./style";
 
 const Information = props => {
   const classes = useStyles();
-  const { title = "", items, icon = "" } = props;
+  const { title = "", machineBackground, icon = "" } = props;
 
   const getItems = () => {
     let data = []
-    for ( const key in items ) {
+    for ( const key in machineBackground ) {
       data.push(
         <Typography className={classes.item}>
-          {`${key}: ${items[key]}`}
+          {`${key}: ${machineBackground[key]}`}
         </Typography>
       )
     }
@@ -38,7 +38,7 @@ const Information = props => {
               {item}
             </Typography>
           ))} */}
-          {Object.keys(items).length === 0 
+          {Object.keys(machineBackground).length === 0 
             ? getEmptyData()
             : getItems()}
         </Grid>
@@ -48,7 +48,7 @@ const Information = props => {
 };
 
 Information.propTypes = {
-  items: PropTypes.object.isRequired
+  machineBackground: PropTypes.object.isRequired
 };
 
 export { Information };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
@@ -8,20 +8,33 @@ import { BarChart } from "./charts/BarChart"
 import dashboard1 from "../../assets/img/fake/dashboard1.png";
 import dashboard2 from "../../assets/img/fake/dashboard2.png";
 import dashboard3 from "../../assets/img/fake/dashboard3.png";
+import { connect, useDispatch } from "react-redux";
+import { machineActions } from '../../redux/actions'
+import _ from 'lodash'
 
 const Dashboard = props => {
   const classes = useStyles();
-  const data = {
-    'marca_diseno': 'FLSmith – Fuller Traylor 60”x110” Tc',
-    'instalacion_concava': '10-04-2020',
-    'instalacion_manto': '03-06-2020',
-    'ton_concava': '8.9 Mton',
-    'ton_manto': '4.5 Mton',
-    'setting_objetivo': '7.5',
-    'manto_instalado': '112.5',
-    'altura_manto': '50 mm',
-    'recorrido': '210 mm'
+  const dispatch = useDispatch()
+  const [ machineBackground, setMachineBackground ] = useState({})
+  const { data } = props.machine
+  if ( !_.isEqual( machineBackground, data ) ) {
+    setMachineBackground( data )
   }
+
+  useEffect( () => {
+    getMachineBackground()
+  }, [machineBackground] )
+
+  const getMachineBackground = () => {
+    //TODO: pending get machine data to send to getMachineBackground api.
+    const body = { 
+      'machine': '*machine*',
+      'campaign': '*campaign*',
+      'measurement': '*measurement*'
+    }
+    dispatch( machineActions.getMachineBackground(body) )
+  }
+
   return (
     <React.Fragment>
       <Grid
@@ -35,7 +48,7 @@ const Dashboard = props => {
           <Information
             title={"Antecedentes del equipo"}
             icon={"i"}
-            items={ data }
+            machineBackground={ machineBackground }
           />
         </Grid>
         <Grid item xs={10} mt={2}>
@@ -64,4 +77,10 @@ const Dashboard = props => {
   );
 };
 
-export { Dashboard };
+const mapStateToProps = state => {
+  const { machine } = state
+  return { machine }
+}
+
+const connected = connect( mapStateToProps )( Dashboard )
+export { connected as Dashboard }

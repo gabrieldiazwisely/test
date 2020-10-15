@@ -1,0 +1,3 @@
+export const machineConstants = {
+  GET_MACHINE_BACKGROUND_SUCCESS: 'MACHINE_BACKGROUND_GET_SUCCESS'
+}
