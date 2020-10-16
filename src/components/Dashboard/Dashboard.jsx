@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
@@ -18,12 +18,6 @@ const Dashboard = props => {
   const classes = useStyles();
   const dispatch = useDispatch()
 
-  const [flag, setFlag] = React.useState(true)
-  const [flagMachines, setFlagMachines] = React.useState(true)
-
-  const machine = useSelector(state => state.machine.data)
-  const machines = useSelector(state => state.machines.data)
-
 
   const [ machineBackground, setMachineBackground ] = useState({})
   const { data } = props.machine
@@ -31,20 +25,7 @@ const Dashboard = props => {
     setMachineBackground( data )
   }
 
-  useEffect( () => {
-    // getMachineBackground()
-
-    if (flag || !machine){
-      setFlag(false)
-      dispatch(machinesActions.getSelectedMachine(machines[machines.length -1]))
-    }
-
-    if (flagMachines || !machines){
-      setFlagMachines(false)
-      dispatch(machinesActions.getAll())
-    }
-
-  }, [machineBackground, machines, machine] )
+  
 
   const getMachineBackground = () => {
     //TODO: pending get machine data to send to getMachineBackground api.

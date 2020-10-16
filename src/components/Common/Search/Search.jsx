@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
+import { machinesActions } from '../../../redux/actions'
 
 import {
   Grid,
@@ -40,20 +41,43 @@ const BootstrapInput = withStyles((theme) => ({
 const Search = () => {
 
   const dispatch = useDispatch()
+  
+  const machines = useSelector(state => {
+    return state.machines.data
+  })
+
+  const selectedMachine = useSelector(state => {
+    return state.selectedMachine.data
+  })
+
+  const [equipment, setEquipment] = useState(4)
+  const [campaign, setCampaign] = useState(3)
+  const [measurement, setMeasurement] = useState(2)
+
+  const [flag, setFlag] = useState(true) 
+  const [flagSelected, setFlagSelected] = useState(true) 
+
+  useEffect(() => {
+    if ( flag || machines.length === 0 ) {
+      dispatch(machinesActions.getAll())
+      setFlag(false)
+    }
+
+    if ( flagSelected || selectedMachine.length === 0 ) {
+      dispatch(machinesActions.getSelectedMachine(equipment))
+      setFlagSelected(false)
+    }
+  }, [selectedMachine])
 
   const classes = useStyles();
 
-  const machines = useSelector(state => state.machines.data)
-  const selectedMachine = useSelector(state => state.selectedMachine.data)
-// debugger
-
-
-  const [equipment, setEquipment] = React.useState(selectedMachine.id)
-  const [campaign, setCampaign] = React.useState(1)
-  const [measurement, setMeasurement] = React.useState(1)
-
   const handleChangeEquipment = event => {
-    setEquipment(event.target.value);
+    setEquipment(event.target.value)
+    setCampaign(3)
+
+    dispatch(machinesActions.getSelectedMachine(event.target.value))
+    renderCampaigns()
+    renderMeasurements()
   }
 
   const handleChangeCampaign = event => {
@@ -73,20 +97,20 @@ const Search = () => {
   }
 
   const renderCampaigns = () => {
-    if ( machines ) {
-      return machines[selectedMachine.id].campaigns.map((value, index) => {
+    if ( selectedMachine.campaigns.length > 0 ) {
+      return selectedMachine.campaigns.map((value, index) => {
         return <MenuItem value={index}>{value.name}</MenuItem>
       })
     }
   }
 
-  // const renderMeasurements = () => {
-  //   if ( machines ) {
-  //     return machines[machines.length - 1].campaigns[machines[machines.length - 1].campaigns.length - 1].measurements.map((value, index) => {
-  //       return <MenuItem value={index}>{value.date}</MenuItem>
-  //     })
-  //   }
-  // }
+  const renderMeasurements = () => {
+    if ( selectedMachine.campaigns[campaign].measurements.length > 0 ) {
+      return selectedMachine.campaigns[campaign].measurements.map((value, index) => {
+        return <MenuItem value={index}>{value.name}</MenuItem>
+      })
+    }
+  }
 
   return (
     <React.Fragment>
@@ -131,7 +155,7 @@ const Search = () => {
                   },
                 }}
               >
-                {/* {renderCampaigns()} */}
+                {renderCampaigns()} 
               </Select>
             </Tooltip>
           </FormControl>
@@ -156,7 +180,7 @@ const Search = () => {
                   },
                 }}
               >
-                {/* {renderMeasurements()} */}
+                {renderMeasurements()}
               </Select>
             </Tooltip>
           </FormControl>

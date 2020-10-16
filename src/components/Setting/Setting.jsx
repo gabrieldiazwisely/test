@@ -23,7 +23,7 @@ const Setting = props => {
         spacing={2}
       >
         <Grid item xs={12} sm={10}>
-          <Information
+          {/* <Information
             icon={"i"}
             title={'Antecedentes del equipo'}
             items={[
@@ -31,7 +31,7 @@ const Setting = props => {
               "Tempor incididunt ut labore et dolore magna aliqua. ",
               "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             ]}
-          />
+          /> */}
         </Grid>
         <Grid item xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>

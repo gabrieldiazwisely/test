@@ -6,7 +6,7 @@ const { protocol, hostname, port, version } = config.restapiAuth.server;
 const getBackgroundData = body => {
   const requestOptions = {
     // url: `${protocol}://${hostname}${port}${version}/machine`,
-    url: config.apiGateway.routes.machines.machineBackground,
+    path: config.apiGateway.routes.machines.machineBackground,
     method: 'GET',
     headers: auth.getHeader(),
     //body
