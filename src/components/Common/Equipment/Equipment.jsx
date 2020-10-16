@@ -8,7 +8,8 @@ const Equipment = props => {
   const { DASH_ROUTES } = props
   
   const pathname = window.location.pathname.split('/')[1]
-  
+  const searchDisabled = (pathname === 'dashboard')? true : false
+
   var submenu =  DASH_ROUTES.filter(function(hero) {
     return hero.path === '/' + pathname;
   });
@@ -19,7 +20,7 @@ const Equipment = props => {
     <React.Fragment>
       <Grid container className={classes.root} xs={12}>
         <Grid item xs={12} sm={7}>
-          <Search />
+          <Search searchDisabled = { searchDisabled } />
         </Grid>
         <Hidden smDown>
           <Grid item xs={12} sm={5} style={{ paddingRight: 0 }}>

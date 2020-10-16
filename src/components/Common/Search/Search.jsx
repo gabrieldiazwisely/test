@@ -38,7 +38,7 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-const Search = () => {
+const Search = props => {
 
   const dispatch = useDispatch()
   
@@ -112,6 +112,7 @@ const Search = () => {
     }
   }
 
+
   return (
     <React.Fragment>
       <Grid container className={classes.root} spacing={0} direction="row" justify="left" alignItems="center">
@@ -144,6 +145,7 @@ const Search = () => {
           <FormControl fullWidth variant="outlined" className={classes.formControl}>
             <Tooltip title="Campaña" arrow> 
               <Select
+                disabled = {props.searchDisabled}
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={campaign}
@@ -169,6 +171,7 @@ const Search = () => {
           <FormControl fullWidth variant="outlined" className={classes.formControl}>
             <Tooltip title="Medición" arrow>
               <Select
+                disabled = {props.searchDisabled}
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={measurement}

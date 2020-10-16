@@ -54,8 +54,8 @@ h3 {
 }
 
 .Mui-disabled {
-  color: #ffffff !important;
-  background-color: #009FE3 !important;
+  /* color: #ffffff !important;
+  background-color: #009FE3 !important; */
 }
 
 .MuiInput-underline:before {
