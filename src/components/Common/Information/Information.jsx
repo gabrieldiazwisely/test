@@ -1,22 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography, Avatar } from "@material-ui/core";
+import { Grid, Typography, Avatar, Divider } from "@material-ui/core";
 import { useStyles } from "./style";
 
 const Information = props => {
   const classes = useStyles();
   const { title = "", machineBackground, icon = "" } = props;
 
-  const getItems = () => {
+  const getItemsByColumn = col => {
     let data = []
     for ( const key in machineBackground ) {
       data.push(
-        <Typography className={classes.item}>
-          {`${key}: ${machineBackground[key]}`}
-        </Typography>
+        <Grid container className={classes.keyValueContainer}>
+          <Grid item xs={4} >
+            <Typography className={classes.key}>
+              {`${key}: `}
+            </Typography>
+          </Grid>
+          <Grid item xs={8}>
+            <Typography className={classes.value}>
+              ${machineBackground[key]}
+            </Typography>
+          </Grid>
+        </Grid>
       )
     }
-    return data
+    switch ( col ) {
+      case 1: return data.slice( 0, data.length / 2 + 1)
+      case 2: return data.slice( data.length / 2 + 1 )
+      default: return data
+    } 
   }
 
   const getEmptyData = () => <Typography className={classes.item}>{'No Data'}</Typography>
@@ -33,14 +46,19 @@ const Information = props => {
               {title}
             </Typography>
           )}
-          {/* {items.map((item, i) => (
-            <Typography className={classes.item} key={i}>
-              {item}
-            </Typography>
-          ))} */}
-          {Object.keys(machineBackground).length === 0 
-            ? getEmptyData()
-            : getItems()}
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {Object.keys(machineBackground).length === 0 
+                ? getEmptyData()
+                : getItemsByColumn(1)}
+            </Grid>
+            <Divider orientation="vertical" flexItem className={classes.divider} />
+            <Grid item xs={5}>
+              {Object.keys(machineBackground).length === 0 
+                ? getEmptyData()
+                : getItemsByColumn(2)}
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </React.Fragment>
