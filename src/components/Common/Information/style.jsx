@@ -14,7 +14,7 @@ export const useStyles = makeStyles(theme => ({
     font: "Bold 23px/25px Arial"
   },
   items: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(0.3),
     marginBottom: theme.spacing(3)
   },
   item: {
@@ -22,6 +22,23 @@ export const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(1)
   },
   title: {
-    color: "#0057B8"
+    color: "#0057B8",
+    marginBottom: theme.spacing(2)
+  },
+  keyValueContainer: {
+    marginBottom: theme.spacing(0.5)
+  },
+  key: {
+    font: "Bold 16px Arial",
+    color: '#000',
+  },
+  value: {
+    font: "14px Arial",
+    color: '#555555',
+    textAlign: 'right'
+  },
+  divider: {
+    background: '#5A9EEB',
+    width: '2px'
   }
 }));
