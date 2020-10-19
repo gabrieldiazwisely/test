@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography, Avatar, Divider } from "@material-ui/core";
+import { Grid, Typography, Avatar, Divider, Hidden } from "@material-ui/core";
 import { useStyles } from "./style";
 
 const Information = props => {
@@ -12,16 +12,29 @@ const Information = props => {
     for ( const key in machineBackground ) {
       data.push(
         <Grid container className={classes.keyValueContainer}>
-          <Grid item xs={4} >
-            <Typography className={classes.key}>
-              {`${key}: `}
-            </Typography>
-          </Grid>
-          <Grid item xs={8}>
-            <Typography className={classes.value}>
-              ${machineBackground[key]}
-            </Typography>
-          </Grid>
+          <Hidden smDown>
+            <Grid item xs={4}>
+              <Typography className={classes.key}>
+                {`${key}: `}
+              </Typography>
+            </Grid>
+            <Grid item xs={8}>
+              <Typography className={classes.value}>
+                ${machineBackground[key]}
+              </Typography>
+            </Grid>
+          </Hidden>
+
+          <Hidden only={[ 'md', 'lg', 'xl' ]}>
+            <Grid item>
+              <Typography className={classes.key}>
+                {`${key}: `}
+              </Typography>
+              <Typography className={classes.valueResponsive}>
+                ${machineBackground[key]}
+              </Typography>
+            </Grid>
+          </Hidden>
         </Grid>
       )
     }
@@ -37,23 +50,23 @@ const Information = props => {
   return (
     <React.Fragment>
       <Grid container className={classes.root} spacing={2}>
-        <Grid item xs={1}>
+        <Grid item xs={12} sm={1} className={classes.iconContainer}>
           {icon !== "" && <Avatar className={classes.icon}>{icon}</Avatar>}
         </Grid>
-        <Grid item xs={11} className={classes.items}>
+        <Grid item xs={12} sm={11} className={classes.items}>
           {title !== "" && (
             <Typography className={classes.title} variant={"h4"}>
               {title}
             </Typography>
           )}
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               {Object.keys(machineBackground).length === 0 
                 ? getEmptyData()
                 : getItemsByColumn(1)}
             </Grid>
             <Divider orientation="vertical" flexItem className={classes.divider} />
-            <Grid item xs={5}>
+            <Grid item xs={12} sm={5}>
               {Object.keys(machineBackground).length === 0 
                 ? getEmptyData()
                 : getItemsByColumn(2)}
