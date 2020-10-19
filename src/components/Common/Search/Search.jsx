@@ -98,7 +98,7 @@ const Search = props => {
 
   const renderCampaigns = () => {
     if ( typeof selectedMachine != 'undefined' ) {
-      if ( selectedMachine.campaigns.length > 0 ) {
+      if ( typeof selectedMachine.campaigns != 'undefined' && selectedMachine.campaigns.length > 0 ) {
         return selectedMachine.campaigns.map((value, index) => {
           return <MenuItem value={index}>{value.name}</MenuItem>
         })
@@ -108,7 +108,7 @@ const Search = props => {
 
   const renderMeasurements = () => {
     if ( typeof selectedMachine != 'undefined' ) {
-      if ( selectedMachine.campaigns[campaign].measurements.length > 0 ) {
+      if ( typeof selectedMachine.campaigns != 'undefined' && selectedMachine.campaigns[campaign].measurements.length > 0 ) {
         return selectedMachine.campaigns[campaign].measurements.map((value, index) => {
           return <MenuItem value={index}>{value.name}</MenuItem>
         })
