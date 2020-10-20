@@ -6,7 +6,6 @@ export const useStyles = makeStyles(theme => ({
     background: "#0057B8",
     top: "auto",
     bottom: 0,
-    // paddingTop: theme.spacing(2),
     marginTop: theme.spacing(3),
     height: "100%"
   },
@@ -17,6 +16,12 @@ export const useStyles = makeStyles(theme => ({
     color: "#fff"
   },
   NavAll: {
-    background: "#0057B8"
+    background: "#0057B8",
+    padding: theme.spacing(3)
+  },
+  links: {
+    color: '#fff', 
+    fontWeight: 'bold',
+    fontSize: '18px'
   }
 }));

@@ -14,22 +14,18 @@ const Footer = () => {
       <Grid
         container
         className={classes.NavAll}
-        direction="row"
-        justify="center"
-        alignItems="flex-start"
-        spacing={3}
       >
-        <Grid item xs={12} sm={6} style={{ paddingLeft: 50 }}>
-          <MultiLanguage />
+        <Grid item xs={12} sm={3} style={{ textAlign: 'start' }}>
           <Scale />
         </Grid>
         <Grid
           item
           xs={12} sm={6}
-          style={{ textAlign: "right", paddingRight: 50 }}
+          style={{ textAlign: 'center', color: '#fff' }}
         >
-          <Typography>
+          <Typography style={{ fontSize: '16px' }}>
             <a
+              className={classes.links}
               href="http://me-elecmetal.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -38,6 +34,7 @@ const Footer = () => {
             </a>{" "}
             © Todos los derechos reservados. Powered by{" "}
             <a
+              className={classes.links}
               href="https://wisely.cl"
               target="_blank"
               rel="noopener noreferrer"
@@ -46,6 +43,9 @@ const Footer = () => {
             </a>
             .
           </Typography>
+        </Grid>
+        <Grid item xs={12} sm={3} style={{ textAlign: 'end' }}>
+          <MultiLanguage />
         </Grid>
       </Grid>
     </BottomNavigation>
