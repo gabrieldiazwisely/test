@@ -13,6 +13,10 @@ export const useStyles = makeStyles(theme => ({
     color: "#fff",
     font: "Bold 23px/25px Arial"
   },
+  iconContainer: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
   items: {
     marginTop: theme.spacing(0.3),
     marginBottom: theme.spacing(3)
@@ -30,12 +34,19 @@ export const useStyles = makeStyles(theme => ({
   },
   key: {
     font: "Bold 16px Arial",
-    color: '#000',
+    color: '#000'
   },
   value: {
     font: "14px Arial",
     color: '#555555',
-    textAlign: 'right'
+    textAlign: 'right',
+    marginBottom: '12px'
+  },
+  valueResponsive: {
+    font: "14px Arial",
+    color: '#555555',
+    textAlign: 'left',
+    marginBottom: '12px'
   },
   divider: {
     background: '#5A9EEB',
