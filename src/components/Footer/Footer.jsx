@@ -23,7 +23,7 @@ const Footer = () => {
           xs={12} sm={6}
           style={{ textAlign: 'center', color: '#fff' }}
         >
-          <Typography style={{ fontSize: '16px' }}>
+          <Typography style={{ fontSize: '15px' }}>
             <a
               className={classes.links}
               href="http://me-elecmetal.com"
