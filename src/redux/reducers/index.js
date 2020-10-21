@@ -10,6 +10,8 @@ import { machine } from './machineReducer'
 import { machines } from "./machinesReducer"
 import { selectedMachine } from "./selectedMachineReducer"
 
+import { dashboard } from "./dashboardReducer"
+
 
 export const createRootReducer = history =>
   combineReducers({
@@ -21,5 +23,6 @@ export const createRootReducer = history =>
     scale,
     machine,
     machines,
-    selectedMachine
+    selectedMachine,
+    dashboard
   });

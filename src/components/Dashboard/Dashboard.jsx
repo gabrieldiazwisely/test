@@ -1,22 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
+
 import { useStyles } from "./style";
 import { Information } from "../Common/";
+import { MtoHeightRecommendation } from "../Common/Calculators/";
 import { BarChart } from "./charts/BarChart"
+import { LineChart } from './charts/LineChart'
 
 import { connect, useDispatch, useSelector } from "react-redux";
-import { machineActions, machinesActions } from '../../redux/actions'
+import { machineActions, dashboardActions } from '../../redux/actions'
+
+
 
 import _ from 'lodash'
 
 
 import dashboard1 from "../../assets/img/fake/dashboard1.png";
-import dashboard2 from "../../assets/img/fake/dashboard2.png";
-import dashboard3 from "../../assets/img/fake/dashboard3.png";
 
 const Dashboard = props => {
   const classes = useStyles();
   const dispatch = useDispatch()
+
+  const [flag, setFlag] = React.useState(true)
+
+  const dashboardCharts = useSelector(state => {
+    return state.dashboard
+  })
+
+  useEffect(() => {
+    if(flag || !dashboardCharts) {
+      dispatch(dashboardActions.mtoHeightRecommendation())
+      setFlag(false)
+    }
+  }, [dashboardCharts])
 
 
   const [ machineBackground, setMachineBackground ] = useState({})
@@ -35,6 +51,32 @@ const Dashboard = props => {
       'measurement': '*measurement*'
     }
     dispatch( machineActions.getMachineBackground(body) )
+  }
+
+  const renderMtoHeightRecommendation = () => {
+    if(dashboardCharts) {
+
+      return (
+        <Grid container>
+          <Grid item xs={12} sm={10}>
+            <LineChart data = { dashboardCharts.mto_height_recommendation } />
+          </Grid>
+          <Grid item xs={12} sm={2}>
+            <Paper elevation={3} className={classes.recomendationInfo}>
+              <Typography variant="button" display="block" gutterBottom>HOY</Typography>
+              <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.date}</Typography>
+              
+              <Typography variant="button" display="block" gutterBottom>Altura de poste recomendada:</Typography>
+              <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.ton} mm</Typography>
+              
+              <Typography variant="button" display="block" gutterBottom>Setting obetivo:</Typography>
+              <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.mtoHeight}"</Typography>
+              
+            </Paper>
+          </Grid>
+        </Grid>
+      )
+    }
   }
 
   return (
@@ -60,12 +102,18 @@ const Dashboard = props => {
           </Paper>
         </Grid>
         <Grid item xs={10}>
-          <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Recomendación altura de manto</Typography>
-            <img src={dashboard2} alt={"Dashboard2"} style={{ width: "70%" }} />
-          </Paper>
+        <Paper elevation={3} className={classes.imgCenter}>
+          <Typography variant="h3">Recomendación altura de manto</Typography>
+          <Grid container>
+            <Grid item xs={0} sm={5}></Grid>
+            <Grid item xs={12} sm={7}>
+              <MtoHeightRecommendation />
+            </Grid>
+          </Grid>
+              { renderMtoHeightRecommendation() }      
+        </Paper>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">
               Resumen histórico de procesamiento por campaña
