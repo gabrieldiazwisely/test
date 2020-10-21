@@ -4,3 +4,5 @@ export * from "./handlers/handlerErrorActions"
 export * from "./multiLanguageActions"
 export * from './machineActions'
 export * from './machinesActions'
+
+export * from './dashboardActions'

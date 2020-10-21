@@ -28,6 +28,12 @@ export const useStyles = makeStyles(theme => ({
     background: '#fff',
     borderRadius: 10,
     marginTop: theme.spacing(1),
+    padding: theme.spacing(0, 2, 1, 2)
+  },
+  InputTextRecomendation: {
+    background: '#fff',
+    borderRadius: 10,
+    marginTop: theme.spacing(1),
     padding: theme.spacing(1, 2, 1, 2)
   },
   InputLabel: {
@@ -74,6 +80,12 @@ export const useStyles = makeStyles(theme => ({
     fontSize: '55px',
     right: '-10px',
     top: '-10px',
+  },
+  iconRecommendation: {
+    color: '#0057B8',
+    fontSize: '55px',
+    right: '-10px',
+    top: '-5px',
   },
   formControl: {
     padding: theme.spacing(1)

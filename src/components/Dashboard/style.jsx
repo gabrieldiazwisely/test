@@ -6,5 +6,17 @@ export const useStyles = makeStyles(theme => ({
   },
   imgCenter: {
     textAlign: "center"
+  },
+  recomendationInfo: {
+    background: '#0057B8 !important',
+    boxShadow: 'none',
+    margin: theme.spacing(2),
+    padding: theme.spacing(2),
+    color: '#fff',
+    fontSize: 21,
+    textAlign: "left"
+  },
+  recomendationInfoDescription : {
+    fontWeight: 'bold'
   }
 }));

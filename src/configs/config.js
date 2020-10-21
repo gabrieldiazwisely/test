@@ -29,6 +29,9 @@ export const config = {
         getMachine: '/fakes/machine/:id',
         machineBackground:'/fakes/machinebackground'
       },
+      charts: {
+        mtoHeightRecommendation: '/fakes/mto-height-recommendation'
+      }
     }
   }
 };
