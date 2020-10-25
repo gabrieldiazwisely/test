@@ -6,3 +6,4 @@ export * from './machineActions'
 export * from './machinesActions'
 
 export * from './dashboardActions'
+export * from './settingActions'

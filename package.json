@@ -15,6 +15,7 @@
     "@rjsf/core": "^2.0.1",
     "@rjsf/material-ui": "^2.0.1",
     "chart.js": "^2.9.3",
+    "chartjs-plugin-annotation": "^0.5.7",
     "clsx": "^1.0.4",
     "connected-react-router": "^6.4.0",
     "eslint": "^6.6.0",
@@ -46,8 +47,7 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "serve": "^11.3.2",
-    "chartjs-plugin-annotation": "^0.5.7"
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2",

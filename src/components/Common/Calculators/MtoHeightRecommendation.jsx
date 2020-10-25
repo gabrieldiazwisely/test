@@ -50,7 +50,6 @@ const MtoHeightRecommendation = props => {
   }
 
   const handleChangeSetting = event => {
-    debugger
     setSetting(event.target.value);
   }
 

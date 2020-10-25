@@ -11,6 +11,7 @@ import { machines } from "./machinesReducer"
 import { selectedMachine } from "./selectedMachineReducer"
 
 import { dashboard } from "./dashboardReducer"
+import { setting } from "./settingReducer"
 
 
 export const createRootReducer = history =>
@@ -24,5 +25,6 @@ export const createRootReducer = history =>
     machine,
     machines,
     selectedMachine,
-    dashboard
+    dashboard,
+    setting
   });

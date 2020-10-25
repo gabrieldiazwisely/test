@@ -31,6 +31,9 @@ export const config = {
       },
       charts: {
         mtoHeightRecommendation: '/fakes/mto-height-recommendation'
+      },
+      canvas: {
+        setting: '/fakes/canvas'
       }
     }
   }

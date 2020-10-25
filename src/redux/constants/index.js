@@ -5,3 +5,4 @@ export * from './machineConstants'
 export * from "./machinesConstants";
 
 export * from "./dashboardConstants"
+export * from "./settingConstants"

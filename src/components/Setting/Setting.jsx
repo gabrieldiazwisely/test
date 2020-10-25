@@ -1,4 +1,7 @@
-import React from "react"
+import React, { useEffect, useState } from "react";
+import {  useDispatch, useSelector} from "react-redux";
+import { settingActions } from '../../redux/actions'
+
 import { Grid, Paper, Typography } from "@material-ui/core"
 import { useStyles } from "./style"
 import { Information } from "../Common/"
@@ -9,10 +12,24 @@ import { BarChartDistribucionSetting } from "./charts/BarChartDistribucionSettin
 import { LineChartDistribucionSetting } from "./charts/LineChartDistribucionSetting"
 
 
-import desgaste1 from "../../assets/img/fake/desgaste1.png";
-
 const Setting = props => {
-  const classes = useStyles();
+  const classes = useStyles()
+  const dispatch = useDispatch()
+
+  const [flag, setFlag] = React.useState(true)
+
+  const settingCanvas = useSelector(state => {
+    return state.setting.canvas
+  })
+
+  useEffect(() => {
+    if(flag || !settingCanvas) {
+      dispatch(settingActions.canvas())
+      setFlag(false)
+    }
+  }, [settingCanvas])
+
+
   return (
     <React.Fragment>
       <Grid
@@ -35,7 +52,7 @@ const Setting = props => {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <CanvasImg />
+            <CanvasImg canvas = { settingCanvas } />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
