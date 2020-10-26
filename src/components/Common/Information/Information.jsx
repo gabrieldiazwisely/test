@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {  useDispatch, useSelector} from "react-redux";
+import { machineActions } from '../../../redux/actions'
+
 import PropTypes from "prop-types";
 import { Grid, Typography, Avatar, Divider, Hidden } from "@material-ui/core";
 import { useStyles } from "./style";
 
 const Information = props => {
   const classes = useStyles();
-  const { title = "", machineBackground, icon = "" } = props;
+  const dispatch = useDispatch()
+
+  const [flag, setFlag] = React.useState(true)
+
+  const machineBackground = useSelector(state => {
+    return state.machine.data
+  })
+
+  useEffect(() => {
+    if(flag || !machineBackground) {
+      dispatch(machineActions.getMachineBackground())
+      setFlag(false)
+    }
+  }, [machineBackground])
+
+
+  const { title = "Antecedentes del equipo",  icon = "i" } = props;
 
   const getItemsByColumn = col => {
     let data = []
@@ -15,7 +34,7 @@ const Information = props => {
           <Hidden smDown>
             <Grid item xs={4}>
               <Typography className={classes.key}>
-                {`${key}: `}
+                {`${key.replace("_"," ")}: `}
               </Typography>
             </Grid>
             <Grid item xs={8}>

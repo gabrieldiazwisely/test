@@ -34,7 +34,8 @@ export const useStyles = makeStyles(theme => ({
   },
   key: {
     font: "Bold 16px Arial",
-    color: '#000'
+    color: '#000',
+    textTransform: 'capitalize'
   },
   value: {
     font: "14px Arial",

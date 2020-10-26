@@ -92,7 +92,6 @@ const Dashboard = props => {
           <Information
             title={"Antecedentes del equipo"}
             icon={"i"}
-            machineBackground={ machineBackground }
           />
         </Grid>
         <Grid item xs={10} mt={2}>
