@@ -1,12 +1,11 @@
 import { settingsDistributionConstants } from '../constants'
 import { handlerErrorActions } from './handlers/handlerErrorActions'
-//importar service
+import { settingsDistributionService } from '../../services'
 
 const getSettingsDistribution = body => {
   return async dispatch => {
     try {
-      // change
-      // const res = await machineService.getBackgroundData(body) 
+      const res = await settingsDistributionService.getSettingsDistribution(body)
       if (res.status !== 200) throw new Error( res.message || 'Internal Server Error' )
       dispatch( success( settingsDistributionConstants.GET_DISTRIBUTION_SETTING_SUCCESS, res.data ) )
     } catch (err) {
