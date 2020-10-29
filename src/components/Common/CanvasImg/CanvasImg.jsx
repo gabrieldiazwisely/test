@@ -16,14 +16,16 @@ const CanvasImg = props => {
 
   return (
     <React.Fragment>
-      <CanvasDraw
-        disabled
-        hideGrid
-        immediateLoading = {true}
-        saveData={JSON.stringify(drawingProps)}
-        canvasWidth= {585}
-        canvasHeight= {500}
-      />
+      <div className={classes.canvasContent}>
+        <CanvasDraw
+          disabled
+          hideGrid
+          immediateLoading = {true}
+          saveData={JSON.stringify(drawingProps)}
+          canvasWidth= {585}
+          canvasHeight= {500}
+        />
+      </div>
     </React.Fragment>
   )
 }

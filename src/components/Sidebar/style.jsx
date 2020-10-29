@@ -83,5 +83,12 @@ export const useStyles = makeStyles(theme => ({
     position: "absolute",
     top: "70px",
     left: "5px"
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    marginRight: theme.spacing(2),
+    fontSize: 30,
+    fontWeight: 'bold'
   }
 }));

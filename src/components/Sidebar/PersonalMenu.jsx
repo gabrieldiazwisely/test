@@ -56,6 +56,7 @@ export default function PersonalMenu() {
         aria-haspopup="true"
         color="primary"
         onClick={handleClick}
+        className={classes.large}
       >
         G
       </Avatar>

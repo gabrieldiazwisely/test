@@ -5,4 +5,8 @@ export const useStyles = makeStyles(theme => ({
     // width: '500px',
     // height: '500px'
   },
+  canvasContent: {
+    overflow: 'auto',
+    position: 'relative'
+  }
 }));
