@@ -35,8 +35,8 @@ export const config = {
       canvas: {
         setting: '/fakes/canvas'
       },
-      settingsDistributtion: {
-        settingsDistribution: 'fakes/settings-distribution'
+      settings: {
+        settingsDistribution: '/fakes/settings-distribution'
       }
     }
   }

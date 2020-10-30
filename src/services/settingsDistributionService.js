@@ -5,7 +5,7 @@ import { config } from "../configs"
 
 const getSettingsDistribution = body => {
   const requestOptions = {
-    path: config.apiGateway.routes.settingsDistributtion,
+    path: config.apiGateway.routes.settings.settingsDistribution,
     method: 'GET',
     headers: auth.getHeader(),
     //body

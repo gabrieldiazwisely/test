@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {  useDispatch, useSelector} from "react-redux";
-import { settingActions } from '../../redux/actions'
+import { settingActions, settingsDistributionActions } from '../../redux/actions'
 
 import { Grid, Paper, Typography } from "@material-ui/core"
 import { useStyles } from "./style"
@@ -8,6 +8,8 @@ import { Information } from "../Common/"
 
 import { BarChart } from "./charts/BarChart"
 import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
+import { BarChartSettingsDistributionHistogram } from  './charts/BarChartSettingsDistributionHistogram'
+import { LineChartSettingsDistributionHeight } from './charts/LineChartSettingsDistributionHeight'
 import { BarChartDistribucionSetting } from "./charts/BarChartDistribucionSetting"
 import { LineChartDistribucionSetting } from "./charts/LineChartDistribucionSetting"
 
@@ -17,6 +19,7 @@ const Setting = props => {
   const dispatch = useDispatch()
 
   const [flag, setFlag] = React.useState(true)
+  const [flag2, setFlag2] = React.useState(true)
 
   const settingCanvas = useSelector(state => {
     return state.setting.canvas
@@ -29,6 +32,16 @@ const Setting = props => {
     }
   }, [settingCanvas])
 
+  const settingsDistribution = useSelector(state => {
+    return state.settingsDistribution.data
+  })
+
+  useEffect(() => {
+    if (flag2 || !settingsDistribution) {
+      dispatch(settingsDistributionActions.getSettingsDistribution())
+      setFlag2(false)
+    }
+  }, [settingsDistribution])
 
   return (
     <React.Fragment>
@@ -72,8 +85,8 @@ const Setting = props => {
               justify="center"
               spacing={2}
             >
-              <Grid item xs={12} sm={6} mt={2}><BarChartDistribucionSetting /></Grid>
-              <Grid item xs={12} sm={6} mt={2}><LineChartDistribucionSetting/></Grid>
+              <Grid item xs={12} sm={6} mt={2}><BarChartSettingsDistributionHistogram histogramData = { settingsDistribution.setting_histogram } /></Grid>
+              <Grid item xs={12} sm={6} mt={2}><LineChartSettingsDistributionHeight heightData = { settingsDistribution.settings_vs_height } /></Grid>
             </Grid>
           </Paper>
         </Grid>

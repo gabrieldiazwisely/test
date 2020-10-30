@@ -1,7 +1,7 @@
 import { settingsDistributionConstants } from '../constants'
 
 const initialState = {
-  settingsDistributionData: {}
+  data: {}
 }
 
 export function settingsDistribution(state = initialState, action) {
@@ -9,7 +9,7 @@ export function settingsDistribution(state = initialState, action) {
     case settingsDistributionConstants.GET_DISTRIBUTION_SETTING_SUCCESS:
       return {
         ...state,
-        settingsDistributionData: action.data
+        data: action.data
       }
     default: return state
   }
