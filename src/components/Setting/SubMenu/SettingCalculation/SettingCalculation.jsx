@@ -8,6 +8,8 @@ import { LineChart } from "../../charts/LineChart"
 
 import { CanvasImg } from '../../../Common/CanvasImg/CanvasImg'
 
+import settingcalculation2 from '../../../../assets/img/fake/settingcalculation2.png'
+
 
 const SettingCalculation = props => {
   const classes = useStyles()
@@ -44,7 +46,12 @@ const SettingCalculation = props => {
         <Grid item xs={12} sm={5}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Zona de setting</Typography>
-            <CanvasImg />
+            {/* <CanvasImg /> */}
+            <img
+              src={settingcalculation2}
+              alt={"settingcalculation2"}
+              style={{ height: "100%" }}
+            />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={5}>
