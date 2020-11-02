@@ -8,6 +8,7 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
 
   const data = {
     labels: ['7,00', '7,25', '7,50', '7,75', '8,00', '8,25', '8,50', '8,75', '9,00', '9,25'],
+    // labels: ['1', '2', '3', '4', '5', '6','7', '8', '9', '10'],
     datasets: [
       {
         label: 'Remanente ',
@@ -79,6 +80,7 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
   const getVerticalLines = () => {
     const { vertical_lines } = heightData
     return vertical_lines.map( x => {
+      console.log('x', x)
       return ({
         type: 'line',
         mode: 'vertical',

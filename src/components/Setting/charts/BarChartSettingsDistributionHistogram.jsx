@@ -6,6 +6,9 @@ const BarChartSettingsDistributionHistogram = ({ histogramData }) => {
 
   console.log(histogramData)
 
+  //HARDCODED AVERAGE LINE
+  const average_line = { x: "7.45" }
+
   const data = {
     labels: [...histogramData.x],
     datasets: [
@@ -17,120 +20,92 @@ const BarChartSettingsDistributionHistogram = ({ histogramData }) => {
         stack: 1,
         hoverBackgroundColor: 'rgba(178, 204, 234)',
         // hoverBorderColor: 'rgba(178, 204, 234)',
-        data: [...histogramData.x]
+        data: [...histogramData.x],
       }, {
-        label: '',
-        color: 'rgba(178, 204, 234)',
+        label: 'Promedio',
+        fill: true,
+        showLine: true,
+        type: 'line',
+        lineTension: 0.1,
+
+        backgroundColor: 'rgba(75,192,192,0)',
+        borderColor: 'rgba(75,192,192,1)',
+        borderCapStyle: 'butt',
+
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'rgba(75,192,192,1)',
+        pointBackgroundColor: 'rgba(75,192,192,1)',
+        pointBorderWidth: 1,
+        pointHoverRadius: 1,
+
+        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBorderWidth: 1,
+        pointRadius: 1,
+        pointHitRadius: 1,
+
+        borderWidth: 2,
 
         data: [...histogramData.curve.map(p => p.y)],
-        type: 'line',
-        order: 2
-        }
+      }
     ]
+  }
+
+  const getAverageLine = () => {
+    const { x } = average_line
+    return ({
+      type: 'line',
+      mode: 'vertical',
+      scaleID: 'x-axis-0',
+      value: x,
+      pointBackgroundColor: 'rgba(75,192,192,1)',
+      borderWidth: 3
+    })
   }
   
   const options = {
-  layout: {
-    padding: {
-      bottom: 0,
-      top: 0
-    }
-  },
-  scales: {
-  xAxes: [{
-    stacked: false,
-    gridLines: {
-      display: false
+    annotation: {
+      annotations: [getAverageLine()]
     },
-    scaleLabel: {
-      display: false,
-      labelString: histogramData.xlabel
-    }
-  }],
-  yAxes: [{
-    stacked: true,
-    scaleLabel: {
-      display: false,
-      labelString: 'Procesamiento Mton'
-    }
-  }],
-  },
-  responsive: true,
+    layout: {
+      padding: {
+        bottom: 0,
+        top: 0
+      }
+    },
+    scales: {
+      
+    xAxes: [{
+      // barPercentage: 1.0,
+      // categoryPercentage: 1.0,
+      stacked: false,
+      gridLines: {
+        display: false
+      },
+      scaleLabel: {
+        display: true,
+        labelString: histogramData.xlabel
+      }
+    }],
+    yAxes: [{
+      stacked: true,
+      scaleLabel: {
+        display: false,
+        // labelString: 'Procesamiento Mton'
+      }
+    }],
+    },
+    responsive: true,
     legend: {
       display: false,
-      position: 'right',
+      position: 'bottom',
       labels: {
         fontColor: '#91929b',
         padding: 20
       }
     }
   }
-
-
-
-
-
-
-
-
-
-  // const data = {
-  //   labels: [7.50, 6.76, 9.70, 9.00],
-  //   datasets: [
-  //     {
-  //       label: '',
-  //       backgroundColor: 'rgba(178, 204, 234,0.2)',
-  //       borderColor: 'rgba(178, 204, 234)',
-  //       borderWidth: 1,
-  //       stack: 1,
-  //       hoverBackgroundColor: 'rgba(178, 204, 234,0.2)',
-  //       hoverBorderColor: 'rgba(178, 204, 234)',
-  //       data: [7.50, 6.76, 9.70, 9.00]
-  //     }, {
-  //       label: '',
-  //       data: [7.50, 6.76, 9.70, 9.00],
-  //       type: 'line',
-  //       order: 2
-  //       }
-  //   ]
-  // }
-  
-  // const options = {
-  // layout: {
-  //   padding: {
-  //     bottom: 0,
-  //     top: 0
-  //   }
-  // },
-  // scales: {
-  // xAxes: [{
-  //   stacked: true,
-  //   gridLines: {
-  //     display: false
-  //   },
-  //   scaleLabel: {
-  //     display: true,
-  //     labelString: 'CSS[IN]'
-  //   }
-  // }],
-  // yAxes: [{
-  //   stacked: true,
-  //   scaleLabel: {
-  //     display: false,
-  //     labelString: 'Procesamiento Mton'
-  //   }
-  // }],
-  // },
-  // responsive: true,
-  //   legend: {
-  //     display: false,
-  //     position: 'right',
-  //     labels: {
-  //       fontColor: '#91929b',
-  //       padding: 20
-  //     }
-  //   }
-  // }
 
   return (
     <div>

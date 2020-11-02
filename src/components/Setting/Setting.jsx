@@ -10,8 +10,6 @@ import { BarChart } from "./charts/BarChart"
 import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
 import { BarChartSettingsDistributionHistogram } from  './charts/BarChartSettingsDistributionHistogram'
 import { LineChartSettingsDistributionHeight } from './charts/LineChartSettingsDistributionHeight'
-import { BarChartDistribucionSetting } from "./charts/BarChartDistribucionSetting"
-import { LineChartDistribucionSetting } from "./charts/LineChartDistribucionSetting"
 
 
 const Setting = props => {
