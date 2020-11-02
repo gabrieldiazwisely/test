@@ -12,6 +12,7 @@ import { selectedMachine } from "./selectedMachineReducer"
 
 import { dashboard } from "./dashboardReducer"
 import { setting } from "./settingReducer"
+import { settingsDistribution } from "./settingsDistributionReducer"
 
 
 export const createRootReducer = history =>
@@ -26,5 +27,6 @@ export const createRootReducer = history =>
     machines,
     selectedMachine,
     dashboard,
-    setting
+    setting,
+    settingsDistribution
   });
