@@ -80,7 +80,6 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
   const getVerticalLines = () => {
     const { vertical_lines } = heightData
     return vertical_lines.map( x => {
-      console.log('x', x)
       return ({
         type: 'line',
         mode: 'vertical',
@@ -95,40 +94,6 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
   const options = {
     annotation: {
       annotations: [...getVerticalLines()]
-      // annotations: [{
-      //   type: 'line',
-      //   mode: 'vertical',
-      //   scaleID: 'x-axis-0',
-      //   value: '7.5',
-      //   borderColor: '#838383',
-      //   borderWidth: 1,
-      //   label: {
-      //     // enabled: true,    
-      //     // position: "top",
-      //     // content: '7.5'
-      //  }
-      // },{
-      //   type: 'line',
-      //   mode: 'vertical',
-      //   scaleID: 'x-axis-0',
-      //   value: '6.25',
-      //   borderColor: '#838383',
-      //   borderWidth: 1,
-      // },{
-      //   type: 'line',
-      //   mode: 'vertical',
-      //   scaleID: 'x-axis-0',
-      //   value: '3.75',
-      //   borderColor: '#838383',
-      //   borderWidth: 1,
-      // },{
-      //   type: 'line',
-      //   mode: 'vertical',
-      //   scaleID: 'x-axis-0',
-      //   value: '1.5',
-      //   borderColor: '#838383',
-      //   borderWidth: 1,
-      // }],
   },
     layout: {
       padding: {

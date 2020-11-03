@@ -73,7 +73,9 @@ const Setting = props => {
           </Paper>
         </Grid>
 
-        <Grid item xs={12} sm={10} mt={2}>
+        {settingsDistribution && (
+          // console.log('sDistribution', settingsDistribution)
+          <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Distribucion de setting</Typography>
             <Grid
@@ -88,6 +90,7 @@ const Setting = props => {
             </Grid>
           </Paper>
         </Grid>
+        )}
       </Grid>
     </React.Fragment>
   );
