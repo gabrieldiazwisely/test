@@ -2,7 +2,7 @@ import { scaleConstants } from "../constants";
 
 const initialState = {
   data: {
-    scale: "cm"
+    scale: "centimetro"
   }
 };
 

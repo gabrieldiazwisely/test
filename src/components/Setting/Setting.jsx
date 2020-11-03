@@ -73,8 +73,7 @@ const Setting = props => {
           </Paper>
         </Grid>
 
-        {settingsDistribution && (
-          // console.log('sDistribution', settingsDistribution)
+        {settingsDistribution && Object.keys(settingsDistribution).length > 0 && (
           <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">Distribucion de setting</Typography>
