@@ -28,8 +28,8 @@ const MultiLanguage = props => {
   }, [selectLanguage]);
 
   const handleClick = event => {
-    dispatch();
     setAnchor(event.currentTarget);
+    // setSelectLanguage()
   };
 
   const onClickSelect = data => {
@@ -60,16 +60,12 @@ const MultiLanguage = props => {
           onClose={handleClose}
         >
           <MenuItem
-            onClick={() => {
-              onClickSelect("es");
-            }}
+              onClick={ () => onClickSelect('es') }
           >
             ESPAÑOL
           </MenuItem>
           <MenuItem
-            onClick={() => {
-              onClickSelect("en");
-            }}
+            onClick={ () => onClickSelect('en') }
           >
             ENGLISH
           </MenuItem>

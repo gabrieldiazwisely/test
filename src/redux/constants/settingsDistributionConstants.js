@@ -1,0 +1,3 @@
+export const settingsDistributionConstants = {
+  GET_DISTRIBUTION_SETTING_SUCCESS: "GET_DISTRIBUTION_SETTING_SUCCESS"
+}
