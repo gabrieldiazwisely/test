@@ -51,6 +51,7 @@ export const useStyles = makeStyles(theme => ({
   },
   divider: {
     background: '#5A9EEB',
-    width: '2px'
+    width: '2px',
+    margin: '0 24px'
   }
 }));
