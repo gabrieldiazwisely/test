@@ -17,14 +17,14 @@ const CanvasImg = props => {
   
   useEffect(() => {
 
-    const { perfilesLongitudinalesConcava, perfilesLongitudinalesManto  } =  props.canvas
+    const { perfilesLongitudinalesConcava, perfilesLongitudinalesManto, ejemploNominales  } =  props.canvas
 
 
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
 
     // Center
-    ctx.translate(5, 455);
+    ctx.translate(5, 435);
         
     // // Add some lines
     // ctx.beginPath();
@@ -77,11 +77,40 @@ const CanvasImg = props => {
     perfilesLongitudinalesManto.points.forEach(o => {
       drawCartesianPoint(ctx, o.x, o.y, perfilesLongitudinalesManto.brushColor, perfilesLongitudinalesManto.brushRadius );
     })
+
+    ejemploNominales.points.forEach(o => {
+      drawCartesianPoint(ctx, o.x, o.y, ejemploNominales.brushColor, ejemploNominales.brushRadius );
+    })
     // drawCartesianText(ctx, -100, 100, '(-100, -100) correct');
+
+    ctx.beginPath()
+    ctx.fillStyle="#737373";
+    ctx.arc(33, -50, 35, 0, Math.PI * 2, false);
+    ctx.fill();
+    ctx.strokeStyle = "#000";
+    ctx.lineWidth = 3;  
+    ctx.stroke();
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.font = "25px serif"
+    ctx.fillStyle = "#fff"
+    ctx.fillText("OSS", 10, -50)
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath()
+    ctx.font = "17px serif"
+    ctx.fillStyle = "#fff"
+    ctx.fillText('8,0"', 20, -30)
+    ctx.stroke()
+    ctx.closePath()
+
 
   }, [])
   
-  return <canvas ref={canvasRef}  width="456" height="456"/>
+  return <canvas ref={canvasRef}  width="456" height="440"/>
 }
 
 CanvasImg.propTypes = {

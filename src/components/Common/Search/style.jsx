@@ -17,6 +17,9 @@ export const useStyles = makeStyles(theme => ({
   label: {
     textAlign: 'right', 
     paddingRight: 0, 
-    color: '#707070'
-  }
+    color: '#707070',
+    '@media (max-width:1700px)': {
+      display: 'none'
+    }
+  },
 }));

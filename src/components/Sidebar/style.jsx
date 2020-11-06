@@ -12,16 +12,23 @@ export const useStyles = makeStyles(theme => ({
     borderRadius: "0",
     color: "#fff !important",
     padding: theme.spacing(2, 1), 
+    '@media (max-width:1300px)': {
+      fontSize: '1.2rem'
+    }, 
+    
   },
   NavLink: {
     padding: "10px 10px",
     borderRight: "2px solid #fff",
     "&:last-child": {
       borderRight: "none"
+    },
+    '@media (max-width:1060px)': {
+      padding: '10px 0px'
     }
   },
   NabButtonMobile: {
-    color: "#0057B8",
+    color: "#0057B8 !important",
     "&:hover": {
       textDecoration: "none",
       backgroundColor: "transparent"

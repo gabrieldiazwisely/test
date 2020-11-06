@@ -96,13 +96,13 @@ const Dashboard = props => {
         </Grid>
         <Grid item xs={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Proyecciones</Typography>
+            <Typography variant="h3" className={classes.defaultTitle}>Proyecciones</Typography>
             <img src={dashboard1} alt={"Dashboard1"} style={{ width: "70%" }} />
           </Paper>
         </Grid>
         <Grid item xs={10}>
         <Paper elevation={3} className={classes.imgCenter}>
-          <Typography variant="h3">Recomendación altura de manto</Typography>
+          <Typography variant="h3" className={classes.defaultTitle}>Recomendación altura de manto</Typography>
           <Grid container>
             <Grid item xs={0} sm={5}></Grid>
             <Grid item xs={12} sm={7}>
@@ -114,7 +114,7 @@ const Dashboard = props => {
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">
+            <Typography variant="h3" className={classes.defaultTitle}>
               Resumen histórico de procesamiento por campaña
             </Typography>
             <BarChart />

@@ -120,7 +120,7 @@ const Search = props => {
   return (
     <React.Fragment>
       <Grid container className={classes.root} spacing={0} direction="row" justify="left" alignItems="center">
-        <Grid item xs={4} sm={3}>
+        <Grid item md={4}  lg={3}>
           <FormControl fullWidth variant="outlined" className={classes.formControl} >
             <Tooltip title="Equipo" arrow> 
               <Select
@@ -142,10 +142,10 @@ const Search = props => {
         </Grid>
         <Hidden smDown>
           <Grid item xs={12} sm={1} className={classes.label}>
-            <Typography variant="h6">Campaña:</Typography>
+            <Typography variant="h6" className={classes.labelTitle}>Campaña:</Typography>
           </Grid>
         </Hidden>
-        <Grid item xs={4} sm={3}>
+        <Grid item md={4} lg={3}>
           <FormControl fullWidth variant="outlined" className={classes.formControl}>
             <Tooltip title="Campaña" arrow> 
               <Select
@@ -171,7 +171,7 @@ const Search = props => {
             <Typography variant="h6">Medición:</Typography>
           </Grid>
         </Hidden>
-        <Grid item xs={4} sm={3}>
+        <Grid item md={4} lg={3}>
           <FormControl fullWidth variant="outlined" className={classes.formControl}>
             <Tooltip title="Medición" arrow>
               <Select
