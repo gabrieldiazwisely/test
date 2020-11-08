@@ -62,17 +62,23 @@ const Dashboard = props => {
             <LineChart data = { dashboardCharts.mto_height_recommendation } />
           </Grid>
           <Grid item xs={12} sm={2}>
-            <Paper elevation={3} className={classes.recomendationInfo}>
-              <Typography variant="button" display="block" gutterBottom>HOY</Typography>
-              <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.date}</Typography>
-              
-              <Typography variant="button" display="block" gutterBottom>Altura de poste recomendada:</Typography>
-              <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.ton} mm</Typography>
-              
-              <Typography variant="button" display="block" gutterBottom>Setting obetivo:</Typography>
-              <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.mtoHeight}"</Typography>
-              
-            </Paper>
+            <Grid container>
+              <Grid item xs={12} sm={12}>
+                <MtoHeightRecommendation />
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <Paper elevation={3} className={classes.recomendationInfo}>
+                  <Typography variant="button" display="block" gutterBottom>HOY</Typography>
+                  <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.date}</Typography>
+                  
+                  <Typography variant="button" display="block" gutterBottom>Altura de poste recomendada:</Typography>
+                  <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.ton} mm</Typography>
+                  
+                  <Typography variant="button" display="block" gutterBottom>Setting obetivo:</Typography>
+                  <Typography variant="h4" className={classes.recomendationInfoDescription} gutterBottom>{dashboardCharts.mto_height_recommendation.box.mtoHeight}"</Typography>
+                </Paper>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       )
@@ -103,13 +109,7 @@ const Dashboard = props => {
         <Grid item xs={10}>
         <Paper elevation={3} className={classes.imgCenter}>
           <Typography variant="h3" className={classes.defaultTitle}>Recomendación altura de manto</Typography>
-          <Grid container>
-            <Grid item xs={0} sm={5}></Grid>
-            <Grid item xs={12} sm={7}>
-              <MtoHeightRecommendation />
-            </Grid>
-          </Grid>
-              { renderMtoHeightRecommendation() }      
+          { renderMtoHeightRecommendation() }      
         </Paper>
         </Grid>
         <Grid item xs={12} sm={10}>

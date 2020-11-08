@@ -66,7 +66,7 @@ const MtoHeightRecommendation = props => {
     <React.Fragment>
       <Paper elevation={3} className={classes.root}>
         <Grid container  spacing={2}>
-            <Grid item xs={12} sm={2} className={classes.InputContent}>
+            <Grid item xs={12} sm={12} className={classes.InputContent}>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -87,38 +87,11 @@ const MtoHeightRecommendation = props => {
                 <MenuItem  value={3}>Setting 3</MenuItem>
               </Select>
             </Grid>
-            <Grid item xs={12} sm={2} className={classes.InputContent}>
-              <Select
-                labelId="demo-simple-select-label"
-                title="Fecha"
-                id="demo-simple-select"
-                value={date}
-                onChange={handleChangeDate}
-                input={<BootstrapInput />}
-                inputProps={{
-                  classes: {
-                      icon: classes.iconRecommendation,
-                  },
-                }}
-                style={{width: '100%', paddingTop: '8px'}}
-              >
-                <MenuItem value={1}>01-10-2020</MenuItem>
-                <MenuItem value={2}>02-10-2020</MenuItem>
-                <MenuItem value={3}>03-10-2020</MenuItem>
-              </Select>
+            <Grid item xs={12} sm={12} className={classes.SelectContent}>
+              <Link className={clsx(classes.Link, classes.LinkSelectRight, classes.active)}>Fecha</Link>
+              <Link className={clsx(classes.Link, classes.LinkSelectLeft)}>Tonelaje</Link>
             </Grid>
-            <Grid item xs={12} sm={2} className={classes.InputContent}>
-              <TextField
-                placeholder="Tonelaje"
-                fullWidth
-                margin="normal"
-                className={classes.InputText}
-                InputProps={{
-                  className: classes.input,
-                }} 
-              />
-            </Grid>
-            <Grid item xs={12} sm={2} className={classes.InputContent}>
+            <Grid item xs={12} sm={12} className={classes.InputContent}>
               <TextField
                 placeholder="TPD"
                 fullWidth
@@ -129,7 +102,7 @@ const MtoHeightRecommendation = props => {
                 }} 
               />
             </Grid>
-            <Grid item xs={12} sm={4} align={'right'}>
+            <Grid item xs={12} sm={12} align={'right'}>
               <Button onClick={clickUpdate} variant="contained" size="medium" color="primary"  className={clsx(classes.Button, classes.MarginTopCero)}>
                 Actualizar
               </Button>
