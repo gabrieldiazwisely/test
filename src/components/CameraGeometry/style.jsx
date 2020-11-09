@@ -21,5 +21,11 @@ export const useStyles = makeStyles(theme => ({
   },
   Dinformation: {
     padding: theme.spacing(3) + "px !important"
+  },
+  defaultTitle: {
+    paddingTop: theme.spacing(1) + 'px !important',
+    paddingBottom: theme.spacing(2),
+    color: '#0057B8',
+    fontSize: '2.125rem',
   }
 }));

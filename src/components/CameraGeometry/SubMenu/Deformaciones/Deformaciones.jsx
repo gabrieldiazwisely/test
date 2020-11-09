@@ -18,7 +18,13 @@ const Deformaciones = props => {
         justify="center"
         spacing={2}
       >
-        <Hidden smDown>
+        <Grid item xs={10}>
+          <Information
+            title={"Antecedentes del equipo"}
+            icon={"i"}
+          />
+        </Grid>
+        {/* <Hidden smDown>
         <Grid item xs={12} sm={12} style={{ textAlign: "right" }}>
           <img
             src={deformaciones1}
@@ -26,22 +32,12 @@ const Deformaciones = props => {
             style={{ height: "100%" }}
           />
         </Grid>
-        </Hidden>
+        </Hidden> */}
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Deformación de cóncava</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Deformación de cóncava</Typography>
             <Grid container spacing={2} direction="row" justify="center">
-              <Grid item xs={10} mt={12} className={classes.Dinformation}>
-                <Information
-                  title={"Antecedentes del equipo"}
-                  icon={"i"}
-                  items={[
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
-                    "Tempor incididunt ut labore et dolore magna aliqua. ",
-                    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  ]}
-                />
-              </Grid>
+              
               <Grid item xs={12} mt={12}>
                 <img
                   src={deformaciones2}
@@ -54,7 +50,7 @@ const Deformaciones = props => {
         </Grid>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Deformación de manto</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Deformación de manto</Typography>
             <Grid container spacing={2} direction="row" justify="center">
               <Grid item xs={12} mt={12}>
                 <img

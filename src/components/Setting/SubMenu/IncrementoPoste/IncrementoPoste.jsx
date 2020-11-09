@@ -60,7 +60,7 @@ const IncrementoPoste = props => {
       >
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">
+            <Typography variant="h3" className={classes.defaultTitle} >
               Recomendación incremento de poste
             </Typography>
             <Grid container spacing={2}>
@@ -83,7 +83,7 @@ const IncrementoPoste = props => {
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">
+            <Typography variant="h3" className={classes.defaultTitle} >
               Recomendación de altura del poste del manto
             </Typography>
             <img

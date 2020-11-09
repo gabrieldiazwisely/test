@@ -22,16 +22,22 @@ const PerfilDesgaste = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={12} sm={12} style={{ textAlign: "right" }}>
+        <Grid item xs={10}>
+          <Information
+            title={"Antecedentes del equipo"}
+            icon={"i"}
+          />
+        </Grid>
+        {/* <Grid item xs={12} sm={12} style={{ textAlign: "right" }}>
           <img
             src={perfildesgaste0}
             alt={"perfildesgaste0"}
             style={{ height: "100%" }}
           />
-        </Grid>
+        </Grid> */}
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Espesores de cóncavas</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Espesores de cóncavas</Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
                 <img
@@ -48,7 +54,7 @@ const PerfilDesgaste = props => {
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Espesores de manto 112,5”</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Espesores de manto 112,5”</Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
                 <img
@@ -56,20 +62,6 @@ const PerfilDesgaste = props => {
                   alt={"perfildesgaste2"}
                   style={{ width: "100%" }}
                 />
-              </Grid>
-              <Grid item xs={12} sm={9}>
-                <TableManto />
-                <div className={classes.PDinformation}>
-                  <Information
-                    title={"Antecedentes del equipo"}
-                    icon={"i"}
-                    items={[
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
-                      "Tempor incididunt ut labore et dolore magna aliqua. ",
-                      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    ]}
-                  />
-                </div>
               </Grid>
             </Grid>
           </Paper>

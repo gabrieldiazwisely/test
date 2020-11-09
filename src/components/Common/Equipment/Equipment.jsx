@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Hidden } from "@material-ui/core";
+import { Grid, Hidden, useMediaQuery } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Search, SubMenu } from "../";
 
@@ -15,11 +15,13 @@ const Equipment = props => {
   });
   
   const classes = useStyles();
+  
+  const matches = useMediaQuery('(min-width:960px)');
 
   return (
     <React.Fragment>
       <Grid container className={classes.root} xs={12}>
-        <Grid item xs={12} sm={7}>
+        <Grid item xs={12} sm={ (!matches)? 12 : 7 }>
           <Search searchDisabled = { searchDisabled } />
         </Grid>
         <Hidden smDown>

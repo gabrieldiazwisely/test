@@ -47,4 +47,10 @@ export const useStyles = makeStyles(theme => ({
   tableBackgroundTwo: {
     background: '#D1D8E4',
   },
+  defaultTitle: {
+    paddingTop: theme.spacing(1) + 'px !important',
+    paddingBottom: theme.spacing(2),
+    color: '#0057B8',
+    fontSize: '2.125rem',
+  }
 }));

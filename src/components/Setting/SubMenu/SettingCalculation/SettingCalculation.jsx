@@ -35,7 +35,7 @@ const SettingCalculation = props => {
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Variación del Setting</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Variación del Setting</Typography>
             <Grid container spacing={2} align={'left'}>
               <Grid item xs={12} sm={12}>
                 <SettingVariation />
@@ -45,7 +45,7 @@ const SettingCalculation = props => {
         </Grid>
         <Grid item xs={12} sm={5}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Zona de setting</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Zona de setting</Typography>
             {/* <CanvasImg /> */}
             <img
               src={settingcalculation2}
@@ -56,7 +56,7 @@ const SettingCalculation = props => {
         </Grid>
         <Grid item xs={12} sm={5}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Setting v/s Altura de poste</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Setting v/s Altura de poste</Typography>
             <LineChart />
           </Paper>
         </Grid>

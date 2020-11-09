@@ -17,7 +17,7 @@ const MapaEspesores = props => {
       >
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Mapa de espesores remanentes</Typography>
+            <Typography variant="h3" className={classes.defaultTitle} >Mapa de espesores remanentes</Typography>
             <img
               src={mapaespesores1}
               alt={"mapaespesores1"}

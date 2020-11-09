@@ -19,9 +19,15 @@ const AnguloCamara = props => {
         justify="center"
         spacing={2}
       >
-        <Grid item xs={10} sm={12}>
+        <Grid item xs={10}>
+          <Information
+            title={"Antecedentes del equipo"}
+            icon={"i"}
+          />
+        </Grid>
+        <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Ángulo NIP</Typography>
+            <Typography variant="h3" className={classes.defaultTitle}>Ángulo NIP</Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <img
@@ -41,13 +47,6 @@ const AnguloCamara = props => {
                     <Paper>
                       <TableGrado />
                     </Paper>
-                  </Grid>
-                  <Grid item xs={12} sm={12} className={classes.Dinformation}>
-                    <Information
-                      items={[
-                        "Para el cálculo del NIP Angle (ángulo NIP) como para las dimensiones interiores de la cámara de chancado, se utilizaron las curvas promedio tanto para cóncavo como para manto. Se realiza la medida en la condición de OSS y CSS."
-                      ]}
-                    />
                   </Grid>
                 </Grid>
               </Grid>
