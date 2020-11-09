@@ -18,5 +18,9 @@ export const useStyles = makeStyles(theme => ({
   },
   recomendationInfoDescription : {
     fontWeight: 'bold'
+  },
+  defaultTitle: {
+    color: '#0057B8',
+    fontSize: '2.125rem',
   }
 }));

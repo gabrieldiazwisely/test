@@ -107,5 +107,14 @@ export const useStyles = makeStyles(theme => ({
   }, 
   separationCalculatorRight: {
     paddingLeft: theme.spacing(3)
+  },
+  SelectContent: {
+    marginTop: theme.spacing(1)
+  },
+  LinkSelectRight: {
+    paddingRight: '6px'
+  },
+  LinkSelectLeft: {
+    paddingLeft: '3px'
   }
 }));

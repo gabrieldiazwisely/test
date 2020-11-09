@@ -76,7 +76,7 @@ const Setting = props => {
         {settingsDistribution && Object.keys(settingsDistribution).length > 0 && (
           <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3">Distribucion de setting</Typography>
+            <Typography variant="h3" className={classes.defaultTitle}>Distribucion de setting</Typography>
             <Grid
               container
               className={classes.root}

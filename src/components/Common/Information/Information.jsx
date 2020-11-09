@@ -39,7 +39,7 @@ const Information = props => {
             </Grid>
             <Grid item xs={8}>
               <Typography className={classes.value}>
-                ${machineBackground[key]}
+                {machineBackground[key]}
               </Typography>
             </Grid>
           </Hidden>

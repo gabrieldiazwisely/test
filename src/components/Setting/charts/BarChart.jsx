@@ -32,8 +32,6 @@ const options = {
       scaleLabel: {
         display: true,
         labelString: 'Setting',
-        fontSize: 21,
-        fontColor: '#0057B8'
       },
     }],
     yAxes: [{
@@ -41,9 +39,6 @@ const options = {
       scaleLabel: {
         display: true,
         labelString: 'Altura de poste en porcentaje y mm',
-        fontSize: 21,
-        fontWeight: 'bold',
-        fontColor: '#0057B8'
       },
       ticks: {
         min: 0,

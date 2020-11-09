@@ -15,7 +15,14 @@ export const useStyles = makeStyles(theme => ({
     },
     "&:hover": {
       color: "#e7e7e7"
-    }
+    },
+    '@media (max-width:1410px)': {
+      padding: theme.spacing(2, 1, 2, 1),
+      fontSize: '1.2rem'
+    }, 
+    '@media (max-width:1220px)': {
+      fontSize: '1rem'
+    }, 
   },
   active: {
     background: "#009FE3 !important",

@@ -40,7 +40,12 @@ const SimManto = props => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <CanvasImg />
+            {/* <CanvasImg /> */}
+            <img
+              src={simmanto3}
+              alt={"simmanto3"}
+              style={{ height: "100%" }}
+            />
           </Paper>
         </Grid>
       </Grid>

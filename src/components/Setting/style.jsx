@@ -38,5 +38,9 @@ export const useStyles = makeStyles(theme => ({
   },
   boxRight: {
     textAlign: 'right'
+  },
+  defaultTitle: {
+    color: '#0057B8',
+    fontSize: '2.125rem',
   }
 }));
