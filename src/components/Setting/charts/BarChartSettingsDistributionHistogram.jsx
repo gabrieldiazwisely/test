@@ -4,63 +4,53 @@ import cloneDeep from 'lodash/cloneDeep'
 
 const BarChartSettingsDistributionHistogram = ({ histogramData }) => {
 
-  console.log(histogramData)
+  histogramData = {
+    x: ['6.6','6.7','6.8','6.9','7.0','7.1','7.2','7.3'], 
+    y: ['0.1','0.4','0.6','1.4','3.5','4.0','3.0','1.5'], 
+    average_line: { x: '7.0' },
+    xlabel: 'CSS [in]',
+    ylabel: 'N° de Ocurrencias'
+  } 
 
-  //HARDCODED AVERAGE LINE
-  const average_line = { x: "7.45" }
+  console.log(histogramData)
 
   const data = {
     labels: [...histogramData.x],
     datasets: [
       {
         label: '',
-        backgroundColor: 'rgba(178, 204, 234)',
-        // borderColor: 'rgba(178, 204, 234)',
-        borderWidth: 1,
+        fill: true,
+        backgroundColor: 'rgba(178, 204, 234, 0.8)',
         stack: 1,
         hoverBackgroundColor: 'rgba(178, 204, 234)',
-        // hoverBorderColor: 'rgba(178, 204, 234)',
-        data: [...histogramData.x],
-      }, {
+        data: [...histogramData.y],
+      }, 
+      {
         label: 'Promedio',
         fill: true,
         showLine: true,
         type: 'line',
-        lineTension: 0.1,
-
+        lineTension: 0.2,
         backgroundColor: 'rgba(75,192,192,0)',
         borderColor: 'rgba(75,192,192,1)',
-        borderCapStyle: 'butt',
-
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'rgba(75,192,192,1)',
-        pointBackgroundColor: 'rgba(75,192,192,1)',
-        pointBorderWidth: 1,
-        pointHoverRadius: 1,
-
-        pointHoverBorderColor: 'rgba(220,220,220,1)',
-        pointHoverBorderWidth: 1,
-        pointRadius: 1,
-        pointHitRadius: 1,
-
-        borderWidth: 2,
-
-        data: [...histogramData.curve.map(p => p.y)],
+        pointRadius: 0,
+        borderWidth: 1,
+        data: [...histogramData.y],
       }
     ]
   }
 
   const getAverageLine = () => {
-    const { x } = average_line
+    const { x } = histogramData.average_line
     return ({
       type: 'line',
       mode: 'vertical',
       scaleID: 'x-axis-0',
       value: x,
-      pointBackgroundColor: 'rgba(75,192,192,1)',
-      borderWidth: 3
+      backgroundColor: 'rgba(178, 204, 234, 1)',
+      borderWidth: 3,
+      fill: true,
+      showLine: true,
     })
   }
   
@@ -70,16 +60,16 @@ const BarChartSettingsDistributionHistogram = ({ histogramData }) => {
     },
     layout: {
       padding: {
-        bottom: 0,
-        top: 0
+        bottom: 20,
+        top: 20,
+        right: 20,
+        left: 20
       }
     },
     scales: {
       
     xAxes: [{
-      // barPercentage: 1.0,
-      // categoryPercentage: 1.0,
-      stacked: false,
+      stacked: true,
       gridLines: {
         display: false
       },
@@ -91,15 +81,15 @@ const BarChartSettingsDistributionHistogram = ({ histogramData }) => {
     yAxes: [{
       stacked: true,
       scaleLabel: {
-        display: false,
-        // labelString: 'Procesamiento Mton'
+        display: true,
+        labelString: histogramData.ylabel
       }
     }],
     },
     responsive: true,
     legend: {
       display: false,
-      position: 'bottom',
+      position: 'top',
       labels: {
         fontColor: '#91929b',
         padding: 20
