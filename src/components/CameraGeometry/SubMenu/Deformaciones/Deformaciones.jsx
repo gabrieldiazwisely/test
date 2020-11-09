@@ -1,9 +1,8 @@
 import React from "react";
 import { Information } from "../../../Common";
-import { Grid, Typography, Paper, Hidden } from "@material-ui/core";
+import { Grid, Typography, Paper, Box } from "@material-ui/core";
 import { useStyles } from "../../style";
 
-import deformaciones1 from "../../../../assets/img/fake/deformaciones1.png";
 import deformaciones2 from "../../../../assets/img/fake/deformaciones2.png";
 import deformaciones3 from "../../../../assets/img/fake/deformaciones3.png";
 
@@ -35,31 +34,35 @@ const Deformaciones = props => {
         </Hidden> */}
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle} >Deformación de cóncava</Typography>
-            <Grid container spacing={2} direction="row" justify="center">
-              
-              <Grid item xs={12} mt={12}>
-                <img
-                  src={deformaciones2}
-                  alt={"deformaciones2"}
-                  style={{ width: "90%" }}
-                />
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle} >Deformación de cóncava</Typography>
+              <Grid container spacing={2} direction="row" justify="center">
+                
+                <Grid item xs={12} mt={12}>
+                  <img
+                    src={deformaciones2}
+                    alt={"deformaciones2"}
+                    style={{ width: "90%" }}
+                  />
+                </Grid>
               </Grid>
-            </Grid>
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle} >Deformación de manto</Typography>
-            <Grid container spacing={2} direction="row" justify="center">
-              <Grid item xs={12} mt={12}>
-                <img
-                  src={deformaciones3}
-                  alt={"deformaciones3"}
-                  style={{ width: "90%" }}
-                />
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle} >Deformación de manto</Typography>
+              <Grid container spacing={2} direction="row" justify="center">
+                <Grid item xs={12} mt={12}>
+                  <img
+                    src={deformaciones3}
+                    alt={"deformaciones3"}
+                    style={{ width: "90%" }}
+                  />
+                </Grid>
               </Grid>
-            </Grid>
+            </Box>
           </Paper>
         </Grid>
       </Grid>

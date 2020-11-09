@@ -66,51 +66,57 @@ const IncrementoPoste = props => {
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle} >
-              Recomendación incremento de poste
-            </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={12}>
-                <PostIncreaseRecommendation />
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle} >
+                Recomendación incremento de poste
+              </Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12}>
+                  <PostIncreaseRecommendation />
+                </Grid>
               </Grid>
-            </Grid>
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle} >
-              Recomendación de altura del poste del manto
-            </Typography>
-            <img
-              src={incrementoposte1}
-              alt={"incrementoposte1"}
-              style={{ width: "90%" }}
-            />
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle} >
+                Recomendación de altura del poste del manto
+              </Typography>
+              <img
+                src={incrementoposte1}
+                alt={"incrementoposte1"}
+                style={{ width: "90%" }}
+              />
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Paper elevation={3}>
-            <Box  className={classes.boxRight}>
-              <FormControl variant="outlined" className={classes.formControl} >
-                  <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={simulation}
-                  onChange={handleChangeSimulation}
-                  input={<BootstrapInput />}
-                  inputProps={{
-                    classes: {
-                        icon: classes.icon
-                    },
-                  }}
-                >
-                  <MenuItem value={1}>Simulación 1</MenuItem>
-                  <MenuItem value={2}>Simulación 2</MenuItem>
-                  <MenuItem value={3}>Simulación 3</MenuItem>
-                </Select>
-              </FormControl>
+            <Box p={2}>
+              <Box  className={classes.boxRight}>
+                <FormControl variant="outlined" className={classes.formControl} >
+                    <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={simulation}
+                    onChange={handleChangeSimulation}
+                    input={<BootstrapInput />}
+                    inputProps={{
+                      classes: {
+                          icon: classes.icon
+                      },
+                    }}
+                  >
+                    <MenuItem value={1}>Simulación 1</MenuItem>
+                    <MenuItem value={2}>Simulación 2</MenuItem>
+                    <MenuItem value={3}>Simulación 3</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Table />
             </Box>
-            <Table />
           </Paper>
         </Grid>
       </Grid>

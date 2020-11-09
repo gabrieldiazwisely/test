@@ -47,8 +47,6 @@ const options = {
     scaleLabel: {
       display: true,
       labelString: 'OSS [in]',
-      fontSize: 21,
-      fontColor: '#0057B8'
     }
   }],
   yAxes: [{
@@ -56,8 +54,6 @@ const options = {
     scaleLabel: {
       display: true,
       labelString: 'Recorrido del poste [mm]',
-      fontSize: 21,
-      fontColor: '#0057B8'
     }
   }],
   },

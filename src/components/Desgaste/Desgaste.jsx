@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Paper } from "@material-ui/core";
+import { Grid, Typography, Paper, Box } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
 import Table from "./Table";
@@ -31,19 +31,25 @@ const Desgaste = props => {
         </Grid>
         <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Table />
+            <Box p={2}>
+              <Table />
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={10}mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3"  className={classes.defaultTitle} >Desgaste tendencia concavas</Typography>
-            <img src={desgaste1} alt={"desgaste1"} style={{ width: "70%" }} />
+            <Box p={2}>
+              <Typography variant="h3"  className={classes.defaultTitle} >Desgaste tendencia concavas</Typography>
+              <img src={desgaste1} alt={"desgaste1"} style={{ width: "70%" }} />
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3"  className={classes.defaultTitle} >Desgaste tendencia manto</Typography>
-            <img src={desgaste2} alt={"desgaste2"} style={{ width: "70%" }} />
+            <Box p={2}>
+              <Typography variant="h3"  className={classes.defaultTitle} >Desgaste tendencia manto</Typography>
+              <img src={desgaste2} alt={"desgaste2"} style={{ width: "70%" }} />
+            </Box>
           </Paper>
         </Grid>
       </Grid>

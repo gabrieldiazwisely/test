@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Typography, Paper, Hidden, useMediaQuery } from "@material-ui/core";
+import { Grid, Typography, Paper, Hidden, useMediaQuery, Box } from "@material-ui/core";
 
 import { useStyles } from "./style";
 import { Information } from "../Common/";
@@ -110,58 +110,63 @@ const Dashboard = props => {
         </Grid>
         <Grid item xs={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle}>Proyecciones</Typography>
-            <Hidden mdDown>
-              <img src={dashboard1} alt={"Dashboard1"} style={{ width: "70%" }} />
-            </Hidden>
-            <Hidden lgUp>
-              <Grid container direction="row" justify="center" spacing={2}>
-                <Grid item>
-                  <Paper className={classes.paper}  >
-                    <Typography variant="h6">Desgaste ccv</Typography>
-                    <Typography variant="h6">15-09-2020</Typography>
-                    <Typography variant="h5" style={{fontWeight: 'bold'}}>14.98 Mton</Typography>
-                  </Paper>
+            <Box p={2}> 
+              <Typography variant="h3" className={classes.defaultTitle}>Proyecciones</Typography>
+              <Hidden mdDown>
+                <img src={dashboard1} alt={"Dashboard1"} style={{ width: "70%" }} />
+              </Hidden>
+              <Hidden lgUp>
+                <Grid container direction="row" justify="center" spacing={2}>
+                  <Grid item>
+                    <Paper className={classes.paper}  >
+                      <Typography variant="h6">Desgaste ccv</Typography>
+                      <Typography variant="h6">15-09-2020</Typography>
+                      <Typography variant="h5" style={{fontWeight: 'bold'}}>14.98 Mton</Typography>
+                    </Paper>
+                  </Grid>
+                  <Grid item>
+                    <Paper className={classes.paper}  >
+                      <Typography variant="h6">Desgaste de manto</Typography>
+                      <Typography variant="h6">15-09-2020</Typography>
+                      <Typography variant="h5" style={{fontWeight: 'bold'}}>14.98 Mton</Typography>
+                    </Paper>
+                  </Grid>
+                  <Grid item>
+                    <Paper className={classes.paper}  >
+                      <Typography variant="h6">Perdida de setting</Typography>
+                      <Typography variant="h6">15-09-2020</Typography>
+                      <Typography variant="h5" style={{fontWeight: 'bold'}}>14.98 Mton</Typography>
+                    </Paper>
+                  </Grid>
+                  <Grid item>
+                    <Paper className={classes.paperBlue}  >
+                      <Typography variant="h6">Manto Actual</Typography>
+                      <Typography variant="h5" style={{fontWeight: 'bold'}}>117"</Typography>
+                    </Paper>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <Paper className={classes.paper}  >
-                    <Typography variant="h6">Desgaste de manto</Typography>
-                    <Typography variant="h6">15-09-2020</Typography>
-                    <Typography variant="h5" style={{fontWeight: 'bold'}}>14.98 Mton</Typography>
-                  </Paper>
-                </Grid>
-                <Grid item>
-                  <Paper className={classes.paper}  >
-                    <Typography variant="h6">Perdida de setting</Typography>
-                    <Typography variant="h6">15-09-2020</Typography>
-                    <Typography variant="h5" style={{fontWeight: 'bold'}}>14.98 Mton</Typography>
-                  </Paper>
-                </Grid>
-                <Grid item>
-                  <Paper className={classes.paperBlue}  >
-                    <Typography variant="h6">Manto Actual</Typography>
-                    <Typography variant="h5" style={{fontWeight: 'bold'}}>117"</Typography>
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Hidden>
-            
+              </Hidden>
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={10}>
         <Paper elevation={3} className={classes.imgCenter}>
-          <Typography variant="h3" className={classes.defaultTitle}>Recomendación altura de manto</Typography>
-          { renderMtoHeightRecommendation() }      
+          <Box p={2}> 
+            <Typography variant="h3" className={classes.defaultTitle}>Recomendación altura de manto</Typography>
+            { renderMtoHeightRecommendation() }      
+          </Box>
         </Paper>
         </Grid>
         <Hidden smDown>
           <Grid item xs={12} sm={10}>
             <Paper elevation={3} className={classes.imgCenter}>
-              <Typography variant="h3" className={classes.defaultTitle}>
-                Resumen histórico de procesamiento por campaña
-              </Typography>
-              <BarChart />
-              {/* <img src={dashboard3} alt={"Dashboard3"} style={{ width: "70%" }} /> */}
+              <Box p={2}> 
+                <Typography variant="h3" className={classes.defaultTitle}>
+                  Resumen histórico de procesamiento por campaña
+                </Typography>
+                <BarChart />
+                {/* <img src={dashboard3} alt={"Dashboard3"} style={{ width: "70%" }} /> */}
+              </Box>
             </Paper>
           </Grid>
         </Hidden>

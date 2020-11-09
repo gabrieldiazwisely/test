@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid, Paper, Box } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
 import Table from "./Table";
@@ -28,7 +28,9 @@ const CameraGeometry = props => {
         </Grid>
         <Grid item xs={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Table />
+            <Box p={2}>
+              <Table />
+            </Box>
           </Paper>
         </Grid>
       </Grid>

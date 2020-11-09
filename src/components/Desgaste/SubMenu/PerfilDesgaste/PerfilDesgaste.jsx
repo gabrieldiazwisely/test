@@ -1,6 +1,6 @@
 import React from "react"
 import { Information } from "../../../Common"
-import { Grid, Typography, Paper } from "@material-ui/core"
+import { Grid, Typography, Paper, Box } from "@material-ui/core"
 import { useStyles } from "../../style"
 
 import Table from './Table'
@@ -37,33 +37,40 @@ const PerfilDesgaste = props => {
         </Grid> */}
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle} >Espesores de cóncavas</Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={3}>
-                <img
-                  src={perfildesgaste1}
-                  alt={"perfildesgaste1"}
-                  style={{ width: "100%" }}
-                />
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle} >Espesores de cóncavas</Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={3}>
+                  <img
+                    src={perfildesgaste1}
+                    alt={"perfildesgaste1"}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={9}>
+                  <Table />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={9}>
-                <Table />
-              </Grid>
-            </Grid>
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle} >Espesores de manto 112,5”</Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={3}>
-                <img
-                  src={perfildesgaste2}
-                  alt={"perfildesgaste2"}
-                  style={{ width: "100%" }}
-                />
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle} >Espesores de manto 112,5”</Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={3}>
+                  <img
+                    src={perfildesgaste2}
+                    alt={"perfildesgaste2"}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={9}>
+                  <TableManto />
+                </Grid>
               </Grid>
-            </Grid>
+            </Box>
           </Paper>
         </Grid>
       </Grid>

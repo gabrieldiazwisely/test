@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid, Paper, Box } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
 import { SimManto as SimMantoCalculator } from "../Common/Calculators/SimManto"
@@ -22,12 +22,16 @@ const SimManto = props => {
       >
         <Grid item xs={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <SimMantoCalculator />
+            <Box p={2}>
+              <SimMantoCalculator />
+            </Box>
           </Paper>
         </Grid>
         <Grid item  xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <img src={simmanto2} alt={"simmanto2"} style={{ width: "70%" }} />
+            <Box p={2}>
+              <img src={simmanto2} alt={"simmanto2"} style={{ width: "70%" }} />
+            </Box>
           </Paper>
           <Paper elevation={0} className={classes.solution}>
             <Information
@@ -41,11 +45,13 @@ const SimManto = props => {
         <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
             {/* <CanvasImg /> */}
-            <img
-              src={simmanto3}
-              alt={"simmanto3"}
-              style={{ height: "100%" }}
-            />
+            <Box p={2}>
+              <img
+                src={simmanto3}
+                alt={"simmanto3"}
+                style={{ height: "100%" }}
+              />
+            </Box>
           </Paper>
         </Grid>
       </Grid>

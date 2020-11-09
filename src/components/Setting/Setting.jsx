@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {  useDispatch, useSelector} from "react-redux";
 import { settingActions, settingsDistributionActions } from '../../redux/actions'
 
-import { Grid, Paper, Typography } from "@material-ui/core"
+import { Grid, Paper, Typography, Box, Hidden } from "@material-ui/core"
 import { useStyles } from "./style"
 import { Information } from "../Common/"
 
@@ -63,12 +63,16 @@ const Setting = props => {
         </Grid>
         <Grid item xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
+          <Box p={2}>
             <CanvasImg canvas = { settingCanvas } />
+            </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <BarChart />
+            <Box p={2}>
+              <BarChart />
+            </Box>
             {/* <img src={setting2} alt={"setting2"} style={{ width: "70%" }} /> */}
           </Paper>
         </Grid>
@@ -76,17 +80,21 @@ const Setting = props => {
         {settingsDistribution && Object.keys(settingsDistribution).length > 0 && (
           <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle}>Distribucion de setting</Typography>
-            <Grid
-              container
-              className={classes.root}
-              direction="row"
-              justify="center"
-              spacing={2}
-            >
-              <Grid item xs={12} sm={6} mt={2}><BarChartSettingsDistributionHistogram histogramData = { settingsDistribution.setting_histogram } /></Grid>
-              <Grid item xs={12} sm={6} mt={2}><LineChartSettingsDistributionHeight heightData = { settingsDistribution.settings_vs_height } /></Grid>
-            </Grid>
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle}>Distribucion de setting</Typography>
+              <Grid
+                container
+                className={classes.root}
+                direction="row"
+                justify="center"
+                spacing={2}
+              >
+                <Grid item xs={12} sm={6} mt={2}><BarChartSettingsDistributionHistogram histogramData = { settingsDistribution.setting_histogram } /></Grid>
+                <Hidden smDown>
+                  <Grid item xs={12} sm={6} mt={2}><LineChartSettingsDistributionHeight heightData = { settingsDistribution.settings_vs_height } /></Grid>
+                </Hidden>
+              </Grid>
+            </Box>
           </Paper>
         </Grid>
         )}

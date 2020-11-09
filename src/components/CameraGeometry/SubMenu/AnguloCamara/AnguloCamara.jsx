@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Paper } from "@material-ui/core";
+import { Grid, Typography, Paper, Box } from "@material-ui/core";
 import { useStyles } from "../../style";
 import { Information } from "../../../Common";
 
@@ -27,30 +27,32 @@ const AnguloCamara = props => {
         </Grid>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.imgCenter}>
-            <Typography variant="h3" className={classes.defaultTitle}>Ángulo NIP</Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <img
-                  src={angulocamara1}
-                  alt={"angulocamara1"}
-                  style={{ width: "100%" }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Grid container spacing={2}>
-                  <Grid item  xs={12} sm={12}>
-                    <Paper>
-                      <Table />
-                    </Paper>
-                  </Grid>
-                  <Grid item xs={12} sm={12}>
-                    <Paper>
-                      <TableGrado />
-                    </Paper>
+            <Box p={2}>
+              <Typography variant="h3" className={classes.defaultTitle}>Ángulo NIP</Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <img
+                    src={angulocamara1}
+                    alt={"angulocamara1"}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Grid container spacing={2}>
+                    <Grid item  xs={12} sm={12}>
+                      <Paper>
+                        <Table />
+                      </Paper>
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                      <Paper>
+                        <TableGrado />
+                      </Paper>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-            </Grid>
+            </Box>
           </Paper>
         </Grid>
       </Grid>
