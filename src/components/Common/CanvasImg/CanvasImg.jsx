@@ -24,7 +24,7 @@ const CanvasImg = props => {
     const ctx = canvas.getContext('2d')
 
     // Center
-    ctx.translate(5, 435);
+    ctx.translate(5, 385);
         
     // // Add some lines
     // ctx.beginPath();
@@ -110,7 +110,7 @@ const CanvasImg = props => {
 
   }, [])
   
-  return <canvas ref={canvasRef}  width="456" height="440"/>
+  return <canvas ref={canvasRef}  width="456" height="392"/>
 }
 
 CanvasImg.propTypes = {

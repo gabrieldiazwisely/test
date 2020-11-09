@@ -10,7 +10,7 @@ export const useStyles = makeStyles(theme => ({
   recomendationInfo: {
     background: '#0057B8 !important',
     boxShadow: 'none',
-    margin: theme.spacing(2),
+    margin: theme.spacing(1),
     padding: theme.spacing(2),
     color: '#fff',
     fontSize: 21,
