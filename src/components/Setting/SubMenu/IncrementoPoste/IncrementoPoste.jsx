@@ -58,25 +58,20 @@ const IncrementoPoste = props => {
         justify="center"
         spacing={2}
       >
+        <Grid item xs={10}>
+          <Information
+            title={"Antecedentes del equipo"}
+            icon={"i"}
+          />
+        </Grid>
         <Grid item xs={12} sm={10}>
           <Paper elevation={3} className={classes.imgCenter}>
             <Typography variant="h3">
               Recomendación incremento de poste
             </Typography>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={12}>
                 <PostIncreaseRecommendation />
-              </Grid>
-              <Grid item xs={12} sm={6} className={classes.CSinformation}>
-                <Information
-                  title={"Antecedentes del equipo"}
-                  icon={"i"}
-                  items={[
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
-                    "Tempor incididunt ut labore et dolore magna aliqua. ",
-                    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  ]}
-                />
               </Grid>
             </Grid>
           </Paper>
