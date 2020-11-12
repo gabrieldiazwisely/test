@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import {  useDispatch, useSelector} from "react-redux";
 import { settingActions, settingsDistributionActions } from '../../redux/actions'
 
-import { Grid, Paper, Typography, Box, Hidden } from "@material-ui/core"
+import { Grid, Paper, Typography, Box, Hidden, useMediaQuery } from "@material-ui/core"
 import { useStyles } from "./style"
 import { Information } from "../Common/"
 
 import { BarChart } from "./charts/BarChart"
-import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
+import { CanvasImg } from '../Common/Canvas/CanvasImg'
+import { CanvasPercent } from '../Common/Canvas/CanvasPercent'
 import { BarChartSettingsDistributionHistogram } from  './charts/BarChartSettingsDistributionHistogram'
 import { LineChartSettingsDistributionHeight } from './charts/LineChartSettingsDistributionHeight'
 
@@ -15,6 +16,8 @@ import { LineChartSettingsDistributionHeight } from './charts/LineChartSettingsD
 const Setting = props => {
   const classes = useStyles()
   const dispatch = useDispatch()
+
+  const matches = useMediaQuery('(min-width:1390px)');
 
   const [flag, setFlag] = React.useState(true)
   const [flag2, setFlag2] = React.useState(true)
@@ -64,7 +67,18 @@ const Setting = props => {
         <Grid item xs={12} sm={4}>
           <Paper elevation={3} className={classes.imgCenter}>
           <Box p={2}>
-            <CanvasImg canvas = { settingCanvas } />
+            <Grid container style={{overflowX: 'auto'}}>
+              <Grid item xs={(matches)? 10 : 12 }>
+                <Box pt={4} >
+                  <CanvasImg canvas = { settingCanvas } />
+                </Box>
+              </Grid>
+              <Grid item xs={2} disableColumnResize={true} style={{display: (matches)? 'block':'none',}} >
+                <Box pt={4}>
+                  <CanvasPercent  points = {{min: 0, max:100, altura:65}}/>
+                </Box>
+              </Grid>
+            </Grid>
             </Box>
           </Paper>
         </Grid>

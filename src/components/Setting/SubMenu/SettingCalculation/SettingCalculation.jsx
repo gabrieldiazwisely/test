@@ -6,7 +6,7 @@ import { useStyles } from "../../style"
 
 import { LineChart } from "../../charts/LineChart"
 
-import { CanvasImg } from '../../../Common/CanvasImg/CanvasImg'
+import { CanvasImg } from '../../../Common/Canvas/CanvasImg'
 
 import settingcalculation2 from '../../../../assets/img/fake/settingcalculation2.png'
 

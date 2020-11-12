@@ -3,7 +3,7 @@ import { Grid, Paper, Box } from "@material-ui/core";
 import { useStyles } from "./style";
 import { Information } from "../Common/";
 import { SimManto as SimMantoCalculator } from "../Common/Calculators/SimManto"
-import { CanvasImg } from '../Common/CanvasImg/CanvasImg'
+import { CanvasImg } from '../Common/Canvas/CanvasImg'
 
 import simmanto1 from "../../assets/img/fake/simmanto1.png";
 import simmanto2 from "../../assets/img/fake/simmanto2.png";

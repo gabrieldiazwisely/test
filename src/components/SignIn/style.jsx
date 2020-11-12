@@ -80,9 +80,15 @@ export const useStyles = makeStyles(theme => ({
   title: {
     color: "#fff",
     paddingTop: theme.spacing(3),
-    fontSize: 35,
+    fontSize: '2.5rem',
     fontWeight: "bold",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    '@media (max-width:1400px)': {
+      fontSize: '2rem',
+    },
+    '@media (max-width:1060px)': {
+      fontSize: '1.5rem',
+    }
   },
   iconAccount: {
     color: "#fff",
