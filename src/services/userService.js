@@ -29,5 +29,6 @@ function signin(username, password) {
       "Content-Type": "application/json"
     }
   };
+  console.log('signin', requestOptions)
   return HttpRequest.request(requestOptions);
 }

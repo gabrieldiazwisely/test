@@ -1,6 +1,8 @@
 import React from "react"
 import { Information } from "../../../Common"
 import { PostIncreaseRecommendation } from '../../../Common/Calculators/PostIncreaseRecommendation'
+import LineChartSettingPoleIncrement from './LineChartSettingPoleIncrement'
+
 import { 
   Grid, 
   Typography, 
@@ -84,11 +86,9 @@ const IncrementoPoste = props => {
               <Typography variant="h3" className={classes.defaultTitle} >
                 Recomendación de altura del poste del manto
               </Typography>
-              <img
-                src={incrementoposte1}
-                alt={"incrementoposte1"}
-                style={{ width: "90%" }}
-              />
+              <Grid item xs={12}>
+                <LineChartSettingPoleIncrement />
+              </Grid>
             </Box>
           </Paper>
         </Grid>
