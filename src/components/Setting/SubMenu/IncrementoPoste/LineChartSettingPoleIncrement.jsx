@@ -1,6 +1,10 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import cloneDeep from 'lodash/cloneDeep'
+import { Grid, Typography, Paper, Button, TextField, Link, Box } from "@material-ui/core"
+import { useStyles } from "./style"
+import clsx from "clsx";
+
 
 const data = {
   labels: ['7,00', '7,25', '7,50', '7,75', '8,00', '8,25', '8,50', '8,75', '9,00', '9,25'],
@@ -67,8 +71,27 @@ const options = {
   }
 
 const LineChartSettingPoleIncrement = () => {
+	const classes = useStyles()
 	return (
-		<Line data={cloneDeep(data)} options={options}/>
+		<Grid container>
+			<Grid item xs={12} >
+				<Box 
+					display='flex' 
+					flexDirection='row' 
+					justifyContent="flex-end"
+					className={ classes.MarginBottom }>
+					<Button variant="contained" size="medium" color="primary"  
+						className={clsx(classes.Button, classes.MarginTopCero)}>
+						Borrar
+					</Button>
+					<Link className={clsx(classes.Link, classes.active)}>Fecha</Link>
+					<Link className={clsx(classes.Link)}>Tonelaje</Link>
+				</Box>
+			</Grid>
+			<Grid item xs={12}>
+				<Line data={cloneDeep(data)} options={options}/>
+			</Grid>
+		</Grid>
 	) 
 }
 
