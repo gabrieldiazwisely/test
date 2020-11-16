@@ -1,7 +1,7 @@
 import React from "react"
 import { Information } from "../../../Common"
 import { PostIncreaseRecommendation } from '../../../Common/Calculators/PostIncreaseRecommendation'
-import LineChartSettingPoleIncrement from './LineChartSettingPoleIncrement'
+import LineChartSettingPoleIncrement from '../../charts/LineChartSettingPoleIncrement'
 
 import { 
   Grid, 

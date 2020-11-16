@@ -13,6 +13,7 @@ import { selectedMachine } from "./selectedMachineReducer"
 import { dashboard } from "./dashboardReducer"
 import { setting } from "./settingReducer"
 import { settingsDistribution } from "./settingsDistributionReducer"
+import { settingsPoleIncrement } from "./settingsPoleIncrementReducer"
 
 
 export const createRootReducer = history =>
@@ -28,5 +29,6 @@ export const createRootReducer = history =>
     selectedMachine,
     dashboard,
     setting,
-    settingsDistribution
+    settingsDistribution,
+    settingsPoleIncrement
   });

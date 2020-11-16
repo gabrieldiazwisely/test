@@ -36,7 +36,8 @@ export const config = {
         setting: '/fakes/canvas'
       },
       settings: {
-        settingsDistribution: '/fakes/settings-distribution'
+        settingsDistribution: '/fakes/settings-distribution',
+        settingsPoleIncrement: '/fakes/setting-pole-increment'
       }
     }
   }
