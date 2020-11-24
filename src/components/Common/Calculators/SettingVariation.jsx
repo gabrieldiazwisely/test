@@ -1,10 +1,12 @@
 import React from "react"
-import { Grid, Typography, Paper, Button, TextField, Link } from "@material-ui/core"
+import { Grid, Typography, Paper, Button, TextField, Link, useMediaQuery } from "@material-ui/core"
 import { useStyles } from "./style"
 import clsx from "clsx";
 
 const SettingVariation = props => {
   const classes = useStyles()
+  const matches = useMediaQuery('(min-width:1380px)')
+
   return (
     <React.Fragment>
       <Paper elevation={3} className={classes.root}>
@@ -13,7 +15,7 @@ const SettingVariation = props => {
               <Link className={clsx(classes.Link, classes.active)}>OSS</Link>
               <Link className={clsx(classes.Link)}>CSS</Link>
             </Grid>
-            <Grid item xs={12} sm={6} >
+            <Grid item xs={12} sm={(matches)? 6 : 12 } className={classes.separationCalculatorHorizontal} >
               <Grid container  spacing={2}  className={classes.separationCalculatorLeft}>
                 <Grid item xs={12} sm={4} className={classes.InputContent}>
                   <Typography className={classes.InputLabel}>Altura de poste:</Typography>
@@ -46,7 +48,7 @@ const SettingVariation = props => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={(matches)? 6 : 12 }  >
               <Grid container  spacing={2} className={classes.separationCalculatorRight}>
                 <Grid item xs={12} sm={4}>
                   <Typography className={classes.InputLabel}>Setting:</Typography>

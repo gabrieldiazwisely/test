@@ -25,6 +25,82 @@ export const useStyles = makeStyles(theme => ({
     color: '#0057B8',
     fontSize: '2.125rem',
   },
+
+  paperDesk: {
+    width: '100%',
+    background: 'red',
+    color: '#fff',
+    padding: theme.spacing(1, 0),
+  },
+  paperDesk1: {
+    marginTop: theme.spacing(4),
+    '@media (max-width: 1880px)': {
+      marginTop: theme.spacing(5)
+    },
+    '@media (max-width: 1820px)': {
+      marginTop: theme.spacing(5)
+    },
+    '@media (max-width: 1585px)': {
+      marginTop: theme.spacing(3)
+    },
+    '@media (max-width: 1460px)': {
+      marginTop: theme.spacing(2)
+    }
+  },
+  paperDesk2: {
+    marginTop: theme.spacing(6),
+    '@media (max-width: 1880px)': {
+      marginTop: theme.spacing(7)
+    },
+    '@media (max-width: 1730px)': {
+      marginTop: theme.spacing(6)
+    },
+    '@media (max-width: 1650px)': {
+      marginTop: theme.spacing(5)
+    },
+    '@media (max-width: 1585px)': {
+      marginTop: theme.spacing(5)
+    },
+    '@media (max-width: 1535px)': {
+      marginTop: theme.spacing(4)
+    },
+    '@media (max-width: 1385px)': {
+      marginTop: theme.spacing(2)
+    }
+  },
+  paperDesk3: {
+    marginTop: theme.spacing(6),
+    '@media (max-width: 1880px)': {
+      marginTop: theme.spacing(8)
+    },
+    '@media (max-width: 1730px)': {
+      marginTop: theme.spacing(6)
+    },
+    '@media (max-width: 1650px)': {
+      marginTop: theme.spacing(5)
+    },
+    '@media (max-width: 1585px)': {
+      marginTop: theme.spacing(5)
+    },
+    '@media (max-width: 1535px)': {
+      marginTop: theme.spacing(4)
+    },
+    '@media (max-width: 1400px)': {
+      marginTop: theme.spacing(3)
+    }
+    
+  },
+  paperDeskDate: {
+    '@media (max-width: 1880px)': {
+      fontSize: '1rem'
+    }
+  },
+  paperDeskMton: {
+    fontWeight: 'bold',
+    '@media (max-width: 1880px)': {
+      fontSize: '1rem',
+    }
+  },
   paper: {
     height: 150,
     width: 150,

@@ -24,7 +24,7 @@ const CanvasImg = props => {
     const ctx = canvas.getContext('2d')
 
     // Center
-    ctx.translate(5, 385);
+    ctx.translate(125, 385);
         
     // // Add some lines
     // ctx.beginPath();

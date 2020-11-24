@@ -29,35 +29,6 @@ const CanvasPercent = props => {
     ctx.fillText(points.min + "%", 0, 381);
     
     ctx.fill();
-
-    // const max = ctx.createLinearGradient(0, 0, 0, 350);
-    // max.addColorStop(0, "#FF0000"); // Rojo
-    // ctx.beginPath();
-    // ctx.fillStyle = max;
-    // ctx.rect(30, 0, 25, 3);
-    // ctx.fillText(points.max + "%", 0, 10);
-    // ctx.fill();
-
-
-    
-    // const altura = ctx.createLinearGradient(0, 0, 0, 350);
-    // altura.addColorStop(0.7, "#FFF600"); // Amarillo
-    // ctx.beginPath();
-    // ctx.fillStyle = altura;
-    
-    // ctx.fill();
-
-    // const min = ctx.createLinearGradient(0, 0, 0, 350);
-    // min.addColorStop(1, "#26a028"); // Verde
-    // ctx.beginPath();
-    // ctx.fillStyle = min;
-    // ctx.rect(30, 376, 25, 3);
-    // ctx.fillText(points.min + "%", 0, 381);
-    // ctx.fill();
-
-
-
-
   }, [])
   
   return <canvas ref={canvasRef}  width="80" height="392"/>

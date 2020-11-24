@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import {  useDispatch, useSelector} from "react-redux";
+import React, { useEffect, useState } from "react"
+import {  useDispatch, useSelector} from "react-redux"
 import { settingActions, settingsDistributionActions } from '../../redux/actions'
 
-import { Grid, Paper, Typography, Box, Hidden, useMediaQuery } from "@material-ui/core"
+import { Grid, Paper, Typography, Box, Hidden } from "@material-ui/core"
 import { useStyles } from "./style"
 import { Information } from "../Common/"
 
@@ -16,8 +16,6 @@ import { LineChartSettingsDistributionHeight } from './charts/LineChartSettingsD
 const Setting = props => {
   const classes = useStyles()
   const dispatch = useDispatch()
-
-  const matches = useMediaQuery('(min-width:1390px)');
 
   const [flag, setFlag] = React.useState(true)
   const [flag2, setFlag2] = React.useState(true)
@@ -64,33 +62,34 @@ const Setting = props => {
             ]}
           /> 
         </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper elevation={3} className={classes.imgCenter}>
+        <Grid item xs={12} sm={10} md={4}>
+          <Paper elevation={3} className={classes.imgCenter, classes.fixHeight}>
           <Box p={2}>
             <Grid container style={{overflowX: 'auto'}}>
-              <Grid item xs={(matches)? 10 : 12 }>
-                <Box pt={4} >
+              <Grid item xs={10}>
+                <Box pt={1} pb={3}>
                   <CanvasImg canvas = { settingCanvas } />
                 </Box>
               </Grid>
-              <Grid item xs={2} disableColumnResize={true} style={{display: (matches)? 'block':'none',}} >
-                <Box pt={4}>
-                  <CanvasPercent  points = {{min: 0, max:100, altura:65}}/>
+              <Grid item xs={2} disableColumnResize={true} >
+                <Box pt={1}>
+                  <CanvasPercent  points = {{min: 0, max:100, altura:63}}/>
                 </Box>
               </Grid>
             </Grid>
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper elevation={3} className={classes.imgCenter}>
-            <Box p={2}>
-              <BarChart />
-            </Box>
-            {/* <img src={setting2} alt={"setting2"} style={{ width: "70%" }} /> */}
-          </Paper>
-        </Grid>
-
+        <Hidden smDown >
+          <Grid item xs={12} sm={5} md={6}>
+            <Paper elevation={3} className={classes.imgCenter, classes.fixHeight}>
+              <Box p={2}>
+                <BarChart />
+              </Box>
+              {/* <img src={setting2} alt={"setting2"} style={{ width: "70%" }} /> */}
+            </Paper>
+          </Grid>
+        </Hidden>
         {settingsDistribution && Object.keys(settingsDistribution).length > 0 && (
           <Grid item xs={12} sm={10} mt={2}>
           <Paper elevation={3} className={classes.imgCenter}>
@@ -117,4 +116,4 @@ const Setting = props => {
   );
 };
 
-export { Setting };
+export { Setting }

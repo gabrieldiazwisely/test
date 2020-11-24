@@ -15,10 +15,24 @@ export const useStyles = makeStyles(theme => ({
     borderRadius: '10px',
     opacity: '1',
     color: '#fff',
-    font: 'Normal 21px/22px sans-serif',
+    font: 'Normal 1.5rem sans-serif',
     '&:hover': {
       background:'#0057B8',
       color: '#e7e7e7',
+    },
+    '@media (max-width:1134px)': {
+      font: 'Normal 1.2rem sans-serif',
+    },
+    '@media (max-width:800px)': {
+      font: 'Normal 1.2rem sans-serif',
+    },
+    '@media (max-width:599px)': {
+      margin: '0px !important',
+    },
+  },
+  separationCalculatorHorizontal: {
+    '@media (max-width:599px)': {
+      borderBottom: '2px solid #E0E0E0',
     }
   },
   InputContent: {
@@ -41,7 +55,10 @@ export const useStyles = makeStyles(theme => ({
     font: 'Bold 20px/25px Arial',
     letterSpacing: '0px',
     color: '#FFFFFF',
-    opacity: '1',
+    opacity: '1', 
+    '@media (max-width:1533px)': {
+      fontSize: '1rem'
+    }, 
   },
   Link: {
     cursor: 'pointer',
@@ -51,6 +68,15 @@ export const useStyles = makeStyles(theme => ({
     opacity: 1,
     padding: theme.spacing(1, 2, 1, 2),
     font: "Normal 21px/22px sans-serif",
+    '@media (max-width:1134px)': {
+      font: 'Normal 1.2rem sans-serif',
+    },
+    '@media (max-width:1074px)': {
+      font: 'Normal 1rem sans-serif',
+    },
+    '@media (max-width:959px)': {
+      font: 'Normal 1.5rem sans-serif',
+    },
     "&:nth-child(1)": {
       borderRadius: "23px 0 0 23px"
     },
@@ -103,10 +129,17 @@ export const useStyles = makeStyles(theme => ({
   },
   separationCalculatorLeft: {
     borderRight: '3px solid #fff',
-    paddingRight: theme.spacing(3)
+    paddingRight: theme.spacing(3), 
+    '@media (max-width:1380px)': {
+      border: 'none',
+      paddingRight: 0,
+    }
   }, 
   separationCalculatorRight: {
-    paddingLeft: theme.spacing(3)
+    paddingLeft: theme.spacing(3),
+    '@media (max-width:1380px)': {
+      paddingLeft: 0
+    }
   },
   SelectContent: {
     marginTop: theme.spacing(1)

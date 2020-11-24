@@ -1,11 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { Height } from "@material-ui/icons";
 
 export const useStyles = makeStyles(theme => ({
   root: {
     marginTop: theme.spacing(2)
   },
   imgCenter: {
-    textAlign: "center"
+    textAlign: "center",
+  },
+  fixHeight: {
+    height: '460px !important',
   },
   CSinformation: {
     padding: theme.spacing(3) + "px !important"

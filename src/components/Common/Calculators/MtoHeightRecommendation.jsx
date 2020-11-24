@@ -38,27 +38,29 @@ const MtoHeightRecommendation = props => {
   const [setting, setSetting] = useState(1)
   const [tonelaje, setTonelaje] = useState("")
 
-  const [date, setDate] = React.useState(1);
-  const [tpd, setTpd] = React.useState("");
+  const [linkDate, setLinkDate] = React.useState(classes.active);
+  const [linkTpd, setLinkTpd] = React.useState("");
 
-  const handleChangeDate = event => {
-    setDate(event.target.value);
+  const [metrica, setMetrica] = React.useState('d');
+
+  const clickActiveDate = () => {
+    setLinkDate(classes.active);
+    setLinkTpd("");
+    setMetrica('d')
   }
 
-  const handleChangeTonelaje = event => {
-    setTonelaje(event.target.value);
+  const clickActiveTonelaje = () => {
+    setLinkDate("");
+    setLinkTpd(classes.active);
+    setMetrica('t')
   }
 
   const handleChangeSetting = event => {
     setSetting(event.target.value);
   }
 
-  const handleChangeTpd = event => {
-    setTpd(event.target.value);
-  }
-
   const clickUpdate = () => {
-    dispatch(dashboardActions.mtoHeightRecommendation())
+    dispatch(dashboardActions.mtoHeightRecommendation(metrica))
   }
 
 
@@ -88,8 +90,8 @@ const MtoHeightRecommendation = props => {
               </Select>
             </Grid>
             <Grid item xs={12} sm={12} className={classes.SelectContent}>
-              <Link className={clsx(classes.Link, classes.LinkSelectRight, classes.active)}>Fecha</Link>
-              <Link className={clsx(classes.Link, classes.LinkSelectLeft)}>Tonelaje</Link>
+              <Link className={clsx(classes.Link, classes.LinkSelectRight, linkDate)} onClick={clickActiveDate}>Fecha</Link>
+              <Link className={clsx(classes.Link, classes.LinkSelectLeft, linkTpd)} onClick={clickActiveTonelaje}>Tonelaje</Link>
             </Grid>
             <Grid item xs={12} sm={12} className={classes.InputContent}>
               <TextField

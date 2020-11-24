@@ -30,7 +30,7 @@ export const config = {
         machineBackground:'/fakes/machinebackground'
       },
       charts: {
-        mtoHeightRecommendation: '/fakes/mto-height-recommendation'
+        mtoHeightRecommendation: '/fakes/mto-height-recommendation/:metric'
       },
       canvas: {
         setting: '/fakes/canvas'

@@ -1,18 +1,37 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import {  useDispatch, useSelector} from "react-redux"
+import { settingActions, settingsDistributionActions } from '../../../../redux/actions'
 import { Information } from "../../../Common"
 import { SettingVariation } from "../../../Common/Calculators/SettingVariation"
-import { Grid, Typography, Paper, Box } from "@material-ui/core"
+import { Grid, Typography, Paper, Box, Hidden } from "@material-ui/core"
 import { useStyles } from "../../style"
 
 import { LineChart } from "../../charts/LineChart"
 
 import { CanvasImg } from '../../../Common/Canvas/CanvasImg'
+import { CanvasPercent } from '../../../Common/Canvas/CanvasPercent'
 
 import settingcalculation2 from '../../../../assets/img/fake/settingcalculation2.png'
 
 
 const SettingCalculation = props => {
   const classes = useStyles()
+  const dispatch = useDispatch()
+
+  const [flag, setFlag] = React.useState(true)
+
+  const settingCanvas = useSelector(state => {
+    return state.setting.canvas
+  })
+
+  useEffect(() => {
+    if(flag || !settingCanvas) {
+      dispatch(settingActions.canvas())
+      setFlag(false)
+    }
+  }, [settingCanvas])
+
+
   return (
     <React.Fragment>
       <Grid
@@ -45,27 +64,34 @@ const SettingCalculation = props => {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={5}>
-          <Paper elevation={3} className={classes.imgCenter}>
+        <Grid item xs={12} sm={10} md={4}>
+          <Paper elevation={3} className={classes.imgCenter, classes.fixHeight}>
             <Box p={2}>
-              <Typography variant="h3" className={classes.defaultTitle} >Zona de setting</Typography>
-              {/* <CanvasImg /> */}
-              <img
-                src={settingcalculation2}
-                alt={"settingcalculation2"}
-                style={{ height: "100%" }}
-              />
+              <Grid container style={{overflowX: 'auto'}}>
+                <Grid item xs={10}>
+                  <Box pt={1} pb={3}>
+                    <CanvasImg canvas = { settingCanvas } />
+                  </Box>
+                </Grid>
+                <Grid item xs={2} disableColumnResize={true} >
+                  <Box pt={1}>
+                    <CanvasPercent  points = {{min: 0, max:100, altura:63}}/>
+                  </Box>
+                </Grid>
+              </Grid>
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={5}>
-          <Paper elevation={3} className={classes.imgCenter}>
-            <Box p={2}>
-              <Typography variant="h3" className={classes.defaultTitle} >Setting v/s Altura de poste</Typography>
-              <LineChart />
-            </Box>
-          </Paper>
-        </Grid>
+        <Hidden smDown >
+          <Grid item xs={12} sm={5} md={6}>
+            <Paper elevation={3} className={classes.imgCenter, classes.fixHeight}>
+              <Box p={2}>
+                <Typography variant="h3" className={classes.defaultTitle} >Setting v/s Altura de poste</Typography>
+                <LineChart />
+              </Box>
+            </Paper>
+          </Grid>
+        </Hidden>
       </Grid>
     </React.Fragment>
   )

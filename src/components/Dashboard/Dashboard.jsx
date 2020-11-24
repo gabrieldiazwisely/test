@@ -6,7 +6,8 @@ import { Information } from "../Common/";
 import { MtoHeightRecommendation } from "../Common/Calculators/";
 import { BarChart } from "./charts/BarChart"
 import { LineChart } from './charts/LineChart'
-
+import ProyeccionesChart from './charts/ProyeccionesChart'
+import clsx from "clsx";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { machineActions, dashboardActions } from '../../redux/actions'
 
@@ -14,8 +15,6 @@ import { machineActions, dashboardActions } from '../../redux/actions'
 
 import _ from 'lodash'
 
-
-import dashboard1 from "../../assets/img/fake/dashboard1.png";
 
 const Dashboard = props => {
   const classes = useStyles();
@@ -33,7 +32,7 @@ const Dashboard = props => {
 
   useEffect(() => {
     if(flag || !dashboardCharts) {
-      dispatch(dashboardActions.mtoHeightRecommendation())
+      dispatch(dashboardActions.mtoHeightRecommendation('d'))
       setFlag(false)
     }
   }, [dashboardCharts])
@@ -63,11 +62,11 @@ const Dashboard = props => {
       return (
         <Grid container>
           <Hidden smDown>
-            <Grid item xs={12} sm={(matches)? 10 : 8 }>
+            <Grid item xs={12} sm={(matches)? 10 : 9 }>
               <LineChart data = { dashboardCharts.mto_height_recommendation } />
             </Grid>
           </Hidden>
-          <Grid item xs={12} sm={(matches)? 2 : (matches2)? 4 : 12 }>
+          <Grid item xs={12} sm={(matches)? 2 : (matches2)? 3 : 12 }>
             <Grid container>
               <Hidden xsDown>
                 <Grid item xs={12} sm={12}>
@@ -113,7 +112,26 @@ const Dashboard = props => {
             <Box p={2}> 
               <Typography variant="h3" className={classes.defaultTitle}>Proyecciones</Typography>
               <Hidden mdDown>
-                <img src={dashboard1} alt={"Dashboard1"} style={{ width: "70%" }} />
+                <Grid container>
+                  <Grid item xs={11} style={{height: '450px'}}>
+                    <ProyeccionesChart />
+                  </Grid>
+                  <Grid item xs={1}>
+                    <Paper className={clsx(classes.paperDesk, classes.paperDesk1)}>
+                      <Typography variant="h6" className={classes.paperDeskDate} >15-09-2020</Typography>
+                      <Typography variant="h5" className={classes.paperDeskMton} >14.98 Mton</Typography>
+                    </Paper>
+                    <Paper className={clsx(classes.paperDesk, classes.paperDesk2)} >
+                      <Typography variant="h6" className={classes.paperDeskDate} >15-09-2020</Typography>
+                      <Typography variant="h5" className={classes.paperDeskMton} >14.98 Mton</Typography>
+                    </Paper>
+                    <Paper className={clsx(classes.paperDesk, classes.paperDesk3)} >
+                      <Typography variant="h6" className={classes.paperDeskDate} >15-09-2020</Typography>
+                      <Typography variant="h5" className={classes.paperDeskMton} >14.98 Mton</Typography>
+                    </Paper>
+                  </Grid>
+                </Grid>
+                
               </Hidden>
               <Hidden lgUp>
                 <Grid container direction="row" justify="center" spacing={2}>

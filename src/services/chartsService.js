@@ -3,10 +3,10 @@ import { config } from "../configs";
 
 const { protocol, hostname, port, version } = config.restapiAuth.server;
 
-const mtoHeightRecommendation = body => {
+const mtoHeightRecommendation = metrica => {
   const requestOptions = {
     // url: `${protocol}://${hostname}${port}${version}/machine`,
-    path: config.apiGateway.routes.charts.mtoHeightRecommendation,
+    path: config.apiGateway.routes.charts.mtoHeightRecommendation.replace(':metric', metrica),
     method: 'GET',
     headers: auth.getHeader(),
     //body
