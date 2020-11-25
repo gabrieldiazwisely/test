@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Information } from "../../../Common"
 import { PostIncreaseRecommendation } from '../../../Common/Calculators/PostIncreaseRecommendation'
 import LineChartSettingPoleIncrement from '../../charts/LineChartSettingPoleIncrement'
-import { useDispatch, useSelector} from "react-redux"
-import { settingsPoleIncrementActions } from '../../../../redux/actions'
+import { useSelector} from "react-redux"
 
 import { 
   Grid, 
@@ -44,7 +43,6 @@ const BootstrapInput = withStyles((theme) => ({
 const IncrementoPoste = props => {
 
   const classes = useStyles()
-  const dispatch = useDispatch()
 
   //settingPoleIncrement api data
   const [settingPoleIncrementData, setSettingPoleIncrementData] = useState({})
@@ -55,20 +53,6 @@ const IncrementoPoste = props => {
   useEffect(() => {
     setSettingPoleIncrementData(settingsPoleIncrement)
   }, [settingsPoleIncrement])
-
-  //PostIncreseRecommendation on submit handle button
-  const [poleIncrementCalculate, setPoleIncrementCalculate] = useState({})
-  useEffect(() => {
-    const getSettingPoleIncrementApiData = () => {
-      dispatch(
-        settingsPoleIncrementActions
-          .getSettingsPoleIncrement(poleIncrementCalculate)
-      )
-    }
-    if (poleIncrementCalculate && Object.keys(poleIncrementCalculate).length > 0) {
-      getSettingPoleIncrementApiData()
-    }
-  }, [poleIncrementCalculate])
 
   const [simulation, setSimulation] = React.useState(1);
 
@@ -99,8 +83,7 @@ const IncrementoPoste = props => {
               </Typography>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={12}>
-                  <PostIncreaseRecommendation 
-                    setPoleIncrementCalculate={ setPoleIncrementCalculate }/>
+                  <PostIncreaseRecommendation />
                 </Grid>
               </Grid>
             </Box>

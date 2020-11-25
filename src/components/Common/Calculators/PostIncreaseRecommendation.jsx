@@ -2,11 +2,13 @@ import React, { useState } from "react"
 import { Grid, Typography, Paper, Button, TextField, Link } from "@material-ui/core"
 import { useStyles } from "./style"
 import clsx from "clsx";
-import PropTypes from 'prop-types'
+import { useDispatch } from "react-redux"
+import { settingsPoleIncrementActions } from '../../../redux/actions'
 
-const PostIncreaseRecommendation = ({ setPoleIncrementCalculate }) => {
+const PostIncreaseRecommendation = () => {
 
   const classes = useStyles()
+  const dispatch = useDispatch()
 
   const [tpd, setTpd] = useState('')
   const [obj, setObj] = useState('')
@@ -19,11 +21,13 @@ const PostIncreaseRecommendation = ({ setPoleIncrementCalculate }) => {
     if (tpd.trim().length === 0 || obj.trim().length === 0) 
       return alert('Por favor, complete todos los campos!')
 
-      setPoleIncrementCalculate({
+    dispatch(
+      settingsPoleIncrementActions.getSettingsPoleIncrement({
         tpd,
         obj,
         type
       })
+    )
   }
 
   return (
@@ -84,10 +88,6 @@ const PostIncreaseRecommendation = ({ setPoleIncrementCalculate }) => {
       </Paper>
     </React.Fragment>
   )
-}
-
-PostIncreaseRecommendation.propTypes = {
-  setPoleIncrementCalculate: PropTypes.func.isRequired
 }
 
 export { PostIncreaseRecommendation }
