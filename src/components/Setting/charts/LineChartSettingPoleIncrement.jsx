@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Line } from 'react-chartjs-2'
 import cloneDeep from 'lodash/cloneDeep'
 import { Grid, Button, Link, Box } from "@material-ui/core"
@@ -6,6 +6,8 @@ import { useStyles } from "../SubMenu/IncrementoPoste/style"
 import clsx from "clsx";
 
 const LineChartSettingPoleIncrement = ({ settingPoleIncrementData }) => {
+
+  const [type, setType] = useState('Fecha')
 
   let xLabel = 
     (settingPoleIncrementData && settingPoleIncrementData.xlabel) 
@@ -119,8 +121,16 @@ const LineChartSettingPoleIncrement = ({ settingPoleIncrementData }) => {
 						className={clsx(classes.Button, classes.MarginTopCero)}>
 						Borrar
 					</Button>
-					<Link className={clsx(classes.Link, classes.active)}>Fecha</Link>
-					<Link className={clsx(classes.Link)}>Tonelaje</Link>
+          <Link 
+            className={ clsx({[classes.Link]: true, [classes.active]: type == 'Fecha' })}
+            onClick={ () => setType('Fecha') }
+            >Fecha
+          </Link>
+          <Link 
+            className={ clsx({[classes.Link]: true, [classes.active]: type == 'Tonelaje' })}
+            onClick={ () => setType('Tonelaje') }
+            >Tonelaje
+          </Link>
 				</Box>
 			</Grid>
 			<Grid item xs={12}>
