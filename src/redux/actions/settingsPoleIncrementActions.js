@@ -18,6 +18,13 @@ const success = ( type, data ) => {
   return { type, data }
 }
 
+const resetSettingsPoleIncrement = () => {
+  return async dispatch => {
+    dispatch( { type: settingsPoleIncrementConstants.RESET_POLE_INCREMENT_DATA } )
+ }
+}
+
 export const settingsPoleIncrementActions = {
-  getSettingsPoleIncrement
+  getSettingsPoleIncrement,
+  resetSettingsPoleIncrement
 }

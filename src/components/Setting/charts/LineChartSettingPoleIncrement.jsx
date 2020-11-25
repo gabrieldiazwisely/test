@@ -4,9 +4,12 @@ import cloneDeep from 'lodash/cloneDeep'
 import { Grid, Button, Link, Box } from "@material-ui/core"
 import { useStyles } from "../SubMenu/IncrementoPoste/style"
 import clsx from "clsx";
+import { useDispatch } from 'react-redux'
+import { settingsPoleIncrementActions } from '../../../redux/actions'
 
 const LineChartSettingPoleIncrement = ({ settingPoleIncrementData }) => {
 
+  const dispatch = useDispatch()
   const [type, setType] = useState('Fecha')
 
   let xLabel = 
@@ -108,6 +111,12 @@ const LineChartSettingPoleIncrement = ({ settingPoleIncrementData }) => {
     }
   }
 
+  const onHandleCleanButtonClick = () => {
+    dispatch(
+      settingsPoleIncrementActions.resetSettingsPoleIncrement()
+    )
+  }
+
 	const classes = useStyles()
 	return (
 		<Grid container>
@@ -117,8 +126,10 @@ const LineChartSettingPoleIncrement = ({ settingPoleIncrementData }) => {
 					flexDirection='row' 
 					justifyContent="flex-end"
 					className={ classes.MarginBottom }>
-					<Button variant="contained" size="medium" color="primary"  
-						className={clsx(classes.Button, classes.MarginTopCero)}>
+          <Button 
+            variant="contained" size="medium" color="primary"  
+						className={clsx(classes.Button, classes.MarginTopCero)}
+            onClick={ onHandleCleanButtonClick }>
 						Borrar
 					</Button>
           <Link 
