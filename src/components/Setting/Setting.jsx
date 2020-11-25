@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react"
-import {  useDispatch, useSelector} from "react-redux"
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector} from "react-redux";
 import { settingActions, settingsDistributionActions } from '../../redux/actions'
 
 import { Grid, Paper, Typography, Box, Hidden } from "@material-ui/core"

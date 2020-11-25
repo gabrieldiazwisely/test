@@ -32,19 +32,42 @@ export const useStyles = makeStyles(theme => ({
   MarginBottom: {
     marginBottom: theme.spacing(2)
   },
+  // Link: {
+  //   cursor: 'pointer',
+  //   color: "#575756",
+  //   background: '#fff 0% 0% no-repeat padding-box',
+  //   borderRadius: '16px 0px 0px 16x',
+  //   opacity: 1,
+  //   padding: theme.spacing(1, 2, 1, 2),
+  //   font: "Normal 16px/16px sans-serif",
+  //   "&:nth-child(1)": {
+  //     borderRadius: "0 16px 16px 0"
+  //   },
+  //   "&:nth-child(2)": {
+  //     borderRadius: "16px 0 0 16px"
+  //   },
+  //   "&:hover": {
+  //     color: "#e7e7e7"
+  //   }
+  // },
+  // active: {
+  //   background: "#0057B8 !important",
+  //   color: '#fff',
+  //   textTransform: "uppercase"
+  // },
   Link: {
     cursor: 'pointer',
     color: "#575756",
     background: '#fff 0% 0% no-repeat padding-box',
-    borderRadius: '16px 0px 0px 16x',
+    borderRadius: '0 20px 20px 0',
     opacity: 1,
     padding: theme.spacing(1, 2, 1, 2),
-    font: "Normal 16px/16px sans-serif",
+    font: "Normal 21px/22px sans-serif",
     "&:nth-child(1)": {
-      borderRadius: "0 16px 16px 0"
+      borderRadius: "0 23px 23px 0"
     },
     "&:nth-child(2)": {
-      borderRadius: "16px 0 0 16px"
+      borderRadius: "23px 0 0 23px"
     },
     "&:hover": {
       color: "#e7e7e7"
@@ -55,10 +78,10 @@ export const useStyles = makeStyles(theme => ({
     color: '#fff',
     textTransform: "uppercase"
   },
-  LinkSelectRight: {
-    paddingRight: '6px'
-  },
-  LinkSelectLeft: {
-    paddingLeft: '3px'
-  }
+  // LinkSelectRight: {
+  //   paddingRight: '6px'
+  // },
+  // LinkSelectLeft: {
+  //   paddingLeft: '3px'
+  // }
 }));

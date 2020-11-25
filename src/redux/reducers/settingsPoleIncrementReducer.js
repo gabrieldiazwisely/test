@@ -10,11 +10,9 @@ export function settingsPoleIncrement(state = initialState, action) {
 			return {
 				...state,
 				data: action.data
-			}
+      }
+    case settingsPoleIncrementConstants.RESET_POLE_INCREMENT_DATA:
+      return {}
 		default: return state
 	}
 }
-
-
-
-

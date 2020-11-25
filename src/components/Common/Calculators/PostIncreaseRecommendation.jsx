@@ -1,14 +1,40 @@
-import React from "react"
+import React, { useState } from "react"
 import { Grid, Typography, Paper, Button, TextField, Link } from "@material-ui/core"
 import { useStyles } from "./style"
 import clsx from "clsx";
+import { useDispatch } from "react-redux"
+import { settingsPoleIncrementActions } from '../../../redux/actions'
 
-const PostIncreaseRecommendation = props => {
+const PostIncreaseRecommendation = () => {
+
   const classes = useStyles()
+  const dispatch = useDispatch()
+
+  const [tpd, setTpd] = useState('')
+  const [obj, setObj] = useState('')
+  const [type, setType] = useState('OSS')
+
+  const onHandleSubmit = e => {
+    e.preventDefault()
+    
+    //validate form data stored in state
+    if (tpd.trim().length === 0 || obj.trim().length === 0) 
+      return alert('Por favor, complete todos los campos!')
+
+    dispatch(
+      settingsPoleIncrementActions.getSettingsPoleIncrement({
+        tpd,
+        obj,
+        type
+      })
+    )
+  }
+
   return (
     <React.Fragment>
       <Paper elevation={3} className={classes.root}>
-        <Grid container  spacing={2}>
+        <form onSubmit={ onHandleSubmit }>
+          <Grid container  spacing={2}>
             <Grid item xs={12} sm={4} className={classes.InputContent}>
               <Typography className={classes.InputLabel}>TPD:</Typography>
               <TextField
@@ -18,7 +44,8 @@ const PostIncreaseRecommendation = props => {
                 className={classes.InputText}
                 InputProps={{
                   className: classes.input,
-                }} 
+                }}
+                onChange={ e => setTpd(e.target.value) }
               />
             </Grid>
             <Grid item xs={12} sm={4} className={classes.InputContent}>
@@ -30,26 +57,37 @@ const PostIncreaseRecommendation = props => {
                 className={classes.InputText}
                 InputProps={{
                   className: classes.input,
-                }} 
+                }}
+                onChange={ e => setObj(e.target.value) }
               />
             </Grid>
             <Grid item xs={12} sm={4} align={'left'} className={classes.MarginTop}>
-              <Link className={clsx(classes.Link, classes.active)}>OSS</Link>
-              <Link className={clsx(classes.Link)}>CSS</Link>
+              <Link 
+                className={ clsx({[classes.Link]: true, [classes.active]: type === 'OSS' })}
+                onClick={ () => setType('OSS') }
+                >OSS
+              </Link>
+              <Link 
+                className={ clsx({[classes.Link]: true, [classes.active]: type === 'CSS' })}
+                onClick={ () => setType('CSS') }
+                >CSS
+              </Link>
             </Grid>
             <Grid item xs={12} sm={12} align={'right'}>
-              <Button variant="contained" size="medium" color="primary"  className={clsx(classes.Button, classes.MarginTopCero)}>
-                Calcular
+              <Button 
+                variant="contained" 
+                size="medium" 
+                color="primary"  
+                className={clsx(classes.Button, classes.MarginTopCero)}
+                type='submit'
+                >Calcular
               </Button>
             </Grid>
-        </Grid>
+          </Grid>
+        </form>
       </Paper>
     </React.Fragment>
   )
-}
-
-PostIncreaseRecommendation.propTypes = {
-  
 }
 
 export { PostIncreaseRecommendation }

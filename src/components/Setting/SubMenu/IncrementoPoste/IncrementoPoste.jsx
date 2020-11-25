@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Information } from "../../../Common"
 import { PostIncreaseRecommendation } from '../../../Common/Calculators/PostIncreaseRecommendation'
 import LineChartSettingPoleIncrement from '../../charts/LineChartSettingPoleIncrement'
+import { useSelector} from "react-redux"
 
 import { 
   Grid, 
@@ -17,9 +18,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { useStyles } from "../../style"
 
 import Table from "./Table";
-
-import incrementoposte0 from "../../../../assets/img/fake/incrementoposte0.png"
-import incrementoposte1 from "../../../../assets/img/fake/incrementoposte1.png"
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -43,7 +41,18 @@ const BootstrapInput = withStyles((theme) => ({
 }))(InputBase);
 
 const IncrementoPoste = props => {
+
   const classes = useStyles()
+
+  //settingPoleIncrement api data
+  const [settingPoleIncrementData, setSettingPoleIncrementData] = useState({})
+
+  const settingsPoleIncrement = useSelector(state => {
+    return state.settingsPoleIncrement.data
+  })
+  useEffect(() => {
+    setSettingPoleIncrementData(settingsPoleIncrement)
+  }, [settingsPoleIncrement])
 
   const [simulation, setSimulation] = React.useState(1);
 
@@ -87,7 +96,8 @@ const IncrementoPoste = props => {
                 Recomendación de altura del poste del manto
               </Typography>
               <Grid item xs={12}>
-                <LineChartSettingPoleIncrement />
+                <LineChartSettingPoleIncrement 
+                  settingPoleIncrementData={ settingPoleIncrementData }/>
               </Grid>
             </Box>
           </Paper>
