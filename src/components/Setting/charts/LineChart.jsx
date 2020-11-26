@@ -80,7 +80,7 @@ class LineChart extends Component {
   render() {
     return (
       <div>
-        <Line data={cloneDeep(data)} options={options} height={125}/>
+        <Line data={cloneDeep(data)} options={options} height={120}/>
       </div>
     )
   }

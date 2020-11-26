@@ -43,19 +43,11 @@ const SettingVariation = props => {
   }
 
   const clickCalcularAP = (event) => {
-    if(valueAP === '') {
-      setValueAP(valueAPS * 4)
-    } else {
-      setValueAPS(valueAP * 2)
-    }
+      setValueAPS(valueAP * 3)
   }
 
-  const clickCalcularPH = () => {
-    if(valuePH === '') {
-      setValuePH(valuePHS * 5)
-    } else {
-      setValuePHS(valuePH * 3)
-    }
+  const clickCalcularPH = () => { 
+    setValuePH(valuePHS * 3)
   }
 
   
@@ -100,7 +92,8 @@ const SettingVariation = props => {
                       className: classes.input,
                     }} 
                     value={valueAPS}
-                    onChange={changeAPS}
+                    // onChange={changeAPS}
+                    // disabled
                   />
                 </Grid>
               </Grid>
@@ -137,7 +130,8 @@ const SettingVariation = props => {
                       className: classes.input,
                     }} 
                     value={valuePH}
-                    onChange={changePH}
+                    // onChange={changePH}
+                    // disabled
                   />
                 </Grid>
               </Grid>

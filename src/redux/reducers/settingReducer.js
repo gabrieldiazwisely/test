@@ -2,8 +2,14 @@ import { settingConstants } from "../constants";
 
 const initialState = {
   canvas: {
-    perfilesLongitudinales: [],
-    nominales: []
+    ejemploNominales: {},
+    perfilesLongitudinalesConcava: {},
+    perfilesLongitudinalesManto: {},
+    height: {
+      min: 0,
+      max: 100,
+      medium: 0
+    }
   }
 }
 

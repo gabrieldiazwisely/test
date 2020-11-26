@@ -73,7 +73,7 @@ const Setting = props => {
               </Grid>
               <Grid item xs={2} disableColumnResize={true} >
                 <Box pt={1}>
-                  <CanvasPercent  points = {{min: 0, max:100, altura:63}}/>
+                  <CanvasPercent  points = {{min: settingCanvas.height.min, max:settingCanvas.height.max, altura:settingCanvas.height.midium}}/>
                 </Box>
               </Grid>
             </Grid>
