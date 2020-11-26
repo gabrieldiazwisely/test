@@ -4,38 +4,32 @@ import cloneDeep from 'lodash/cloneDeep'
 
 const LineChartSettingsDistributionHeight = ({ heightData }) => {
 
+  console.log('heightData', heightData)
+
   heightData = {
-    x: ['10','20','30','40','50','60','70','80','90','100'], 
+    // x: ['10','20','30','40','50','60','70','80','90','100'], 
     points: [
-      {x: 0, y: 7.634307169827454},
-      {x: 2, y: 7.808075717458578},
-      {x: 4, y: 7.4473037960704715}
-      // {x: '6', y: '7.049794775317785'},
-      // {x: '8', y: '7.0595332950030185'},
-      // {x: '10', y: '7.169494583072296'},
-      // {x: '12', y: '7.691462976156072'},
-      // {x: '14', y: '7.422518971051361'},
-      // {x: '16', y: '7.675066882698764'},
-      // {x: '18', y: '7.527046356178005'},
-    ]
-    
-    
-    
-    
-
-
-
+      {x: '0', y: '7.634307169827454'},
+      {x: '2', y: '7.808075717458578'},
+      {x: '4', y: '7.4473037960704715'},
+      {x: '6', y: '7.049794775317785'},
+      {x: '8', y: '7.0595332950030185'},
+      {x: '10', y: '7.169494583072296'},
+      {x: '12', y: '7.691462976156072'},
+      {x: '14', y: '7.422518971051361'},
+      {x: '16', y: '7.675066882698764'},
+      {x: '18', y: '7.527046356178005'},
+    ],
+    average_line: { y: '7.5' },
+    vertical_lines: ['2', '5', '9', '10.5']
   }
 
-
-  console.log(heightData)
-
   const data = {
-    labels: [...heightData.x],
+    // labels: [...heightData.x],
     datasets: [
       {
         label: 'Remanente ',
-        fill: true,
+        fill: false,
         type: 'scatter',
         backgroundColor: 'rgba(75,134,200,0)',
         borderColor: 'rgba(75,134,200,1)',
@@ -54,50 +48,32 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
         pointHitRadius: 1,
         data: [...heightData.points]
       },
-      // {
-      //   label: 'Sep. de ccv ',
-      //   fill: true,
-      //   lineTension: 0.1,
-      //   backgroundColor: 'rgba(#838383,0.nino4)',
-      //   borderColor: 'rgba(#838383,1)',
-      //   borderCapStyle: 'butt',
-      //   borderDash: [],
-      //   borderDashOffset: 0.0,
-      //   borderJoinStyle: 'miter',
-      //   pointBorderColor: 'rgba(#838383,1)',
-      //   pointBackgroundColor: '#fff',
-      //   pointBorderWidth: 1,
-      //   pointHoverRadius: 5,
-      //   // pointHoverBackgroundColor: 'rgba(#838383,1)',
-      //   pointHoverBorderColor: 'rgba(220,220,220,1)',
-      //   pointHoverBorderWidth: 2,
-      //   pointRadius: 1,
-      //   pointHitRadius: 10,
-      //   data: []
-      // },
-      // {
-      //   label: 'Promedio ',
-      //   fill: true,
-      //   showLine: true,
-      //   lineTension: 0.1,
-      //   backgroundColor: 'rgba(75,192,192,0)',
-      //   borderColor: 'rgba(75,192,192,1)',
-      //   borderCapStyle: 'butt',
-      //   borderDash: [],
-      //   borderDashOffset: 0.0,
-      //   borderJoinStyle: 'miter',
-      //   pointBorderColor: 'rgba(75,192,192,1)',
-      //   pointBackgroundColor: 'rgba(75,192,192,1)',
-      //   pointBorderWidth: 1,
-      //   pointHoverRadius: 1,
-      //   // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-      //   pointHoverBorderColor: 'rgba(220,220,220,1)',
-      //   pointHoverBorderWidth: 2,
-      //   pointRadius: 1,
-      //   pointHitRadius: 1,
-      //   // data: [...heightData.green_line]
-      // },
+      {
+        label: 'Sep. de ccv ',
+        backgroundColor: 'rgba(131, 131, 131, 1)',
+        borderColor: 'rgba(131, 131, 131, 1)',
+      },
+      {
+        label: 'Promedio ',
+        backgroundColor: 'rgba(9, 187, 55, 1)',
+        borderColor: 'rgba(9, 187, 55, 1)',
+      }
     ]
+  }
+
+  const getAverageLine = () => {
+    const { y } = heightData.average_line
+    return ({
+      type: 'line',
+      mode: 'horizontal',
+      scaleID: 'y-axis-0',
+      value: y,
+      backgroundColor: 'rgba(9, 187, 55, 1)',
+      borderColor: 'rgba(9, 187, 55, 1)',
+      borderWidth: 1,
+      fill: true,
+      showLine: true,
+    })
   }
 
   const getVerticalLines = () => {
@@ -108,7 +84,8 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
         mode: 'vertical',
         scaleID: 'x-axis-0',
         value: x,
-        borderColor: '#838383',
+        backgroundColor: 'rgba(131, 131, 131, 1)',
+        borderColor: 'rgba(131, 131, 131, 1)',
         borderWidth: 1
       })
     })
@@ -116,7 +93,10 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
   
   const options = {
     annotation: {
-      // annotations: [...getVerticalLines()]
+      annotations: [
+        getAverageLine(), 
+        ...getVerticalLines()
+    ]
   },
     layout: {
       padding: {
@@ -127,27 +107,19 @@ const LineChartSettingsDistributionHeight = ({ heightData }) => {
     scales: {
     xAxes: [{
       type: 'linear',
-      position: 'bottom',
-      // labels: [...heightData.x],
-      // stacked: true,
-      // gridLines: {
-      //   display: false
-      // },
-      // scaleLabel: {
-      //   display: true,
-      //   labelString: 'Angulo (deg)',
-      //   // fontSize: 21,
-      //   // fontColor: '#0057B8'
-      // }
+      stacked: true,
+      gridLines: {
+        display: false
+      },
     }],
     yAxes: [{
-      stacked: true,
-      scaleLabel: {
-        display: true,
-        labelString: 'Remanente [mm]',
+      // stacked: true,
+      // scaleLabel: {
+      //   display: true,
+      //   labelString: 'Remanente [mm]',
         // fontSize: 21,
         // fontColor: '#0057B8'
-      }
+      // }
     }],
     },
     responsive: true,
