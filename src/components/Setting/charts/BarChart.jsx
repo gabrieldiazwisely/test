@@ -5,6 +5,7 @@ import cloneDeep from 'lodash/cloneDeep'
 
 const data = {
   labels: ['7,75"', '8,0"', '9,25"'],
+  mm: ['130','145','205'],
   datasets: [
   {
       label: "Porciento",
@@ -16,50 +17,71 @@ const data = {
   }]
 }
 
-const options = {
-  layout: {
-    padding: {
-      bottom: 0,
-      top: 0
-    }
-  },
-  scales: {
-    xAxes: [{
-      stacked: false,
-      gridLines: {
-        display: false
-      },
-      scaleLabel: {
-        display: true,
-        labelString: 'Setting',
-      },
-    }],
-    yAxes: [{
-      stacked: false,
-      scaleLabel: {
-        display: true,
-        labelString: 'Altura de poste en porcentaje y mm',
-      },
-      ticks: {
-        min: 0,
-        max: 100,
-        callback: function(value, index, values) {
-          return (value / 100 * 100).toFixed(0) + '%'; 
-        }
-      },
-      
-        }],
-  },
-      responsive: true,
-        legend: {
-          display: false,
-          position: 'right',
-          labels: {
-            fontColor: '#91929b',
-            padding: 20
+  const options = {
+    layout: {
+      padding: {
+        bottom: 0,
+        top: 0
+      }
+    },
+    scales: {
+      xAxes: [{
+        stacked: false,
+        gridLines: {
+          display: false
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'Setting',
+        },
+      }],
+      yAxes: [{
+        stacked: false,
+        scaleLabel: {
+          display: true,
+          labelString: 'Altura de poste en porcentaje y mm',
+        },
+        ticks: {
+          min: 0,
+          max: 100,
+          callback: function(value, index, values) {
+            return (value / 100 * 100).toFixed(0) + '%'; 
           }
+        },
+      }],
+    },
+    responsive: true,
+    legend: {
+      display: false,
+      position: 'right',
+      labels: {
+        fontColor: '#91929b',
+        padding: 20
+      }
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItem, data) {
+          let index = tooltipItem[0].index;      
+          let datasetIndex = tooltipItem[0].datasetIndex;
+          return data.datasets[datasetIndex].data[index] + '% ';
+        },
+        label: function(tooltipItem, data) {
+          let index = tooltipItem.index;      
+          let datasetIndex = tooltipItem.datasetIndex;      
+          return data.mm[index] + 'mm ' 
         }
-      };
+      },
+      // backgroundColor: '#bab4b4',
+      titleFontSize: 20,
+      titleAlign: 'center',
+      titleFontColor: '#fff',
+      bodyFontColor: '#fff',
+      bodyFontSize: 18,
+      displayColors: false,
+      position: 'average'
+    }
+  }
 
 class BarChart extends Component {
   constructor(props) {

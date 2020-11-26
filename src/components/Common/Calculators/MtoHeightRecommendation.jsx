@@ -104,8 +104,8 @@ const MtoHeightRecommendation = props => {
                 }} 
               />
             </Grid>
-            <Grid item xs={12} sm={12} align={'right'}>
-              <Button onClick={clickUpdate} variant="contained" size="medium" color="primary"  className={clsx(classes.Button, classes.MarginTopCero)}>
+            <Grid item xs={12} sm={12} style={{display: 'flex'}}>
+              <Button onClick={clickUpdate} variant="contained" size="medium" color="primary"  className={clsx(classes.Button, classes.MarginTopCero)} style={{width: '100%'}}>
                 Actualizar
               </Button>
             </Grid>

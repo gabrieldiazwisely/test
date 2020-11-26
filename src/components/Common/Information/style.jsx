@@ -6,7 +6,10 @@ export const useStyles = makeStyles(theme => ({
     borderRadius: "7px 25px 25px 0px",
     textAlign: "left",
     width: '100%',
-    marginLeft: 0
+    marginLeft: 0,
+    '@media (max-width:522px)': {
+      marginTop: theme.spacing(5),
+    },
   },
   icon: {
     background: "#0057B8",

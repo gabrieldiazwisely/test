@@ -18,7 +18,7 @@ class ProyeccionesChart extends React.Component {
       gradient.addColorStop(0.9, "#FF0000"); // Verde
       
       return {
-        labels: ['Desgaste ccv', 'Desgaste de Manto','Perdida de Setting'],
+        labels: ['Desgaste ccv         '],
         datasets: [
           {
             label: 'Manto 110"',
@@ -27,7 +27,7 @@ class ProyeccionesChart extends React.Component {
             borderWidth: 1,
             stack: 1,
             order: 1,
-            data: [moment('2020-05-10').valueOf(),moment('2020-06-07').valueOf(),moment('2020-05-10').valueOf()]
+            data: [moment('2020-05-10').valueOf()]
           },
           {
             label: 'Manto 113"',
@@ -36,7 +36,7 @@ class ProyeccionesChart extends React.Component {
             borderWidth: 1,
             stack: 1,
             order: 2,
-            data: [moment('2020-05-10').valueOf(),moment('2020-09-07').valueOf(),moment('2020-05-10').valueOf()]
+            data: [moment('2020-05-10').valueOf()]
           },
           {
             label: 'Manto 115"',
@@ -45,11 +45,11 @@ class ProyeccionesChart extends React.Component {
             borderWidth: 1,
             stack: 1,
             order: 3,
-            data: [moment('2020-05-10').valueOf(),moment('2020-10-18').valueOf(),moment('2020-05-10').valueOf()]
+            data: [moment('2020-05-10').valueOf()]
           },
           {
             label: 'Dias Operacion',
-            data: [moment('2020-10-20').valueOf(), moment('2020-10-20').valueOf(), moment('2020-10-20').valueOf()],
+            data: [moment('2020-10-20').valueOf()],
             backgroundColor: 'rgb(240, 240, 240)',
             borderColor: 'rgb(240, 240, 240)',
             borderWidth: 1,
@@ -58,7 +58,7 @@ class ProyeccionesChart extends React.Component {
           },
           {
             label: 'Dias Proyectados',
-            data: [moment('2020-11-18').valueOf(), moment('2020-12-12').valueOf(), moment('2020-12-04').valueOf()],
+            data: [moment('2020-11-18').valueOf()],
             backgroundColor: gradient,
             borderColor: gradient,
             borderWidth: 1,
@@ -118,6 +118,7 @@ class ProyeccionesChart extends React.Component {
               unitStepSize: 1,
             },
             ticks: {
+              display: false,
               min: moment('2020-05-10').valueOf(),
               max: moment('2020-12-10').valueOf(),
               callback: value => {
@@ -138,14 +139,14 @@ class ProyeccionesChart extends React.Component {
       },
       responsive: true,
       legend: {
-        display: true,
+        display: false,
         position: 'bottom',
         labels: {
           display: false,
           fontColor: '#91929b',
           padding: 20
         },
-        // onClick: null
+        onClick: null
       },
       tooltips: {
         callbacks: {
@@ -154,14 +155,14 @@ class ProyeccionesChart extends React.Component {
             let index = tooltipItem.index;      
             let datasetIndex = tooltipItem.datasetIndex;      
             let date = moment(data.datasets[datasetIndex].data[index]);            
-            if (date != moment('2020-05-10').valueOf()) 
+            if (date != moment('2020-05-10').valueOf()) // si el valor igual al minimo no mostrar!
               return data.datasets[datasetIndex].label + ': ' + date.format('D-M-YYYY')
           }
         }
       }
     }
   
-    return (<HorizontalBar data={data} options={options} height={100} />)
+    return (<HorizontalBar data={data} options={options} height={30} />)
   }
 }
 

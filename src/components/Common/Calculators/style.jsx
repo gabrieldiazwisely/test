@@ -62,6 +62,7 @@ export const useStyles = makeStyles(theme => ({
   },
   Link: {
     cursor: 'pointer',
+    width: '100%',
     color: "#575756",
     background: '#fff 0% 0% no-repeat padding-box',
     borderRadius: '20px 0px 0px 20px',
@@ -142,7 +143,8 @@ export const useStyles = makeStyles(theme => ({
     }
   },
   SelectContent: {
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
+    display: 'flex'
   },
   LinkSelectRight: {
     paddingRight: '6px'

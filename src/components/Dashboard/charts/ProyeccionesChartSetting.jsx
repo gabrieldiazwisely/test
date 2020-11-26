@@ -3,6 +3,43 @@ import { HorizontalBar, Bar } from 'react-chartjs-2'
 
 const moment = require('moment')
 
+const options = {
+  layout: {
+    padding: {
+      bottom: 0,
+      top: 0
+    }
+  },
+  scales: {
+  xAxes: [{
+    stacked: true,
+    gridLines: {
+      display: false
+    },
+    scaleLabel: {
+      display: true,
+      labelString: 'N° campaña. Duración Mton'
+    }
+  }],
+  yAxes: [{
+    stacked: true,
+    scaleLabel: {
+      display: true,
+      labelString: 'Procesamiento Mton'
+    }
+  }],
+  },
+  responsive: true,
+  legend: {
+    display: true,
+    position: 'right',
+    labels: {
+      fontColor: '#91929b',
+      padding: 20
+    }
+  }
+}
+
 class ProyeccionesChart extends React.Component {
   constructor(props) {
     super(props)
@@ -18,7 +55,7 @@ class ProyeccionesChart extends React.Component {
       gradient.addColorStop(0.9, "#FF0000"); // Verde
       
       return {
-        labels: ['Desgaste ccv', 'Desgaste de Manto','Perdida de Setting'],
+        labels: ['Perdida de Setting  '],
         datasets: [
           {
             label: 'Manto 110"',
@@ -27,7 +64,7 @@ class ProyeccionesChart extends React.Component {
             borderWidth: 1,
             stack: 1,
             order: 1,
-            data: [moment('2020-05-10').valueOf(),moment('2020-06-07').valueOf(),moment('2020-05-10').valueOf()]
+            data: [moment('2020-05-10').valueOf()]
           },
           {
             label: 'Manto 113"',
@@ -36,7 +73,7 @@ class ProyeccionesChart extends React.Component {
             borderWidth: 1,
             stack: 1,
             order: 2,
-            data: [moment('2020-05-10').valueOf(),moment('2020-09-07').valueOf(),moment('2020-05-10').valueOf()]
+            data: [moment('2020-05-10').valueOf()]
           },
           {
             label: 'Manto 115"',
@@ -45,11 +82,11 @@ class ProyeccionesChart extends React.Component {
             borderWidth: 1,
             stack: 1,
             order: 3,
-            data: [moment('2020-05-10').valueOf(),moment('2020-10-18').valueOf(),moment('2020-05-10').valueOf()]
+            data: [moment('2020-05-10').valueOf()]
           },
           {
             label: 'Dias Operacion',
-            data: [moment('2020-10-20').valueOf(), moment('2020-10-20').valueOf(), moment('2020-10-20').valueOf()],
+            data: [moment('2020-10-20').valueOf()],
             backgroundColor: 'rgb(240, 240, 240)',
             borderColor: 'rgb(240, 240, 240)',
             borderWidth: 1,
@@ -58,7 +95,7 @@ class ProyeccionesChart extends React.Component {
           },
           {
             label: 'Dias Proyectados',
-            data: [moment('2020-11-18').valueOf(), moment('2020-12-12').valueOf(), moment('2020-12-04').valueOf()],
+            data: [moment('2020-12-04').valueOf()],
             backgroundColor: gradient,
             borderColor: gradient,
             borderWidth: 1,
@@ -84,7 +121,7 @@ class ProyeccionesChart extends React.Component {
             showLine: true,
             label: {
               content: "Fecha Instalacion Concava: 10-05-2020",
-              enabled: true,
+              enabled: false,
               position: "top",
               xAdjust: -120,
             }
@@ -100,7 +137,7 @@ class ProyeccionesChart extends React.Component {
             showLine: true,
             label: {
               content: "Fecha Actual: 19-20-2020",
-              enabled: true,
+              enabled: false,
               position: "top",
             }
           }
@@ -142,10 +179,10 @@ class ProyeccionesChart extends React.Component {
         position: 'bottom',
         labels: {
           display: false,
-          fontColor: '#91929b',
+          fontColor: '#000000',
           padding: 20
         },
-        // onClick: null
+        onClick: null
       },
       tooltips: {
         callbacks: {
@@ -154,15 +191,117 @@ class ProyeccionesChart extends React.Component {
             let index = tooltipItem.index;      
             let datasetIndex = tooltipItem.datasetIndex;      
             let date = moment(data.datasets[datasetIndex].data[index]);            
-            if (date != moment('2020-05-10').valueOf()) 
+            if (date != moment('2020-05-10').valueOf()) // si el valor igual al minimo no mostrar!
               return data.datasets[datasetIndex].label + ': ' + date.format('D-M-YYYY')
           }
         }
       }
     }
   
-    return (<HorizontalBar data={data} options={options} height={100} />)
+    return (<HorizontalBar data={data} options={options} height={45} />)
   }
 }
 
 export default ProyeccionesChart
+
+// import React, { Component } from 'react'
+
+// import { makeStyles } from '@material-ui/core/styles';
+// import pattern from "patternomaly"
+
+// import { HorizontalBar, Bar } from 'react-chartjs-2'
+// import cloneDeep from 'lodash/cloneDeep'
+
+// import { CondicionSalidaModal } from '../CondicionDesgasteModal/CondicionSalidaModal'
+
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     position: 'absolute',
+//     backgroundColor: theme.palette.background.paper,
+//     padding: theme.spacing(0, 4, 3),
+//     margin: theme.spacing(2, 4, 3),
+//     overflow:'scroll',
+//     height:'100%',
+//   },
+// }));
+
+
+
+
+
+
+
+// const ProyeccionesChart = (props) => {
+
+
+//   const data = { 
+//     labels: ['Desgaste CCV', 'desgaste de manto', 'Perdida de Setting'],
+//     datasets: [
+//       {
+//         label: 'manto 107" Mton',
+//         backgroundColor: gradient,
+//         borderColor: 'rgba(255,99,132)',
+//         borderWidth: 1,
+//         stack: 1,
+//         hoverBackgroundColor: gradient,
+//         hoverBorderColor: 'rgba(255,99,132)',
+//         data: [7.50, 6.76, 9.70]
+//       },
+//       {
+//         label: 'manto 110" Mton',
+//         backgroundColor: 'rgba(155,231,91,0.2)',
+//         borderColor: 'rgba(155,231,91,1)',
+//         borderWidth: 1,
+//         stack: 1,
+//         hoverBackgroundColor: 'rgba(155,231,91,0.4)',
+//         hoverBorderColor: 'rgba(155,231,91,1)',
+//         data: [0, 7.21, 5.30]
+//       }
+//     ]
+//   }
+
+//   const options = {
+//     layout: {
+//       padding: {
+//         bottom: 0,
+//         top: 0
+//       }
+//     },
+//     scales: {
+//     xAxes: [{
+//       stacked: true,
+//       gridLines: {
+//         display: false
+//       },
+//       scaleLabel: {
+//         display: false,
+//         labelString: ''
+//       }
+//     }],
+//     yAxes: [{
+//       stacked: true,
+//       scaleLabel: {
+//         display: false,
+//         labelString: ''
+//       }
+//     }],
+//     },
+//     responsive: true,
+//     legend: {
+//       display: true,
+//       position: 'right',
+//       labels: {
+//         fontColor: '#91929b',
+//         padding: 20
+//       }
+//     },
+//   }
+  
+//   return (
+//     <div>
+//       <Bar data={cloneDeep(data)} options={options} />
+//     </div>
+//   )
+// }
+
+// export { ProyeccionesChart };
