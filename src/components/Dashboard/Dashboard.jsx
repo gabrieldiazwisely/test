@@ -6,6 +6,9 @@ import { Information } from "../Common/";
 import { MtoHeightRecommendation } from "../Common/Calculators/";
 import { BarChart } from "./charts/BarChart"
 import { LineChart } from './charts/LineChart'
+import ProyeccionesChartCCV from './charts/ProyeccionesChartCCV'
+import ProyeccionesChartManto from './charts/ProyeccionesChartManto'
+import ProyeccionesChartSetting from './charts/ProyeccionesChartSetting'
 import ProyeccionesChart from './charts/ProyeccionesChart'
 import clsx from "clsx";
 import { connect, useDispatch, useSelector } from "react-redux";
@@ -115,6 +118,7 @@ const Dashboard = props => {
                 <Grid container>
                   <Grid item xs={11} style={{height: '450px'}}>
                     <ProyeccionesChart />
+
                   </Grid>
                   <Grid item xs={1}>
                     <Paper className={clsx(classes.paperDesk, classes.paperDesk1)}>

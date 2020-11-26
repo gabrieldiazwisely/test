@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 
+const min = 10
+const max = 300
 const data = {
   labels: ['7,00', '7,25', '7,50', '7,75', '8,00', '8,25', '8,50', '8,75', '9,00', '9,25'],
   datasets: [
@@ -26,7 +28,7 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [260, 245, 180, 159, 143, 120, 99, 80,40,1]
+      data: [Math.random() * (max - min) + min, Math.random() * (max - min) + min, Math.random() * (max - min) + min, Math.random() * (max - min) + min, Math.random() * (max - min) + min, Math.random() * (max - min) + min, Math.random() * (max - min) + min, Math.random() * (max - min) + min,Math.random() * (max - min) + min,Math.random() * (max - min) + min]
     }
   ]
 }
@@ -78,7 +80,7 @@ class LineChart extends Component {
   render() {
     return (
       <div>
-        <Line data={cloneDeep(data)} options={options}/>
+        <Line data={cloneDeep(data)} options={options} height={125}/>
       </div>
     )
   }

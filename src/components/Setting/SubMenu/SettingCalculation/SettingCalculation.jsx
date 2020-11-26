@@ -87,7 +87,9 @@ const SettingCalculation = props => {
             <Paper elevation={3} className={classes.imgCenter, classes.fixHeight}>
               <Box p={2}>
                 <Typography variant="h3" className={classes.defaultTitle} >Setting v/s Altura de poste</Typography>
-                <LineChart />
+              </Box>
+              <Box>
+                <LineChart/>
               </Box>
             </Paper>
           </Grid>

@@ -20,7 +20,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const data = {
-  labels: ['Campaña 1 05-03-2011 19.07', 'Campaña 2 14-10-2011 13.96', 'Campaña 3 24-03-2012 15.04', 'Campaña 5 06-11-2012 11.82'],
+  labels: [
+    'Campaña 1 05-03-2019 19.07', 
+    'Campaña 2 14-05-2019 13.96', 
+    'Campaña 3 24-07-2019 15.04', 
+    'Campaña 4 06-09-2019 11.82',
+    'Campaña 5 05-11-2019 19.07', 
+    'Campaña 6 14-12-2019 17.66', 
+    'Campaña 7 24-04-2020 12.24', 
+    'Campaña 8 06-06-2020 10.00', 
+    'Campaña 9 24-08-2020 12.04', 
+    'Campaña 10 06-10-2020 11.22', 
+    'Campaña 11 24-12-2020 16.04'],
   datasets: [
     {
       label: 'manto 107" Mton',
@@ -30,7 +41,7 @@ const data = {
       stack: 1,
       hoverBackgroundColor: 'rgba(255,99,132,0.2)',
       hoverBorderColor: 'rgba(255,99,132)',
-      data: [7.50, 6.76, 9.70, 9.00]
+      data: [7.50, 6.76, 9.70, 9.00, 8.22, 7.50, 6.76, 9.70, 9.00, 8.22, 6.30]
     },
     {
       label: 'manto 110" Mton',
@@ -40,7 +51,17 @@ const data = {
       stack: 1,
       hoverBackgroundColor: 'rgba(155,231,91,0.4)',
       hoverBorderColor: 'rgba(155,231,91,1)',
-      data: [0, 7.21, 5.30, 4.32]
+      data: [0, 7.21, 5.30, 4.32, 9.00, 8.22, 7.50, 6.76, 9.70, 9.00, 8.22]
+    },
+    {
+      label: 'manto 113" Mton',
+      backgroundColor: 'rgba(0, 101, 255,0.2)',
+      borderColor: 'rgba(0, 101, 255,1)',
+      borderWidth: 1,
+      stack: 1,
+      hoverBackgroundColor: 'rgba(0, 101, 255,0.4)',
+      hoverBorderColor: 'rgba(0, 101, 255,1)',
+      data: [0, 7.21, 5.30, 4.32, 9.00, 8.22, 7.50, 6.76, 6.76, 9.70, 9.00,]
     }
   ]
 }
