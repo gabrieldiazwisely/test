@@ -16,6 +16,7 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import { useStyles } from "../../style";
+import PropTypes from 'prop-types'
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -38,13 +39,34 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-export default function SpanningTable() {
-  const classes = useStyles();
+const SpanningTable = ({ frecuencyDays, x, y }) => {
 
-  const [date, setDate] = React.useState(1);
+  //only show the first 10 entries
+  const newX = x.slice(0, 10)
+  const newY = y.slice(0, 10)
+
+  const classes = useStyles();
+  const [date, setDate] = React.useState(frecuencyDays[0])
 
   const handleChangeDate = event => {
     setDate(event.target.value);
+  }
+
+  const getFrecuencyDaysMenuItems = () => {
+    return frecuencyDays.map( d => <MenuItem key={ d } value={ d } >{ d }</MenuItem> )
+  }
+
+  const getBody = () => {
+    return newX.map( (x, i) => (
+      <TableRow key={ i }>
+        <TableCell align="center" className={classes.tableItemKey}>
+          { x }
+        </TableCell>
+        <TableCell align="center" className={classes.tableItemValue}>
+          { y[i] }
+        </TableCell>
+      </TableRow>
+    ))
   }
 
   return (
@@ -54,7 +76,7 @@ export default function SpanningTable() {
           <TableRow>
             <TableCell align="center" className={classes.tableTitle}>
               <FormControl fullWidth variant="outlined" className={classes.formControl} >
-                  <Select
+                <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={date}
@@ -66,12 +88,12 @@ export default function SpanningTable() {
                     },
                   }}
                 >
-                  <MenuItem value="" disabled>
+                  <MenuItem value='' disabled>
                     Frecuencia de días para incremento poste
                   </MenuItem>
-                  <MenuItem value={1}>1</MenuItem>
-                  <MenuItem value={2}>2</MenuItem>
-                  <MenuItem value={3}>3</MenuItem>
+
+                  { getFrecuencyDaysMenuItems() }
+                
                 </Select>
               </FormControl>
             </TableCell>
@@ -81,40 +103,17 @@ export default function SpanningTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow key={1}>
-            <TableCell align="center" className={classes.tableTitle}>
-              12 - dic
-            </TableCell>
-            <TableCell align="center" className={classes.tableStatus}>
-              172
-            </TableCell>
-          </TableRow>
-          <TableRow key={2}>
-            <TableCell align="center" className={classes.tableTitle}>
-              15 - dic
-            </TableCell>
-            <TableCell align="center" className={classes.tableStatus}>
-              220
-            </TableCell>
-          </TableRow>
-          <TableRow key={3}>
-            <TableCell align="center" className={classes.tableTitle}>
-              17 - dic
-            </TableCell>
-            <TableCell align="center" className={classes.tableStatus}>
-              248
-            </TableCell>
-          </TableRow>
-          <TableRow key={4}>
-            <TableCell align="center" className={classes.tableTitle}>
-              21 - dic
-            </TableCell>
-            <TableCell align="center" className={classes.tableStatus}>
-              260
-            </TableCell>
-          </TableRow>
+          { getBody() }
         </TableBody>
       </Table>
     </TableContainer>
   );
 }
+
+SpanningTable.propTypes = {
+  frecuencyDays: PropTypes.array.isRequired,
+  x: PropTypes.array.isRequired,
+  y: PropTypes.array.isRequired
+}
+
+export default SpanningTable

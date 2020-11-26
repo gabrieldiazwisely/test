@@ -48,5 +48,14 @@ export const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(2),
     color: '#0057B8',
     fontSize: '2.125rem',
+  },
+  tableItemKey:  {
+    color: "#fff",
+    background: "#0057B8",
+    font: "16px/18px Arial"
+  },
+  tableItemValue: {
+    background: "#EDEDED",
+    font: "16px/18px Arial"
   }
 }));
