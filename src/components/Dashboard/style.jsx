@@ -140,7 +140,7 @@ export const useStyles = makeStyles(theme => ({
     '@media (max-width: 1620px)': {
       fontSize: '1rem',
     },
-    '@media (max-width: 15835px)': {
+    '@media (max-width: 1535px)': {
       fontSize: '0.8rem',
     }
   },
