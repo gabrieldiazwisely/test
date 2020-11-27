@@ -2,9 +2,21 @@ import { settingConstants } from "../constants";
 
 const initialState = {
   canvas: {
-    ejemploNominales: {},
-    perfilesLongitudinalesConcava: {},
-    perfilesLongitudinalesManto: {},
+    ejemploNominales: {
+      brushColor: "#ffffff",
+      brushRadius: 1,
+      points:[{x: 0, y: 0}]
+    },
+    perfilesLongitudinalesConcava: {
+      brushColor: "#ffffff",
+      brushRadius: 1,
+      points:[{x: 0, y: 0}]
+    },
+    perfilesLongitudinalesManto: {
+      brushColor: "#ffffff",
+      brushRadius: 1,
+      points:[{x: 0, y: 0}]
+    },
     height: {
       min: 0,
       max: 100,

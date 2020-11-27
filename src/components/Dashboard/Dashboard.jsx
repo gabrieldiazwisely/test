@@ -12,7 +12,7 @@ import ProyeccionesChartSetting from './charts/ProyeccionesChartSetting'
 import ProyeccionesChart from './charts/ProyeccionesChart'
 import clsx from "clsx";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { machineActions, dashboardActions } from '../../redux/actions'
+import { machineActions, dashboardActions, settingActions } from '../../redux/actions'
 
 
 
@@ -36,6 +36,7 @@ const Dashboard = props => {
   useEffect(() => {
     if(flag || !dashboardCharts) {
       dispatch(dashboardActions.mtoHeightRecommendation('d'))
+      dispatch(settingActions.canvas())
       setFlag(false)
     }
   }, [dashboardCharts])
