@@ -50,7 +50,6 @@ const PoleIncrementSimulationTable = ({ settingPoleIncrementData }) => {
   return  (
     <Grid item xs={12} sm={6}>
       <Paper elevation={3}>
-        cesar
         <Box p={2}>
           <Box  className={classes.boxRight}>
             <FormControl variant="outlined" className={classes.formControl} >
