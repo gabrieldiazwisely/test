@@ -103,7 +103,7 @@ const CanvasImg = props => {
     ctx.beginPath()
     ctx.font = "17px serif"
     ctx.fillStyle = "#fff"
-    ctx.fillText('8,0"', 20, -30)
+    ctx.fillText(props.OSS + ',0"', 20, -30)
     ctx.stroke()
     ctx.closePath()
 

@@ -11,8 +11,6 @@ import { LineChart } from "../../charts/LineChart"
 import { CanvasImg } from '../../../Common/Canvas/CanvasImg'
 import { CanvasPercent } from '../../../Common/Canvas/CanvasPercent'
 
-import settingcalculation2 from '../../../../assets/img/fake/settingcalculation2.png'
-
 
 const SettingCalculation = props => {
   const classes = useStyles()
@@ -70,12 +68,12 @@ const SettingCalculation = props => {
               <Grid container style={{overflowX: 'auto'}}>
                 <Grid item xs={10}>
                   <Box pt={1} pb={3}>
-                    <CanvasImg canvas = { settingCanvas } />
+                    <CanvasImg canvas = { settingCanvas } OSS={settingCanvas.OSS}/>
                   </Box>
                 </Grid>
                 <Grid item xs={2} disableColumnResize={true} >
                   <Box pt={1}>
-                    <CanvasPercent  points = {{min: settingCanvas.height.min, max:settingCanvas.height.max, altura:settingCanvas.height.midium}}/>
+                    <CanvasPercent  points = {{min: settingCanvas.height.min, max:settingCanvas.height.max, altura:settingCanvas.height.midium }}/>
                   </Box>
                 </Grid>
               </Grid>

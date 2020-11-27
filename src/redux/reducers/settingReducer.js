@@ -9,7 +9,8 @@ const initialState = {
       min: 0,
       max: 100,
       medium: 0
-    }
+    },
+    OSS: 0
   }
 }
 

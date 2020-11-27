@@ -1,10 +1,13 @@
 import React from "react"
+import {  useDispatch} from "react-redux"
+import { settingActions } from '../../../redux/actions'
 import { Grid, Typography, Paper, Button, TextField, Link, useMediaQuery } from "@material-ui/core"
 import { useStyles } from "./style"
 import clsx from "clsx";
 
 const SettingVariation = props => {
   const classes = useStyles()
+  const dispatch = useDispatch()
   const matches = useMediaQuery('(min-width:1380px)')
 
   const [linkOSS, setLinkOSS] = React.useState(classes.active);
@@ -18,14 +21,6 @@ const SettingVariation = props => {
 
   const changeAP = event => {
     setValueAP(event.target.value)
-  }
-
-  const changeAPS = event => {
-    setValueAPS(event.target.value)
-  }
-
-  const changePH = event => {
-    setValuePH(event.target.value)
   }
 
   const changePHS = event => {
@@ -43,10 +38,12 @@ const SettingVariation = props => {
   }
 
   const clickCalcularAP = (event) => {
+      dispatch(settingActions.canvas())
       setValueAPS(valueAP * 3)
   }
 
   const clickCalcularPH = () => { 
+    dispatch(settingActions.canvas())
     setValuePH(valuePHS * 3)
   }
 

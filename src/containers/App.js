@@ -61,7 +61,7 @@ class App extends Component {
       if (pathname === "/signin" || pathname === "/register") {
         if (pathname !== "/") history.replace("/");
       } //else {
-      //history.replace('/dashboard')
+        //history.replace('/dashboard')
       //}
     } else {
       if (pathname !== "/signin") history.replace("/signin");

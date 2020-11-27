@@ -68,7 +68,7 @@ const Setting = props => {
             <Grid container style={{overflowX: 'auto'}}>
               <Grid item xs={10}>
                 <Box pt={1} pb={3}>
-                  <CanvasImg canvas = { settingCanvas } />
+                  <CanvasImg canvas = { settingCanvas }  OSS={settingCanvas.OSS} />
                 </Box>
               </Grid>
               <Grid item xs={2} disableColumnResize={true} >

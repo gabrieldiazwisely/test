@@ -70,7 +70,7 @@ const SpanningTable = ({ frecuencyDays, x, y }) => {
   }
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{height: "100px"}}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
