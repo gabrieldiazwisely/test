@@ -42,8 +42,8 @@ const BootstrapInput = withStyles((theme) => ({
 const SpanningTable = ({ frecuencyDays, x, y }) => {
 
   //only show the first 10 entries
-  const newX = x.slice(0, 10)
-  const newY = y.slice(0, 10)
+  // const newX = x.slice(0, 10)
+  // const newY = y.slice(0, 10)
 
   const classes = useStyles();
   const [date, setDate] = React.useState(frecuencyDays[0])
@@ -57,7 +57,7 @@ const SpanningTable = ({ frecuencyDays, x, y }) => {
   }
 
   const getBody = () => {
-    return newX.map( (x, i) => (
+    return x.map( (x, i) => (
       <TableRow key={ i }>
         <TableCell align="center" className={classes.tableItemKey}>
           { x }
@@ -70,7 +70,7 @@ const SpanningTable = ({ frecuencyDays, x, y }) => {
   }
 
   return (
-    <TableContainer component={Paper} style={{height: "100px"}}>
+    <TableContainer component={Paper} style={{height: "400px"}}>
       <Table className={classes.table} aria-label="spanning table">
         <TableHead>
           <TableRow>
