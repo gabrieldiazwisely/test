@@ -33,44 +33,46 @@ function signup(payload) {
 
 function signin(username, password) {
   return async dispatch => {
-    return userService.signin(username, password).then(
-      res => {
-        // signin successful if there's a jwt token in the response
-        if (res && res.data && res.data.authentication_token) {
-          const { email, name, exp, role = "user" } = jwtDecode(
-            res.data.authentication_token
-          );
-          const user = {
-            username: email,
-            name: name,
-            exp: exp,
-            role: role,
-            token: res.data.authentication_token
-          };
-          // store user details and jwt token in local storage to keep user
-          // logged in between page refreshes
-          localStorage.setItem(
-            storageConstants.LOGGED_USER,
-            JSON.stringify(user)
-          );
+    dispatch(success(username));
+        dispatch(replace("/dashboard"));
+    // return userService.signin(username, password).then(
+      // res => {
+      //   // signin successful if there's a jwt token in the response
+      //   if (res && res.data && res.data.authentication_token) {
+      //     const { email, name, exp, role = "user" } = jwtDecode(
+      //       res.data.authentication_token
+      //     );
+      //     const user = {
+      //       username: email,
+      //       name: name,
+      //       exp: exp,
+      //       role: role,
+      //       token: res.data.authentication_token
+      //     };
+      //     // store user details and jwt token in local storage to keep user
+      //     // logged in between page refreshes
+      //     localStorage.setItem(
+      //       storageConstants.LOGGED_USER,
+      //       JSON.stringify(user)
+      //     );
 
-          dispatch(success(user));
-          dispatch(replace("/dashboard"));
-          return;
-        } else {
-          throw new Error(res.message || "Internal Server Error");
-        }
-      },
-      error => {
-        console.log(error);
-        dispatch(failure(error.message));
-        dispatch(
-          notificationActions.error({
-            message: error.message
-          })
-        );
-      }
-    );
+      //     dispatch(success(user));
+      //     dispatch(replace("/dashboard"));
+      //     return;
+      //   } else {
+      //     throw new Error(res.message || "Internal Server Error");
+      //   }
+      // },
+      // error => {
+      //   console.log(error);
+      //   dispatch(failure(error.message));
+      //   dispatch(
+      //     notificationActions.error({
+      //       message: error.message
+      //     })
+      //   );
+      // }
+    
   };
 
   function success(user) {

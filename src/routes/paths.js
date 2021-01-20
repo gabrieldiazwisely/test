@@ -17,7 +17,7 @@ import {
   MapaEspesores,
   //-------- Geometria de Camara-----------
   Deformaciones,
-  AnguloCamara
+  AnguloCamara,
 } from "../views";
 
 const User = withAuthorization(["user"], { unauthorized: <div>403</div> }); // TODO
@@ -26,105 +26,117 @@ export const routePaths = [
   {
     name: "Register",
     path: "/register",
-    component: Register
+    component: Register,
   },
   {
     name: "SignIn",
     path: "/signin",
-    component: SignIn
+    component: SignIn,
   },
   {
     name: "ForgotPassword",
     path: "/forgotpassword",
-    component: ForgotPassword
+    component: ForgotPassword,
   },
   {
     name: "SignOut",
     path: "/signout",
-    component: SignOut
+    component: SignOut,
   },
   {
     name: "Dashboard",
     path: "/dashboard",
-    component: User(Dashboard),
+    // component: User(Dashboard),
+    component: Dashboard,
     exact: true,
-    needAuth: true
+    // needAuth: true
   },
   {
     name: "Setting",
     path: "/setting",
-    component: User(Setting),
+    // component: User(Setting),
+    component: Setting,
+    component: Setting,
     exact: true,
-    needAuth: true
+    // needAuth: true
   },
   {
     name: "Desgaste",
     path: "/wear",
-    component: User(Desgaste),
+    // component: User(Desgaste),
+    component: Desgaste,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Sim. Manto",
     path: "/sim-manto",
-    component: User(SimManto),
+    // component: User(SimManto),
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Geometría de cámara",
     path: "/camera-geometry",
-    component: User(CameraGeometry),
+    // component: User(CameraGeometry),
+    component: CameraGeometry,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Calculo de setting",
     path: "/setting/setting-calculation",
-    component: User(SettingCalculation),
+    // component: User(SettingCalculation),
+    component: SettingCalculation,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Incremento poste",
     path: "/setting/incremento-poste",
-    component: User(IncrementoPoste),
+    // component: User(IncrementoPoste),
+    component: IncrementoPoste,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Simulación ingreso manto",
     path: "/setting/simulacion-ingreso-manto",
-    component: User(SimulacionIngresoManto),
+    // component: User(SimulacionIngresoManto),
+    component: SimulacionIngresoManto,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Perfil de desgaste",
     path: "/wear/perfil-desgaste",
-    component: User(PerfilDesgaste),
+    // component: User(PerfilDesgaste),
+    component: PerfilDesgaste,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Mapa de espesores",
     path: "/wear/mapa-espesores",
-    component: User(MapaEspesores),
+    // component: User(MapaEspesores),
+    component: MapaEspesores,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Deformaciones",
     path: "/camera-geometry/deformaciones",
-    component: User(Deformaciones),
+    // component: User(Deformaciones),
+    component: Deformaciones,
     exact: true,
-    needAuth: true
+    // needAuth: true,
   },
   {
     name: "Ángulo cámara",
     path: "/camera-geometry/angulo-camara",
-    component: User(AnguloCamara),
+    // component: User(AnguloCamara),
+    component: AnguloCamara,
     exact: true,
-    needAuth: true
-  }
+    // needAuth: true,
+  },
 ];

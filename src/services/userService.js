@@ -22,7 +22,7 @@ function signup(payload) {
 
 function signin(username, password) {
   const requestOptions = {
-    url: `${protocol}://${hostname}${port}${version}/sessions`,
+    url: `${protocol}://${hostname}${port}${version}/users/sign_in`,
     method: "POST",
     body: { email: username, password: password },
     headers: {
